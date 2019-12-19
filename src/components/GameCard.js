@@ -24,37 +24,35 @@ class GameCard extends React.Component {
     } = this.props;
     const adminActions = (
       <div className="extra content">
-        {this.state.showConfirmation ? (
-          <div className="ui two buttons">
-            <button
-              className="ui red basic button"
-              onClick={() => deleteGame(game)}
-            >
-              <i className="ui icon check" /> YES
-            </button>
-            <button
-              className="ui grey basic button"
-              onClick={this.hideConfirmation}
-            >
-              <i className="ui icon close" /> NO
-            </button>
-          </div>
-        ) : (
-          <div className="ui two buttons">
-            <Link
-              to={`/games/edit/${game._id}`}
-              className="ui green basic button"
-            >
-              <i className="ui icon edit"></i>
-            </Link>
-            <button
-              className="ui red basic button"
-              onClick={this.showConfirmation}
-            >
-              <i className="ui icon trash"></i>
-            </button>
-          </div>
-        )}
+        {this.state.showConfirmation
+          ? <div className="ui two buttons">
+              <button
+                className="ui red basic button"
+                onClick={() => deleteGame(game)}
+              >
+                <i className="ui icon check" /> YES
+              </button>
+              <button
+                className="ui grey basic button"
+                onClick={this.hideConfirmation}
+              >
+                <i className="ui icon close" /> NO
+              </button>
+            </div>
+          : <div className="ui two buttons">
+              <Link
+                to={`/games/edit/${game._id}`}
+                className="ui olive basic button"
+              >
+                <i className="ui icon edit" />
+              </Link>
+              <button
+                className="ui red basic button"
+                onClick={this.showConfirmation}
+              >
+                <i className="ui icon trash" />
+              </button>
+            </div>}
       </div>
     );
     const addToCart = (
@@ -65,21 +63,21 @@ class GameCard extends React.Component {
 
     return (
       <div className="ui card">
-        {!game.described ? (
-          <div className="image">
-            <Price game={game} />
-            <Featured
-              featured={game.featured}
-              toggleFeatured={toggleFeatured}
-              gameId={game._id}
-            />
-            <img src={game.thumbnail} alt="Game cover" />
-          </div>
-        ) : (
-          <div className="ui justified container description">
-            <p>{game.description}</p>
-          </div>
-        )}
+        {!game.described
+          ? <div className="image">
+              <Price game={game} />
+              <Featured
+                featured={game.featured}
+                toggleFeatured={toggleFeatured}
+                gameId={game._id}
+              />
+              <img src={game.thumbnail} alt="Game cover" />
+            </div>
+          : <div className="ui justified container description">
+              <p>
+                {game.description}
+              </p>
+            </div>}
         <div className="content">
           <Link to={`/game/${game._id}`} className="header">
             {game.name}
