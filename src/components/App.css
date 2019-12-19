@@ -1,0 +1,7 @@
+.caption {
+  display: flex;
+  justify-content: space-between;
+}
+.description {
+  padding: 10px;
+}
