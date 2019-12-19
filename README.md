@@ -1,3 +1,23 @@
+
+## Clonez ce repo 
+[https://github.com/WildCodeSchool/Paris-0919-P3-front-flowerShop.git](https://github.com/WildCodeSchool/Paris-0919-P3-front-flowerShop.git)
+La branche où il y a tout s'appelle 'start'
+Puis yarn install (installez yarn si vous ne l'avez pas)
+
+
+## Installez MongoDb
+https://docs.mongodb.com/manual/installation/
+Suivez le guide, faut télécharger mongodb, puis suivre les instructions pour l'installer en ligne de commande (brew install mongodb pour mac par exemple.) 
+dans le dossier où vous voulez mettre tout le projet
+Qquand c'est installé: lancer la commande "mongo" ( sans les guillemets) dans le terminal
+
+## Clonez le repo back 
+[https://github.com/ClaireWeb/bgshop-api](https://github.com/ClaireWeb/bgshop-api)
+git clone https://github.com/ClaireWeb/bgshop-api nom-de-votre-dossier-local
+puis yarn start
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
