@@ -11,22 +11,25 @@ const GamesList = ({
   deleteGame,
   user
 }) => (
-  <div className="ui stackable grid three cards">
-    {games.length === 0 ? (
-      <Message header="header" content="message" />
-    ) : (
-      games.map(game => (
-        <GameCard
-          game={game}
-          key={game._id}
-          toggleFeatured={toggleFeatured}
-          toggleDescription={toggleDescription}
-          deleteGame={deleteGame}
-          user={user}
-        />
-      ))
-    )}
-  </div>
+  <>
+    <h1>Nos bouquets</h1>
+    <div className='ui stackable grid three cards'>
+      {games.length === 0 ? (
+        <Message header='header' content='message' />
+      ) : (
+        games.map(game => (
+          <GameCard
+            game={game}
+            key={game._id}
+            toggleFeatured={toggleFeatured}
+            toggleDescription={toggleDescription}
+            deleteGame={deleteGame}
+            user={user}
+          />
+        ))
+      )}
+    </div>
+  </>
 );
 
 GamesList.propTypes = {

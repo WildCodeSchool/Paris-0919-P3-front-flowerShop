@@ -2,21 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const GameDetails = ({ game }) => (
-  <div>
-    <h1 className="ui center aligned dividing header">{game.name}</h1>
+  <div className='ui container'>
+    <h1 className='ui center aligned dividing header'>{game.name}</h1>
 
-    <div className="ui stackable grid">
-      <div className="six wide column">
-        <div className="ui fluid image">
-          <img src={game.thumbnail} alt="Game cover" />
+    <div className='ui stackable grid'>
+      <div className='six wide column'>
+        <div className='ui fluid image'>
+          <img src={game.thumbnail} alt='Game cover' />
         </div>
       </div>
     </div>
 
-    <div className="ten wide column">
+    <div className='ten wide column'>
       <p>{game.description}</p>
 
-      <table className="ui table">
+      <table className='ui table'>
         <tbody>
           <tr>
             <td>Numbers of players:</td>
@@ -29,7 +29,7 @@ const GameDetails = ({ game }) => (
         </tbody>
       </table>
 
-      <p className="ui green huge label">$ {game.price / 100}</p>
+      <p className='ui green huge label'>{game.price / 100} €</p>
     </div>
   </div>
 );

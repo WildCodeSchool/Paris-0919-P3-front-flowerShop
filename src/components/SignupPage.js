@@ -6,13 +6,13 @@ import api from '../api';
 class SignupPage extends Component {
   submit = data =>
     api.users.create(data).then(() => {
-      this.props.setMessage('You have been successfully signed up!');
+      this.props.setMessage('Vous êtes connecté avec succès !');
       this.props.history.push('/login');
     });
 
   render() {
     return (
-      <div className="ui segment">
+      <div className='ui segment'>
         <SignupForm submit={this.submit} />
       </div>
     );

@@ -42,12 +42,12 @@ class GameForm extends Component {
   validate(data) {
     const errors = {};
 
-    if (!data.name) errors.name = "This field can't be blank";
-    if (!data.description) errors.description = "This field can't be blank";
-    if (!data.players) errors.players = "This field can't be blank";
-    if (!data.publisher) errors.publisher = "This field can't be blank";
-    if (!data.thumbnail) errors.thumbnail = "This field can't be blank";
-    if (data.price <= 0) errors.price = "Too cheap, don't you think?";
+    if (!data.name) errors.name = 'Champ requis';
+    if (!data.description) errors.description = 'Champ requis';
+    if (!data.players) errors.players = 'Champ requis';
+    if (!data.publisher) errors.publisher = 'Champ requis';
+    if (!data.thumbnail) errors.thumbnail = 'Champ requis';
+    if (data.price <= 0) errors.price = 'Doit être un nombre positif';
     if (data.duration <= 0) errors.duration = "Too short, isn't it?";
 
     return errors;
@@ -91,129 +91,129 @@ class GameForm extends Component {
     const formClassNames = loading ? 'ui form loading' : 'ui form';
     return (
       <form className={formClassNames} onSubmit={this.handleSubmit}>
-        <div className="ui grid">
-          <div className="twelve wide column">
+        <div className='ui grid'>
+          <div className='twelve wide column'>
             <div className={errors.name ? 'field error' : 'field'}>
-              <label htmlFor="name">Game Title</label>
+              <label htmlFor='name'>Nom du produit</label>
               <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Full game title"
+                type='text'
+                id='name'
+                name='name'
+                placeholder='Full game title'
                 value={data.name}
                 onChange={this.handleChange}
               />
-              <FormInlineMessage content={errors.name} type="error" />
+              <FormInlineMessage content={errors.name} type='error' />
             </div>
 
             <div className={errors.description ? 'field error' : 'field'}>
-              <label htmlFor="description">Game Description</label>
+              <label htmlFor='description'>Description du produit</label>
               <textarea
-                type="text"
-                id="description"
-                name="description"
-                placeholder="Game description"
+                type='text'
+                id='description'
+                name='description'
+                placeholder='Game description'
                 value={data.description}
                 onChange={this.handleChange}
               />
-              <FormInlineMessage content={errors.description} type="error" />
+              <FormInlineMessage content={errors.description} type='error' />
             </div>
           </div>
 
-          <div className="four wide column">
+          <div className='four wide column'>
             <ReactImageFallback
               src={data.thumbnail}
-              fallbackImage="http://via.placeholder.com/250x250"
-              alt="Thumbnail"
-              className="ui image"
+              fallbackImage='http://via.placeholder.com/250x250'
+              alt='Thumbnail'
+              className='ui image'
             />
           </div>
         </div>
 
         <div className={errors.thumbnail ? 'field error' : 'field'}>
-          <label htmlFor="thumbnail">Thumbnail</label>
+          <label htmlFor='thumbnail'>Image</label>
           <input
-            type="text"
-            id="thumbnail"
-            name="thumbnail"
-            placeholder="Image URL"
+            type='text'
+            id='thumbnail'
+            name='thumbnail'
+            placeholder='Image URL'
             value={data.thumbnail}
             onChange={this.handleChange}
           />
-          <FormInlineMessage content={errors.thumbnail} type="error" />
+          <FormInlineMessage content={errors.thumbnail} type='error' />
         </div>
 
-        <div className="three fields">
+        <div className='three fields'>
           <div className={errors.price ? 'field error' : 'field'}>
-            <label htmlFor="price">Price (in cents)</label>
+            <label htmlFor='price'>Prix (en centimes)</label>
             <input
-              type="number"
-              id="price"
-              name="price"
+              type='number'
+              id='price'
+              name='price'
               value={data.price}
               onChange={this.handleChange}
             />
-            <FormInlineMessage content={errors.price} type="error" />
+            <FormInlineMessage content={errors.price} type='error' />
           </div>
 
           <div className={errors.duration ? 'field error' : 'field'}>
-            <label htmlFor="duration">Duration (in minutes)</label>
+            <label htmlFor='duration'>Duration (in minutes)</label>
             <input
-              type="number"
-              id="duration"
-              name="duration"
+              type='number'
+              id='duration'
+              name='duration'
               value={data.duration}
               onChange={this.handleChange}
             />
-            <FormInlineMessage content={errors.duration} type="error" />
+            <FormInlineMessage content={errors.duration} type='error' />
           </div>
           <div className={errors.players ? 'field error' : 'field'}>
-            <label htmlFor="players">Players</label>
+            <label htmlFor='players'>Players</label>
             <input
-              type="text"
-              id="players"
-              name="players"
+              type='text'
+              id='players'
+              name='players'
               value={data.players}
               onChange={this.handleChange}
             />
-            <FormInlineMessage content={errors.players} type="error" />
+            <FormInlineMessage content={errors.players} type='error' />
           </div>
         </div>
-        <div className="inline field">
+        <div className='inline field'>
           <input
-            id="featured"
-            name="featured"
-            type="checkbox"
+            id='featured'
+            name='featured'
+            type='checkbox'
             checked={this.state.featured}
             onChange={this.handleCheckboxChange}
           />
-          <label htmlFor="featured">Featured?</label>
+          <label htmlFor='featured'>Featured?</label>
         </div>
 
         <div className={errors.publisher ? 'field error' : 'field'}>
-          <label>Publishers</label>
+          <label>Type de produit</label>
           <select
-            name="publisher"
+            name='publisher'
             value={this.state.publisher}
             onChange={this.handleChange}
           >
-            <option value="0">Choose Publisher</option>
+            <option value='0'>Choisir un type</option>
             {this.props.publishers.map(publisher => (
               <option value={publisher._id} key={publisher._id}>
                 {publisher.name}
               </option>
             ))}
           </select>
-          <FormInlineMessage content={errors.publisher} type="error" />
+          <FormInlineMessage content={errors.publisher} type='error' />
         </div>
 
-        <div className="ui fluid buttons">
-          <button className="ui primary button" type="submit">
-            Create
+        <div className='ui fluid buttons'>
+          <button className='ui primary button' type='submit'>
+            Créer
           </button>
-          <div className="or"></div>
-          <Link to="/games" className="ui button">
-            Cancel
+          <div className='or' data-text='ou'></div>
+          <Link to='/games' className='ui button'>
+            Annuler
           </Link>
         </div>
       </form>

@@ -35,10 +35,9 @@ class LoginForm extends React.Component {
 
   validate = data => {
     const errors = {};
-    if (!isEmail(data.email))
-      errors.email = 'You provided invalid email address';
-    if (!data.email) errors.email = "This field can't be blank";
-    if (!data.password) errors.password = "This field can't be blank";
+    if (!isEmail(data.email)) errors.email = 'Adresse email invalide';
+    if (!data.email) errors.email = 'Champ obligatoire';
+    if (!data.password) errors.password = 'Champ obligatoire';
     return errors;
   };
 
@@ -48,38 +47,38 @@ class LoginForm extends React.Component {
     return (
       <form className={formClassNames} onSubmit={this.handleSubmit}>
         <div className={errors.email ? 'field error' : 'field'}>
-          <label htmlFor="email">Email</label>
+          <label htmlFor='email'>Email</label>
           <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Your Email Address"
+            type='email'
+            id='email'
+            name='email'
+            placeholder='Votre adresse email'
             value={data.email}
             onChange={this.handleStringChange}
           />
-          <FormInlineMessage content={errors.email} type="error" />
+          <FormInlineMessage content={errors.email} type='error' />
         </div>
 
         <div className={errors.password ? 'field error' : 'field'}>
-          <label htmlFor="password">Password</label>
+          <label htmlFor='password'>Mot de passe</label>
           <input
-            type="password"
-            id="passord"
-            name="password"
-            placeholder="Make it secure"
+            type='password'
+            id='passord'
+            name='password'
+            placeholder='Votre mot de passe'
             value={data.password}
             onChange={this.handleStringChange}
           />
-          <FormInlineMessage content={errors.password} type="error" />
+          <FormInlineMessage content={errors.password} type='error' />
         </div>
 
-        <div className="ui fluid buttons">
-          <button className="ui primary button" type="submit">
-            Login
+        <div className='ui fluid buttons'>
+          <button className='ui primary button' type='submit'>
+            Connexion
           </button>
-          <div className="or"></div>
-          <Link to="/" className="ui button">
-            Cancel
+          <div className='or' data-text='ou'></div>
+          <Link to='/' className='ui button'>
+            Annuler
           </Link>
         </div>
       </form>

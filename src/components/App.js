@@ -55,7 +55,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="ui container">
+      <div>
         <TopNavigation
           isAuthenticated={!!this.state.user.token}
           logout={this.logout}
@@ -63,28 +63,32 @@ class App extends React.Component {
         />
 
         {this.state.message && (
-          <div className="ui info message">
-            <i className="close icon" onClick={() => this.setMessage('')} />
+          <div className='ui info message'>
+            <i className='close icon' onClick={() => this.setMessage('')} />
             {this.state.message}
           </div>
         )}
 
-        <Route exact path="/" component={HomePage} />
         <Route
-          path="/games"
+          exact
+          path='/'
+          render={props => <HomePage {...props} user={this.state.user} />}
+        />
+        <Route
+          path='/games'
           render={props => <GamesPage {...props} user={this.state.user} />}
         />
         <Route
-          path="/signup"
+          path='/signup'
           render={props => (
             <SignupPage {...props} setMessage={this.setMessage} />
           )}
         />
         <Route
-          path="/login"
+          path='/login'
           render={props => <LoginPage {...props} login={this.login} />}
         />
-        <Route path="/game/:_id" exact component={ShowGamePage} />
+        <Route path='/game/:_id' exact component={ShowGamePage} />
       </div>
     );
   }

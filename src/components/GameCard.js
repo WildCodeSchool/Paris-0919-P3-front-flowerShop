@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import Price from './Price';
-import Featured from './Featured';
+// import Featured from './Featured';
 import GameDescription from './GameDescription';
 
 class GameCard extends React.Component {
@@ -17,75 +17,79 @@ class GameCard extends React.Component {
   render() {
     const {
       game,
-      toggleFeatured,
+      // toggleFeatured,
       toggleDescription,
       deleteGame,
       user
     } = this.props;
     const adminActions = (
-      <div className="extra content">
-        {this.state.showConfirmation
-          ? <div className="ui two buttons">
-              <button
-                className="ui red basic button"
-                onClick={() => deleteGame(game)}
-              >
-                <i className="ui icon check" /> YES
-              </button>
-              <button
-                className="ui grey basic button"
-                onClick={this.hideConfirmation}
-              >
-                <i className="ui icon close" /> NO
-              </button>
-            </div>
-          : <div className="ui two buttons">
-              <Link
-                to={`/games/edit/${game._id}`}
-                className="ui olive basic button"
-              >
-                <i className="ui icon edit" />
-              </Link>
-              <button
-                className="ui red basic button"
-                onClick={this.showConfirmation}
-              >
-                <i className="ui icon trash" />
-              </button>
-            </div>}
+      <div className='extra content'>
+        {this.state.showConfirmation ? (
+          <div className='ui two buttons'>
+            <button
+              className='ui red basic button'
+              onClick={() => deleteGame(game)}
+            >
+              <i className='ui icon check' /> YES
+            </button>
+            <button
+              className='ui grey basic button'
+              onClick={this.hideConfirmation}
+            >
+              <i className='ui icon close' /> NO
+            </button>
+          </div>
+        ) : (
+          <div className='ui two buttons'>
+            <Link
+              to={`/games/edit/${game._id}`}
+              className='ui olive basic button'
+            >
+              <i className='ui icon edit' />
+            </Link>
+            <button
+              className='ui red basic button'
+              onClick={this.showConfirmation}
+            >
+              <i className='ui icon trash' />
+            </button>
+          </div>
+        )}
       </div>
     );
     const addToCart = (
-      <div className="extra content">
-        <button className="ui green basic button">Add to Cart</button>
+      <div className='extra content right'>
+        <button className='ui green basic button'>
+          <i className='shopping basket icon'></i>Ajouter au panier
+        </button>
       </div>
     );
 
     return (
-      <div className="ui card">
-        {!game.described
-          ? <div className="image">
-              <Price game={game} />
-              <Featured
+      <div className='ui card'>
+        {!game.described ? (
+          <div className='image'>
+            <Price game={game} />
+            {/* <Featured
                 featured={game.featured}
                 toggleFeatured={toggleFeatured}
                 gameId={game._id}
-              />
-              <img src={game.thumbnail} alt="Game cover" />
-            </div>
-          : <div className="ui justified container description">
-              <p>
-                {game.description}
-              </p>
-            </div>}
-        <div className="content">
-          <Link to={`/game/${game._id}`} className="header">
+              /> */}
+            <img src={game.thumbnail} alt='Game cover' />
+          </div>
+        ) : (
+          <div className='ui justified container description'>
+            <p>{game.description}</p>
+          </div>
+        )}
+        <div className='content'>
+          <Link to={`/game/${game._id}`} className='header'>
             {game.name}
           </Link>
-          <div className="meta caption">
-            <div className="game__icon">
-              <i className="icon users" /> {game.players}&nbsp;
-              <i className="icon wait" /> {game.duration} min.
+          <div className='meta caption'>
+            <div className='game__icon'>
+              <i className='icon users' /> {game.players}&nbsp;
+              <i className='icon wait' /> {game.duration} min.
             </div>
             <GameDescription
               described={game.described}
