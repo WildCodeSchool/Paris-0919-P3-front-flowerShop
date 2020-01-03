@@ -43,7 +43,7 @@ class GameCard extends React.Component {
           <div className='ui two buttons'>
             <Link
               to={`/games/edit/${game._id}`}
-              className='ui olive basic button'
+              className='ui green basic button'
             >
               <i className='ui icon edit' />
             </Link>
@@ -75,7 +75,7 @@ class GameCard extends React.Component {
                 toggleFeatured={toggleFeatured}
                 gameId={game._id}
               /> */}
-            <img src={game.thumbnail} alt='Game cover' />
+            <img src={game.thumbnail} alt='Bouquet' />
           </div>
         ) : (
           <div className='ui justified container description'>

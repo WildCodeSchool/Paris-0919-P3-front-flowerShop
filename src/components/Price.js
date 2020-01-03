@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Price = ({ game }) => (
-  <span className='ui green basic label'>{game.price / 100} €</span>
+  <span className='ui pink basic label'>{game.price / 100} €</span>
 );
 
 Price.propTypes = {

@@ -6,16 +6,16 @@ const GameDescription = ({ described, toggleDescription, gameId }) => {
       {!described ? (
         <button
           onClick={() => toggleDescription(gameId)}
-          className="text__icon"
+          className='text__icon'
         >
-          <i className="ui grey icon eye" />
+          <i className='ui pink icon eye' />
         </button>
       ) : (
         <button
           onClick={() => toggleDescription(gameId)}
-          className="text__icon"
+          className='text__icon'
         >
-          <i className="ui green icon eye" />
+          <i className='ui green icon eye' />
         </button>
       )}
     </span>

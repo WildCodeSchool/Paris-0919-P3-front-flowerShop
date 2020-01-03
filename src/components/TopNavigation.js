@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../logo.png';
 
 const TopNavigation = ({ isAuthenticated, logout, isAdmin }) => (
-  <div className='ui stackable purple secondary pointing menu'>
+  <div className='ui stackable pink secondary pointing menu'>
     <NavLink exact to='/' className='item'>
       <div className='ui medium image'>
         <img src={logo} alt='Logo' />
