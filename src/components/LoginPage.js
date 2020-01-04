@@ -12,12 +12,12 @@ class LoginPage extends React.Component {
   submit = data =>
     api.users.login(data).then(token => {
       this.props.login(token);
-      this.props.history.push('/games');
+      this.props.history.push('/products');
     });
 
   render() {
     return (
-      <div className="ui segment">
+      <div className='ui segment'>
         <LoginForm submit={this.submit} />
       </div>
     );

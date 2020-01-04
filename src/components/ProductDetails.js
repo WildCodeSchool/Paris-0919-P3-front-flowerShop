@@ -1,47 +1,48 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ProductDetails = ({ game }) => (
+const ProductDetails = ({ product }) => (
   <div className='ui container'>
-    <h1 className='ui center aligned dividing header'>{game.name}</h1>
+    <h1 className='ui center aligned dividing header'>{product.name}</h1>
 
     <div className='ui stackable grid'>
-      <div className='six wide column'>
-        <div className='ui fluid image'>
-          <img src={game.thumbnail} alt='Game cover' />
+      <div className='row'>
+        <div className='six wide column'>
+          <div className='ui fluid image'>
+            <img src={product.thumbnail} alt='Bouquet' />
+          </div>
+        </div>
+
+        <div className='ten wide column'>
+          <p>{product.description}</p>
+          <table className='ui table'>
+            <tbody>
+              <tr>
+                <td>Tailles disponibles:</td>
+                <td>{product.size}</td>
+              </tr>
+              {/* <tr>
+            <td>Duration:</td>
+            <td>{product.duration} minutes</td>
+          </tr> */}
+            </tbody>
+          </table>
+
+          <p className='ui green huge label'>{product.price / 100} €</p>
         </div>
       </div>
-    </div>
-
-    <div className='ten wide column'>
-      <p>{game.description}</p>
-
-      <table className='ui table'>
-        <tbody>
-          <tr>
-            <td>Numbers of players:</td>
-            <td>{game.players}</td>
-          </tr>
-          <tr>
-            <td>Duration:</td>
-            <td>{game.duration} minutes</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p className='ui green huge label'>{game.price / 100} €</p>
     </div>
   </div>
 );
 
 ProductDetails.propTypes = {
-  game: PropTypes.shape({
+  product: PropTypes.shape({
     name: PropTypes.string.isRequired,
     thumbnail: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    players: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    duration: PropTypes.number.isRequired
+    size: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired
+    //duration: PropTypes.number.isRequired
   }).isRequired
 };
 

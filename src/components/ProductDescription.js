@@ -1,18 +1,18 @@
 import React from 'react';
 
-const ProductDescription = ({ described, toggleDescription, gameId }) => {
+const ProductDescription = ({ described, toggleDescription, productId }) => {
   return (
     <span>
       {!described ? (
         <button
-          onClick={() => toggleDescription(gameId)}
+          onClick={() => toggleDescription(productId)}
           className='text__icon'
         >
           <i className='ui pink icon eye' />
         </button>
       ) : (
         <button
-          onClick={() => toggleDescription(gameId)}
+          onClick={() => toggleDescription(productId)}
           className='text__icon'
         >
           <i className='ui green icon eye' />

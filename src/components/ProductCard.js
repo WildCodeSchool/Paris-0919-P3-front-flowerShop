@@ -16,10 +16,10 @@ class ProductCard extends React.Component {
 
   render() {
     const {
-      game,
+      product,
       // toggleFeatured,
       toggleDescription,
-      deleteGame,
+      deleteProduct,
       user
     } = this.props;
     const adminActions = (
@@ -28,7 +28,7 @@ class ProductCard extends React.Component {
           <div className='ui two buttons'>
             <button
               className='ui red basic button'
-              onClick={() => deleteGame(game)}
+              onClick={() => deleteProduct(product)}
             >
               <i className='ui icon check' /> YES
             </button>
@@ -42,7 +42,7 @@ class ProductCard extends React.Component {
         ) : (
           <div className='ui two buttons'>
             <Link
-              to={`/games/edit/${game._id}`}
+              to={`/products/edit/${product._id}`}
               className='ui green basic button'
             >
               <i className='ui icon edit' />
@@ -67,34 +67,34 @@ class ProductCard extends React.Component {
 
     return (
       <div className='ui card'>
-        {!game.described ? (
+        {!product.described ? (
           <div className='image'>
-            <Price game={game} />
+            <Price product={product} />
             {/* <Featured
-                featured={game.featured}
+                featured={product.featured}
                 toggleFeatured={toggleFeatured}
-                gameId={game._id}
+                productId={product._id}
               /> */}
-            <img src={game.thumbnail} alt='Bouquet' />
+            <img src={product.thumbnail} alt='Bouquet' />
           </div>
         ) : (
           <div className='ui justified container description'>
-            <p>{game.description}</p>
+            <p>{product.description}</p>
           </div>
         )}
         <div className='content'>
-          <Link to={`/game/${game._id}`} className='header'>
-            {game.name}
+          <Link to={`/product/${product._id}`} className='header'>
+            {product.name}
           </Link>
           <div className='meta caption'>
-            <div className='game__icon'>
-              <i className='icon users' /> {game.players}&nbsp;
-              <i className='icon wait' /> {game.duration} min.
+            <div className='product__icon'>
+              <i className='icon sort' /> <strong>Tailles :</strong>{' '}
+              {product.size}
             </div>
             <ProductDescription
-              described={game.described}
+              described={product.described}
               toggleDescription={toggleDescription}
-              gameId={game._id}
+              productId={product._id}
             />
           </div>
         </div>
@@ -106,16 +106,16 @@ class ProductCard extends React.Component {
 }
 
 ProductCard.propTypes = {
-  game: PropTypes.shape({
+  product: PropTypes.shape({
     name: PropTypes.string.isRequired,
     thumbnail: PropTypes.string.isRequired,
-    players: PropTypes.string.isRequired,
+    size: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    duration: PropTypes.number.isRequired,
+    //duration: PropTypes.number.isRequired,
     featured: PropTypes.bool.isRequired
   }).isRequired,
   toggleFeatured: PropTypes.func.isRequired,
-  deleteGame: PropTypes.func.isRequired,
+  deleteProduct: PropTypes.func.isRequired,
   user: PropTypes.shape({
     token: PropTypes.string,
     role: PropTypes.string.isRequired

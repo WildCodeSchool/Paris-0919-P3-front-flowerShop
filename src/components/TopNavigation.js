@@ -11,11 +11,11 @@ const TopNavigation = ({ isAuthenticated, logout, isAdmin }) => (
         <img src={logo} alt='Logo' />
       </div>
     </NavLink>
-    <NavLink exact to='/games' className='item'>
-      Bouquets
+    <NavLink exact to='/products' className='item'>
+      FLOWER SHOP
     </NavLink>
     {isAdmin && (
-      <NavLink exact to='/games/new' className='item'>
+      <NavLink exact to='/products/new' className='item'>
         <i className='icon plus' />
         Ajouter un nouveau produit
       </NavLink>

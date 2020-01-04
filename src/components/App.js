@@ -75,7 +75,7 @@ class App extends React.Component {
           render={props => <HomePage {...props} user={this.state.user} />}
         />
         <Route
-          path='/games'
+          path='/products'
           render={props => <ProductsPage {...props} user={this.state.user} />}
         />
         <Route
@@ -88,7 +88,7 @@ class App extends React.Component {
           path='/login'
           render={props => <LoginPage {...props} login={this.login} />}
         />
-        <Route path='/game/:_id' exact component={ShowProductPage} />
+        <Route path='/product/:_id' exact component={ShowProductPage} />
       </div>
     );
   }

@@ -5,39 +5,39 @@ import ProductCard from './ProductCard';
 import Message from './Message';
 
 const ProductsList = ({
-  games,
+  products,
   toggleFeatured,
   toggleDescription,
-  deleteGame,
+  deleteProduct,
   user
 }) => (
-  <>
-    <h1>Nos bouquets</h1>
+  <div className='ui container shop'>
+    <h1>FLOWER SHOP / LA BOUTIQUE</h1>
     <p>
       Éclosion vous propose des bouquets frais renouvelés chaque mercredi à 9h.
     </p>
     <p>Des bouquets délicats, poétiques, un brin sauvage.</p>
-    <div role='list' class='ui bulleted list'>
-      <div role='listitem' class='item'>
+    <div role='list' className='ui bulleted list'>
+      <div role='listitem' className='item'>
         3 choix
       </div>
-      <div role='listitem' class='item'>
+      <div role='listitem' className='item'>
         2 tailles
       </div>
     </div>
     <p>La livraison est incluse dans le prix du bouquet affiché.</p>
 
     <div className='ui stackable grid three cards'>
-      {games.length === 0 ? (
+      {products.length === 0 ? (
         <Message header='header' content='message' />
       ) : (
-        games.map(game => (
+        products.map(product => (
           <ProductCard
-            game={game}
-            key={game._id}
+            product={product}
+            key={product._id}
             toggleFeatured={toggleFeatured}
             toggleDescription={toggleDescription}
-            deleteGame={deleteGame}
+            deleteProduct={deleteProduct}
             user={user}
           />
         ))
@@ -48,14 +48,14 @@ const ProductsList = ({
     <div className='contact'>
       <button className='ui pink button contact'>Contactez-nous</button>
     </div>
-  </>
+  </div>
 );
 
 ProductsList.propTypes = {
-  games: PropTypes.arrayOf(PropTypes.object).isRequired,
+  products: PropTypes.arrayOf(PropTypes.object).isRequired,
   toggleFeatured: PropTypes.func.isRequired,
   toggleDescription: PropTypes.func.isRequired,
-  deleteGame: PropTypes.func.isRequired,
+  deleteProduct: PropTypes.func.isRequired,
   user: PropTypes.shape({
     token: PropTypes.string,
     role: PropTypes.string.isRequired
@@ -63,7 +63,7 @@ ProductsList.propTypes = {
 };
 
 ProductsList.defaultProps = {
-  games: []
+  products: []
 };
 
 export default ProductsList;

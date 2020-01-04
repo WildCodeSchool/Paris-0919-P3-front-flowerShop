@@ -1,17 +1,17 @@
 import axios from 'axios';
 
 export default {
-  games: {
-    fetchAll: () => axios.get('/api/unsafegames').then(res => res.data.games),
+  products: {
+    fetchAll: () => axios.get('/api/products').then(res => res.data.products),
     fetchById: id =>
-      axios.get(`/api/unsafegames/${id}`).then(res => res.data.game),
-    create: game =>
-      axios.post('/api/unsafegames', { game }).then(res => res.data.game),
-    update: game =>
+      axios.get(`/api/products/${id}`).then(res => res.data.product),
+    create: product =>
+      axios.post('/api/products', { product }).then(res => res.data.product),
+    update: product =>
       axios
-        .put(`/api/unsafegames/${game._id}`, { game })
-        .then(res => res.data.game),
-    delete: game => axios.delete(`/api/unsafegames/${game._id}`)
+        .put(`/api/products/${product._id}`, { product })
+        .then(res => res.data.product),
+    delete: product => axios.delete(`/api/products/${product._id}`)
   },
   users: {
     create: user => axios.post(`/api/users`, { user }),

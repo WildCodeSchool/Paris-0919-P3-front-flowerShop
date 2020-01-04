@@ -43,3 +43,15 @@
   justify-content: center;
   margin: 1rem 0rem 2rem 0rem;
 }
+.shop {
+  text-align: center;
+}
+
+.home {
+  background: fixed left bottom / 10%
+      url('https://cdn.clipart.email/ee6abd24ecc10680f9527aff4e02708d_decorative-purple-flower-png-transparent-ornament-gallery-_319-710.png')
+      no-repeat,
+    fixed right top 30% / 10%
+      url('https://www.searchpng.com/wp-content/uploads/2018/12/Rose-Flower-PNG-Images-715x1298.png')
+      no-repeat;
+}

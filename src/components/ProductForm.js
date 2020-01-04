@@ -8,10 +8,10 @@ const initialData = {
   name: '',
   description: '',
   price: 0,
-  duration: 0,
-  players: '',
-  featured: false,
-  publisher: '0',
+  size: '',
+  //duration: 0,
+  //featured: false,
+  productType: '0',
   thumbnail: ''
 };
 
@@ -24,16 +24,19 @@ class ProductForm extends Component {
   };
 
   componentDidMount() {
-    if (this.props.game._id) {
-      this.setState({ data: this.props.game });
+    if (this.props.product._id) {
+      this.setState({ data: this.props.product });
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.game._id && nextProps.game._id !== this.state.data._id) {
-      this.setState({ data: nextProps.game });
+    if (
+      nextProps.product._id &&
+      nextProps.product._id !== this.state.data._id
+    ) {
+      this.setState({ data: nextProps.product });
     }
-    if (!nextProps.game._id) {
+    if (!nextProps.product._id) {
       this.setState({ data: initialData });
     }
   }
@@ -44,11 +47,11 @@ class ProductForm extends Component {
 
     if (!data.name) errors.name = 'Champ requis';
     if (!data.description) errors.description = 'Champ requis';
-    if (!data.players) errors.players = 'Champ requis';
-    if (!data.publisher) errors.publisher = 'Champ requis';
+    if (!data.size) errors.size = 'Champ requis';
+    if (!data.productType) errors.productType = 'Champ requis';
     if (!data.thumbnail) errors.thumbnail = 'Champ requis';
     if (data.price <= 0) errors.price = 'Doit être un nombre positif';
-    if (data.duration <= 0) errors.duration = "Too short, isn't it?";
+    //if (data.duration <= 0) errors.duration = "Too short, isn't it?";
 
     return errors;
   }
@@ -143,7 +146,7 @@ class ProductForm extends Component {
           <FormInlineMessage content={errors.thumbnail} type='error' />
         </div>
 
-        <div className='three fields'>
+        <div className='two fields'>
           <div className={errors.price ? 'field error' : 'field'}>
             <label htmlFor='price'>Prix (en centimes)</label>
             <input
@@ -156,7 +159,7 @@ class ProductForm extends Component {
             <FormInlineMessage content={errors.price} type='error' />
           </div>
 
-          <div className={errors.duration ? 'field error' : 'field'}>
+          {/* <div className={errors.duration ? 'field error' : 'field'}>
             <label htmlFor='duration'>Duration (in minutes)</label>
             <input
               type='number'
@@ -166,20 +169,20 @@ class ProductForm extends Component {
               onChange={this.handleChange}
             />
             <FormInlineMessage content={errors.duration} type='error' />
-          </div>
-          <div className={errors.players ? 'field error' : 'field'}>
-            <label htmlFor='players'>Players</label>
+          </div> */}
+          <div className={errors.size ? 'field error' : 'field'}>
+            <label htmlFor='size'>Taille</label>
             <input
               type='text'
-              id='players'
-              name='players'
-              value={data.players}
+              id='size'
+              name='size'
+              value={data.size}
               onChange={this.handleChange}
             />
-            <FormInlineMessage content={errors.players} type='error' />
+            <FormInlineMessage content={errors.size} type='error' />
           </div>
         </div>
-        <div className='inline field'>
+        {/* <div className='inline field'>
           <input
             id='featured'
             name='featured'
@@ -188,23 +191,23 @@ class ProductForm extends Component {
             onChange={this.handleCheckboxChange}
           />
           <label htmlFor='featured'>Featured?</label>
-        </div>
+        </div> */}
 
-        <div className={errors.publisher ? 'field error' : 'field'}>
+        <div className={errors.productType ? 'field error' : 'field'}>
           <label>Type de produit</label>
           <select
-            name='publisher'
-            value={this.state.publisher}
+            name='productType'
+            value={this.state.productType}
             onChange={this.handleChange}
           >
             <option value='0'>Choisir un type</option>
-            {this.props.publishers.map(publisher => (
-              <option value={publisher._id} key={publisher._id}>
-                {publisher.name}
+            {this.props.productTypes.map(productType => (
+              <option value={productType._id} key={productType._id}>
+                {productType.name}
               </option>
             ))}
           </select>
-          <FormInlineMessage content={errors.publisher} type='error' />
+          <FormInlineMessage content={errors.productType} type='error' />
         </div>
 
         <div className='ui fluid buttons'>
@@ -212,7 +215,7 @@ class ProductForm extends Component {
             Créer
           </button>
           <div className='or' data-text='ou'></div>
-          <Link to='/games' className='ui button'>
+          <Link to='/products' className='ui button'>
             Annuler
           </Link>
         </div>
@@ -222,25 +225,25 @@ class ProductForm extends Component {
 }
 
 ProductForm.propTypes = {
-  publishers: PropTypes.arrayOf(
+  productTypes: PropTypes.arrayOf(
     PropTypes.shape({
       _id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired
     })
   ).isRequired,
   submit: PropTypes.func.isRequired,
-  game: PropTypes.shape({
+  product: PropTypes.shape({
     _id: PropTypes.string,
     name: PropTypes.string,
     thumbnail: PropTypes.string,
-    players: PropTypes.string,
-    featured: PropTypes.bool,
-    duration: PropTypes.number
+    size: PropTypes.string,
+    featured: PropTypes.bool
+    //duration: PropTypes.number
   }).isRequired
 };
 
 ProductForm.defaultProps = {
-  publishers: []
+  productTypes: []
 };
 
 export default ProductForm;

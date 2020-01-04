@@ -11,7 +11,7 @@ import api from '../api';
 
 import './App.css';
 
-const publishers = [
+const productTypes = [
   {
     _id: '1',
     name: 'Bouquet'
@@ -24,98 +24,103 @@ const publishers = [
 
 class ProductsPage extends React.Component {
   state = {
-    games: [],
+    products: [],
     loading: true
   };
 
   componentDidMount() {
-    api.games
+    api.products
       .fetchAll()
-      .then(games =>
-        this.setState({ games: this.sortGames(games), loading: false })
+      .then(products =>
+        this.setState({ products: this.sortProducts(products), loading: false })
       );
   }
 
-  sortGames(games) {
-    return _orderBy(games, ['featured', 'name'], ['desc', 'asc']);
+  sortProducts(products) {
+    return _orderBy(products, ['featured', 'name'], ['desc', 'asc']);
   }
 
-  toggleFeatured = gameId => {
-    const game = _find(this.state.games, { _id: gameId });
-    return this.updateGame({
-      ...game,
-      featured: !game.featured
+  toggleFeatured = productId => {
+    const product = _find(this.state.products, { _id: productId });
+    return this.updateProduct({
+      ...product,
+      featured: !product.featured
     });
   };
 
-  toggleDescription = gameId =>
+  toggleDescription = productId =>
     this.setState({
-      games: this.state.games.map(game =>
-        gameId === game._id ? { ...game, described: !game.described } : game
+      products: this.state.products.map(product =>
+        productId === product._id
+          ? { ...product, described: !product.described }
+          : product
       )
     });
 
-  saveGame = game =>
-    // History object possible because update & addgame are promises. Replace a redirect component
-    (game._id ? this.updateGame(game) : this.addGame(game)).then(() =>
-      this.props.history.push('/games')
-    );
+  saveProduct = product =>
+    // History object possible because update & addProduct are promises. Replace a redirect component
+    (product._id
+      ? this.updateProduct(product)
+      : this.addProduct(product)
+    ).then(() => this.props.history.push('/products'));
 
-  addGame = gameData =>
-    api.games.create(gameData).then(game =>
+  addProduct = productData =>
+    api.products.create(productData).then(product =>
       this.setState({
-        games: this.sortGames([...this.state.games, game]),
-        showGameForm: false
+        products: this.sortProducts([...this.state.products, product]),
+        showProductForm: false
       })
     );
 
-  updateGame = gameData =>
-    api.games.update(gameData).then(game =>
+  updateProduct = productData =>
+    api.products.update(productData).then(product =>
       this.setState({
-        games: this.sortGames(
-          this.state.games.map(item => (item._id === game._id ? game : item))
+        products: this.sortProducts(
+          this.state.products.map(item =>
+            item._id === product._id ? product : item
+          )
         ),
-        showGameForm: false
+        showProductForm: false
       })
     );
 
-  deleteGame = game =>
-    api.games.delete(game).then(() =>
+  deleteProduct = product =>
+    api.products.delete(product).then(() =>
       this.setState({
-        games: this.state.games.filter(item => item._id !== game._id)
+        products: this.state.products.filter(item => item._id !== product._id)
       })
     );
 
   render() {
-    const { games, loading } = this.state;
+    const { products, loading } = this.state;
     const numberOfColumns =
-      this.props.location.pathname === '/games' ? 'sixteen' : 'ten';
+      this.props.location.pathname === '/products' ? 'sixteen' : 'ten';
     return (
       <div className='ui container'>
         <div className='ui stackable grid'>
           <AdminRoute
-            path='/games/new'
+            path='/products/new'
             user={this.props.user}
             render={() => (
               <div className='six wide column'>
                 <ProductForm
-                  publishers={publishers}
-                  submit={this.saveGame}
-                  game={{}}
+                  productTypes={productTypes}
+                  submit={this.saveProduct}
+                  product={{}}
                 />
               </div>
             )}
           />
           <AdminRoute
-            path='/games/edit/:_id'
+            path='/products/edit/:_id'
             user={this.props.user}
             render={props => (
               <div className='six wide column'>
                 <ProductForm
-                  publishers={publishers}
-                  submit={this.saveGame}
-                  game={
-                    _find(this.state.games, {
+                  productTypes={productTypes}
+                  submit={this.saveProduct}
+                  product={
+                    _find(this.state.products, {
                       _id: props.match.params._id
                     }) || {}
                   }
@@ -129,10 +134,10 @@ class ProductsPage extends React.Component {
               <LoadingMsg />
             ) : (
               <ProductsList
-                games={games}
+                products={products}
                 toggleFeatured={this.toggleFeatured}
                 toggleDescription={this.toggleDescription}
-                deleteGame={this.deleteGame}
+                deleteProduct={this.deleteProduct}
                 user={this.props.user}
               />
             )}
