@@ -1,0 +1,31 @@
+import React from 'react';
+import ProductDetails from './ProductDetails';
+import LoadingMsg from './LoadingMsg';
+import api from '../api';
+
+class ShowProductPage extends React.Component {
+  state = {
+    product: {},
+    loading: true
+  };
+
+  componentDidMount() {
+    api.products
+      .fetchById(this.props.match.params._id)
+      .then(product => this.setState({ product, loading: false }));
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.loading ? (
+          <LoadingMsg />
+        ) : (
+          <ProductDetails product={this.state.product} />
+        )}
+      </div>
+    );
+  }
+}
+
+export default ShowProductPage;
