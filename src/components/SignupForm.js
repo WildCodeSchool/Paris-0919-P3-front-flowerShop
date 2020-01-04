@@ -54,100 +54,109 @@ class SignupForm extends React.Component {
     const { errors, data, loading } = this.state;
     const formClassNames = loading ? 'ui form loading' : 'ui form';
     return (
-      <form className={formClassNames} onSubmit={this.handleSubmit}>
-        <div className={errors.email ? 'field error' : 'field'}>
-          <label htmlFor='email'>Email</label>
-          <input
-            type='email'
-            id='email'
-            name='email'
-            placeholder='Votre adresse email'
-            value={data.email}
-            onChange={this.handleStringChange}
-          />
-          <FormInlineMessage content={errors.email} type='error' />
-        </div>
+      <div className='ui container'>
+        <h1>Créer un compte</h1>
+        <form className={formClassNames} onSubmit={this.handleSubmit}>
+          <div className={errors.email ? 'field error' : 'field'}>
+            <label htmlFor='email'>Email</label>
+            <input
+              type='email'
+              id='email'
+              name='email'
+              placeholder='Votre adresse email'
+              value={data.email}
+              onChange={this.handleStringChange}
+            />
+            <FormInlineMessage content={errors.email} type='error' />
+          </div>
 
-        <div className={errors.name ? 'field error' : 'field'}>
-          <label htmlFor='name'>Nom</label>
-          <input
-            type='text'
-            id='name'
-            name='name'
-            placeholder='Votre nom de famille'
-            value={data.name}
-            onChange={this.handleStringChange}
-          />
-          <FormInlineMessage content={errors.email} type='error' />
-        </div>
+          <div className='three fields'>
+            <div className={errors.name ? 'field error' : 'field'}>
+              <label htmlFor='name'>Nom</label>
+              <input
+                type='text'
+                id='name'
+                name='name'
+                placeholder='Votre nom de famille'
+                value={data.name}
+                onChange={this.handleStringChange}
+              />
+              <FormInlineMessage content={errors.email} type='error' />
+            </div>
 
-        <div className={errors.firstname ? 'field error' : 'field'}>
-          <label htmlFor='firstname'>Prénom</label>
-          <input
-            type='text'
-            id='firstname'
-            name='firstname'
-            placeholder='Votre prénom'
-            value={data.firstname}
-            onChange={this.handleStringChange}
-          />
-          <FormInlineMessage content={errors.email} type='error' />
-        </div>
+            <div className={errors.firstname ? 'field error' : 'field'}>
+              <label htmlFor='firstname'>Prénom</label>
+              <input
+                type='text'
+                id='firstname'
+                name='firstname'
+                placeholder='Votre prénom'
+                value={data.firstname}
+                onChange={this.handleStringChange}
+              />
+              <FormInlineMessage content={errors.email} type='error' />
+            </div>
 
-        <div className={errors.phone ? 'field error' : 'field'}>
-          <label htmlFor='phone'>Téléphone</label>
-          <input
-            type='tel'
-            id='phone'
-            name='phone'
-            placeholder='Votre numéro de téléphone'
-            value={data.phone}
-            onChange={this.handleStringChange}
-          />
-          <FormInlineMessage content={errors.email} type='error' />
-        </div>
+            <div className={errors.phone ? 'field error' : 'field'}>
+              <label htmlFor='phone'>Téléphone</label>
+              <input
+                type='tel'
+                id='phone'
+                name='phone'
+                placeholder='Votre numéro de téléphone'
+                value={data.phone}
+                onChange={this.handleStringChange}
+              />
+              <FormInlineMessage content={errors.email} type='error' />
+            </div>
+          </div>
 
-        <div className={errors.password ? 'field error' : 'field'}>
-          <label htmlFor='password'>Créer un mot de passe</label>
-          <input
-            type='password'
-            id='passord'
-            name='password'
-            placeholder='Choisissez votre mot de passe'
-            value={data.password}
-            onChange={this.handleStringChange}
-          />
-          <FormInlineMessage content={errors.password} type='error' />
-        </div>
+          <div className='two fields'>
+            <div className={errors.password ? 'field error' : 'field'}>
+              <label htmlFor='password'>Créer un mot de passe</label>
+              <input
+                type='password'
+                id='passord'
+                name='password'
+                placeholder='Choisissez votre mot de passe'
+                value={data.password}
+                onChange={this.handleStringChange}
+              />
+              <FormInlineMessage content={errors.password} type='error' />
+            </div>
 
-        <div className={errors.passwordConfirmation ? 'field error' : 'field'}>
-          <label htmlFor='passwordConfirmation'>
-            Confirmez votre mot de passe
-          </label>
-          <input
-            type='password'
-            id='passordConfirmation'
-            name='passwordConfirmation'
-            placeholder='Remplissez à nouveau votre mot de passe'
-            value={data.passwordConfirmation}
-            onChange={this.handleStringChange}
-          />
-          <FormInlineMessage
-            content={errors.passwordConfirmation}
-            type='error'
-          />
-        </div>
+            <div
+              className={errors.passwordConfirmation ? 'field error' : 'field'}
+            >
+              <label htmlFor='passwordConfirmation'>
+                Confirmez votre mot de passe
+              </label>
+              <input
+                type='password'
+                id='passordConfirmation'
+                name='passwordConfirmation'
+                placeholder='Remplissez à nouveau votre mot de passe'
+                value={data.passwordConfirmation}
+                onChange={this.handleStringChange}
+              />
+              <FormInlineMessage
+                content={errors.passwordConfirmation}
+                type='error'
+              />
+            </div>
+          </div>
 
-        <div className='ui fluid buttons'>
-          <button className='ui primary button' type='submit'>
-            Créer un compte
-          </button>
-          <div className='or' data-text='ou'></div>
-          <Link to='/' className='ui button'>
-            Annuler
-          </Link>
-        </div>
-      </form>
+          <div className='ui fluid buttons'>
+            <button className='ui primary button' type='submit'>
+              Créer un compte
+            </button>
+            <div className='or' data-text='ou'></div>
+            <Link to='/' className='ui button'>
+              Annuler
+            </Link>
+          </div>
+        </form>
+      </div>
     );
   }
 }

@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 import Price from './Price';
 // import Featured from './Featured';
-import GameDescription from './GameDescription';
+import ProductDescription from './ProductDescription';
 
-class GameCard extends React.Component {
+class ProductCard extends React.Component {
   state = {
     showConfirmation: false
   };
@@ -91,7 +91,7 @@ class GameCard extends React.Component {
               <i className='icon users' /> {game.players}&nbsp;
               <i className='icon wait' /> {game.duration} min.
             </div>
-            <GameDescription
+            <ProductDescription
               described={game.described}
               toggleDescription={toggleDescription}
               gameId={game._id}
@@ -105,7 +105,7 @@ class GameCard extends React.Component {
   }
 }
 
-GameCard.propTypes = {
+ProductCard.propTypes = {
   game: PropTypes.shape({
     name: PropTypes.string.isRequired,
     thumbnail: PropTypes.string.isRequired,
@@ -122,4 +122,4 @@ GameCard.propTypes = {
   }).isRequired
 };
 
-export default GameCard;
+export default ProductCard;

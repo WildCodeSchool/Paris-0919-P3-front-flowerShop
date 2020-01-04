@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GameDescription = ({ described, toggleDescription, gameId }) => {
+const ProductDescription = ({ described, toggleDescription, gameId }) => {
   return (
     <span>
       {!described ? (
@@ -22,4 +22,4 @@ const GameDescription = ({ described, toggleDescription, gameId }) => {
   );
 };
 
-export default GameDescription;
+export default ProductDescription;

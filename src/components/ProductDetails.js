@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const GameDetails = ({ game }) => (
+const ProductDetails = ({ game }) => (
   <div className='ui container'>
     <h1 className='ui center aligned dividing header'>{game.name}</h1>
 
@@ -34,7 +34,7 @@ const GameDetails = ({ game }) => (
   </div>
 );
 
-GameDetails.propTypes = {
+ProductDetails.propTypes = {
   game: PropTypes.shape({
     name: PropTypes.string.isRequired,
     thumbnail: PropTypes.string.isRequired,
@@ -45,4 +45,4 @@ GameDetails.propTypes = {
   }).isRequired
 };
 
-export default GameDetails;
+export default ProductDetails;

@@ -45,43 +45,46 @@ class LoginForm extends React.Component {
     const { errors, data, loading } = this.state;
     const formClassNames = loading ? 'ui form loading' : 'ui form';
     return (
-      <form className={formClassNames} onSubmit={this.handleSubmit}>
-        <div className={errors.email ? 'field error' : 'field'}>
-          <label htmlFor='email'>Email</label>
-          <input
-            type='email'
-            id='email'
-            name='email'
-            placeholder='Votre adresse email'
-            value={data.email}
-            onChange={this.handleStringChange}
-          />
-          <FormInlineMessage content={errors.email} type='error' />
-        </div>
+      <div className='ui container'>
+        <h1>Connexion</h1>
+        <form className={formClassNames} onSubmit={this.handleSubmit}>
+          <div className={errors.email ? 'field error' : 'field'}>
+            <label htmlFor='email'>Email</label>
+            <input
+              type='email'
+              id='email'
+              name='email'
+              placeholder='Votre adresse email'
+              value={data.email}
+              onChange={this.handleStringChange}
+            />
+            <FormInlineMessage content={errors.email} type='error' />
+          </div>
 
-        <div className={errors.password ? 'field error' : 'field'}>
-          <label htmlFor='password'>Mot de passe</label>
-          <input
-            type='password'
-            id='passord'
-            name='password'
-            placeholder='Votre mot de passe'
-            value={data.password}
-            onChange={this.handleStringChange}
-          />
-          <FormInlineMessage content={errors.password} type='error' />
-        </div>
+          <div className={errors.password ? 'field error' : 'field'}>
+            <label htmlFor='password'>Mot de passe</label>
+            <input
+              type='password'
+              id='passord'
+              name='password'
+              placeholder='Votre mot de passe'
+              value={data.password}
+              onChange={this.handleStringChange}
+            />
+            <FormInlineMessage content={errors.password} type='error' />
+          </div>
 
-        <div className='ui fluid buttons'>
-          <button className='ui primary button' type='submit'>
-            Connexion
-          </button>
-          <div className='or' data-text='ou'></div>
-          <Link to='/' className='ui button'>
-            Annuler
-          </Link>
-        </div>
-      </form>
+          <div className='ui fluid buttons'>
+            <button className='ui primary button' type='submit'>
+              Connexion
+            </button>
+            <div className='or' data-text='ou'></div>
+            <Link to='/' className='ui button'>
+              Annuler
+            </Link>
+          </div>
+        </form>
+      </div>
     );
   }
 }

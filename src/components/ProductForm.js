@@ -15,7 +15,7 @@ const initialData = {
   thumbnail: ''
 };
 
-class GameForm extends Component {
+class ProductForm extends Component {
   state = {
     data: initialData,
     errors: {},
@@ -99,7 +99,7 @@ class GameForm extends Component {
                 type='text'
                 id='name'
                 name='name'
-                placeholder='Full game title'
+                placeholder='Nom du produit'
                 value={data.name}
                 onChange={this.handleChange}
               />
@@ -112,7 +112,7 @@ class GameForm extends Component {
                 type='text'
                 id='description'
                 name='description'
-                placeholder='Game description'
+                placeholder='Description du produit'
                 value={data.description}
                 onChange={this.handleChange}
               />
@@ -221,7 +221,7 @@ class GameForm extends Component {
   }
 }
 
-GameForm.propTypes = {
+ProductForm.propTypes = {
   publishers: PropTypes.arrayOf(
     PropTypes.shape({
       _id: PropTypes.string.isRequired,
@@ -239,8 +239,8 @@ GameForm.propTypes = {
   }).isRequired
 };
 
-GameForm.defaultProps = {
+ProductForm.defaultProps = {
   publishers: []
 };
 
-export default GameForm;
+export default ProductForm;

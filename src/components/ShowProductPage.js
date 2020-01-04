@@ -1,9 +1,9 @@
 import React from 'react';
-import GameDetails from './GameDetails';
+import ProductDetails from './ProductDetails';
 import LoadingMsg from './LoadingMsg';
 import api from '../api';
 
-class ShowGamePage extends React.Component {
+class ShowProductPage extends React.Component {
   state = {
     game: {},
     loading: true
@@ -21,11 +21,11 @@ class ShowGamePage extends React.Component {
         {this.state.loading ? (
           <LoadingMsg />
         ) : (
-          <GameDetails game={this.state.game} />
+          <ProductDetails game={this.state.game} />
         )}
       </div>
     );
   }
 }
 
-export default ShowGamePage;
+export default ShowProductPage;

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import _orderBy from 'lodash/orderBy';
 import _find from 'lodash/find';
 
-import GameForm from './GameForm';
-import GamesList from './GamesList';
+import ProductForm from './ProductForm';
+import ProductsList from './ProductsList';
 import LoadingMsg from './LoadingMsg';
 import AdminRoute from './AdminRoute';
 import api from '../api';
@@ -22,7 +22,7 @@ const publishers = [
   }
 ];
 
-class GamesPage extends React.Component {
+class ProductsPage extends React.Component {
   state = {
     games: [],
     loading: true
@@ -98,7 +98,7 @@ class GamesPage extends React.Component {
             user={this.props.user}
             render={() => (
               <div className='six wide column'>
-                <GameForm
+                <ProductForm
                   publishers={publishers}
                   submit={this.saveGame}
                   game={{}}
@@ -111,7 +111,7 @@ class GamesPage extends React.Component {
             user={this.props.user}
             render={props => (
               <div className='six wide column'>
-                <GameForm
+                <ProductForm
                   publishers={publishers}
                   submit={this.saveGame}
                   game={
@@ -128,7 +128,7 @@ class GamesPage extends React.Component {
             {loading ? (
               <LoadingMsg />
             ) : (
-              <GamesList
+              <ProductsList
                 games={games}
                 toggleFeatured={this.toggleFeatured}
                 toggleDescription={this.toggleDescription}
@@ -145,11 +145,11 @@ class GamesPage extends React.Component {
   }
 }
 
-GamesPage.defaultProps = {
+ProductsPage.defaultProps = {
   user: PropTypes.shape({
     token: PropTypes.string,
     role: PropTypes.string.isRequired
   }).isRequired
 };
 
-export default GamesPage;
+export default ProductsPage;
