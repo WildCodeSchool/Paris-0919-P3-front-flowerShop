@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Price from './Price';
 // import Featured from './Featured';
 import ProductDescription from './ProductDescription';
+//import ProductDetails from './ProductDetails';
 
 class ProductCard extends React.Component {
   state = {
@@ -23,7 +24,7 @@ class ProductCard extends React.Component {
       user
     } = this.props;
     const adminActions = (
-      <div className='extra content'>
+      <div className='extra content productCard__content'>
         {this.state.showConfirmation ? (
           <div className='ui two buttons'>
             <button
@@ -83,10 +84,11 @@ class ProductCard extends React.Component {
           </div>
         )}
         <div className='content'>
-          <Link to={`/product/${product._id}`} className='header'>
+          <Link to={`/product/${product._id}`} className='header' {...user}>
             {product.name}
           </Link>
-          <div className='meta caption'>
+
+          <div className='meta caption productCard__caption'>
             <div className='product__icon'>
               <i className='icon sort' /> <strong>Tailles :</strong>{' '}
               {product.size}
@@ -110,9 +112,9 @@ ProductCard.propTypes = {
     name: PropTypes.string.isRequired,
     thumbnail: PropTypes.string.isRequired,
     size: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired
     //duration: PropTypes.number.isRequired,
-    featured: PropTypes.bool.isRequired
+    //featured: PropTypes.bool.isRequired
   }).isRequired,
   toggleFeatured: PropTypes.func.isRequired,
   deleteProduct: PropTypes.func.isRequired,

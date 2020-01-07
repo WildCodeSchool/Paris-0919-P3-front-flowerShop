@@ -88,7 +88,13 @@ class App extends React.Component {
           path='/login'
           render={props => <LoginPage {...props} login={this.login} />}
         />
-        <Route path='/product/:_id' exact component={ShowProductPage} />
+        {/* <Route path='/product/:_id' exact component={ShowProductPage} /> */}
+        <Route
+          path='/product/:_id'
+          render={props => (
+            <ShowProductPage {...props} user={this.state.user} />
+          )}
+        />
       </div>
     );
   }

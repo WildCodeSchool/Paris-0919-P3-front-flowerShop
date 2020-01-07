@@ -1,29 +1,20 @@
-.caption {
-  display: flex;
-  justify-content: space-between;
+.home {
+  background: fixed left bottom / 10%
+      url('https://cdn.clipart.email/ee6abd24ecc10680f9527aff4e02708d_decorative-purple-flower-png-transparent-ornament-gallery-_319-710.png')
+      no-repeat,
+    fixed right top 30% / 10%;
+  /* url('https://www.searchpng.com/wp-content/uploads/2018/12/Rose-Flower-PNG-Images-715x1298.png')
+      no-repeat; */
 }
-.description {
-  padding: 10px;
-}
-
-.ui.basic.pink.label {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-}
-.item {
+.nav__item {
   word-wrap: break-word;
   flex-wrap: wrap;
 }
-.ui.cards > .card > .extra,
-.ui.card > .extra {
-  text-align: center;
-}
-.ui.menu .item > i.icon {
+.nav__icon {
   cursor: pointer;
   transition: 0.3s;
 }
-.ui.menu .item > i.icon:hover {
+.nav__icon:hover {
   color: #e79796;
 }
 
@@ -31,27 +22,41 @@
   padding: 2rem 0rem 1rem 0rem;
 }
 
-.ui.container.forme {
-  max-width: 50vw;
+.productList__shop {
+  text-align: center;
 }
-.ask {
+.productList__ask {
   text-align: center;
   padding-top: 2rem;
 }
-.contact {
+.productList__contact {
   display: flex;
   justify-content: center;
   margin: 1rem 0rem 2rem 0rem;
 }
-.shop {
+
+.productCard__caption {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.8rem 0;
+}
+.description {
+  padding: 10px;
+}
+.productCard__desc-btn {
+  border-radius: 5px;
+}
+.productCard__price {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.productCard__content {
   text-align: center;
 }
 
-.home {
-  background: fixed left bottom / 10%
-      url('https://cdn.clipart.email/ee6abd24ecc10680f9527aff4e02708d_decorative-purple-flower-png-transparent-ornament-gallery-_319-710.png')
-      no-repeat,
-    fixed right top 30% / 10%
-      url('https://www.searchpng.com/wp-content/uploads/2018/12/Rose-Flower-PNG-Images-715x1298.png')
-      no-repeat;
+.productDetails__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

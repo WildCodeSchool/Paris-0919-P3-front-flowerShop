@@ -21,7 +21,7 @@ class ShowProductPage extends React.Component {
         {this.state.loading ? (
           <LoadingMsg />
         ) : (
-          <ProductDetails product={this.state.product} />
+          <ProductDetails product={this.state.product} user={this.props.user} />
         )}
       </div>
     );

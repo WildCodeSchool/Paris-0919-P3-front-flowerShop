@@ -6,14 +6,14 @@ const ProductDescription = ({ described, toggleDescription, productId }) => {
       {!described ? (
         <button
           onClick={() => toggleDescription(productId)}
-          className='text__icon'
+          className='text__icon productCard__desc-btn'
         >
           <i className='ui pink icon eye' />
         </button>
       ) : (
         <button
           onClick={() => toggleDescription(productId)}
-          className='text__icon'
+          className='text__icon productCard__desc-btn'
         >
           <i className='ui green icon eye' />
         </button>

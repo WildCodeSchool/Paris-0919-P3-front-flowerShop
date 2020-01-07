@@ -199,8 +199,9 @@ class ProductForm extends Component {
             name='productType'
             value={this.state.productType}
             onChange={this.handleChange}
+            className='ui dropdown'
           >
-            <option value='0'>Choisir un type</option>
+            <option value=''>Choisir un type</option>
             {this.props.productTypes.map(productType => (
               <option value={productType._id} key={productType._id}>
                 {productType.name}
