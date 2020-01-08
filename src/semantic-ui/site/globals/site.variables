@@ -1,0 +1,53 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+/*-------------------
+     Fonts
+--------------------*/
+
+@headerFont        : 'Roboto', 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@pageFont          : 'Roboto', 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@fontSmoothing     : antialiased;
+
+@importGoogleFonts : true;
+@googleFontName    : 'Roboto';
+@googleFontSizes   : '300,300italic';
+@googleFontFamily  : '@{googleFontName}:@{googleFontSizes}';
+
+/*-------------------
+    Base Sizes
+--------------------*/
+
+@emSize      : 16px;
+@fontSize    : 16px;
+
+
+/*-------------------
+    Site Colors
+--------------------*/
+
+/*---  Colors  ---*/
+
+@red            : #B03060;
+@blue           : #0E6EB8;
+@violet         : #EE82EE;
+@black          : #000000;
+@yellow         : #FFB284;
+@grey           : #DDD2C3;
+@teal           : #F4F1EA;
+@pink           : #EBBCAC;
+@purple         : #926B70;
+@orange         : #CC9026;
+@brown          : #9D5D41;
+@green          : #767864;
+@olive          : #444C38;
+
+@primaryColor   : @pink;
+@secondaryColor : @grey;
+
+/*-------------------
+      Page
+--------------------*/
+@headerMargin        : 1em 0em 1rem;
+@paragraphMargin     : 0em 0em 1.5em;
