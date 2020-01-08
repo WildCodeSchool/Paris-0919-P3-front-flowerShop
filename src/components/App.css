@@ -1,11 +1,20 @@
-.home {
+.home::after {
+  content: '';
   background: fixed left bottom / 10%
       url('https://cdn.clipart.email/ee6abd24ecc10680f9527aff4e02708d_decorative-purple-flower-png-transparent-ornament-gallery-_319-710.png')
       no-repeat,
     fixed right top 30% / 10%;
   /* url('https://www.searchpng.com/wp-content/uploads/2018/12/Rose-Flower-PNG-Images-715x1298.png')
       no-repeat; */
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
+
 .nav__item {
   word-wrap: break-word;
   flex-wrap: wrap;
@@ -18,6 +27,9 @@
   color: #e79796;
 }
 
+.ui.container {
+  padding-bottom: 1rem;
+}
 .ui.container h1 {
   padding: 2rem 0rem 1rem 0rem;
 }
@@ -44,6 +56,7 @@
   padding: 10px;
 }
 .productCard__desc-btn {
+  border: 1px solid #ddd2c3;
   border-radius: 5px;
 }
 .productCard__price {
@@ -51,12 +64,32 @@
   bottom: 10px;
   right: 10px;
 }
-.productCard__content {
-  text-align: center;
-}
 
 .productDetails__buttons {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.contextDelivery__card {
+  font-size: 0.8rem;
+}
+.contextDelivery_msg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+.contextDelivery_msg p {
+  margin: 0 1rem;
+}
+.deliveryCities {
+  margin: 0.5rem 0;
+}
+.contextDelivery__time {
+  text-align: center;
+}
+.deliveryTime {
+  display: flex;
   align-items: center;
 }

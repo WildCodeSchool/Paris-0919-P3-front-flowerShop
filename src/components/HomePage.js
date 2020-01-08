@@ -54,6 +54,9 @@ class HomePage extends React.Component {
     const { products, loading } = this.state;
     return (
       <div className='home'>
+        <div className='ui container'>
+          <h1>Bienvenue chez Eclosion !</h1>
+        </div>
         <ContextDelivery />
         <div className='ten wide column'>
           {loading ? (

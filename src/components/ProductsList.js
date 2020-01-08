@@ -14,7 +14,8 @@ const ProductsList = ({
   <div className='ui container productList__shop'>
     <h1>FLOWER SHOP / LA BOUTIQUE</h1>
     <p>
-      Éclosion vous propose des bouquets frais renouvelés chaque mercredi à 9h.
+      Éclosion vous propose des bouquets frais{' '}
+      <strong>renouvelés chaque mercredi</strong> à 9h.
     </p>
     <p>Des bouquets délicats, poétiques, un brin sauvage.</p>
     <div role='list' className='ui bulleted list'>

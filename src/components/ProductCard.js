@@ -24,7 +24,7 @@ class ProductCard extends React.Component {
       user
     } = this.props;
     const adminActions = (
-      <div className='extra content productCard__content'>
+      <div className='extra content'>
         {this.state.showConfirmation ? (
           <div className='ui two buttons'>
             <button
@@ -76,6 +76,7 @@ class ProductCard extends React.Component {
                 toggleFeatured={toggleFeatured}
                 productId={product._id}
               /> */}
+
             <img src={product.thumbnail} alt='Bouquet' />
           </div>
         ) : (

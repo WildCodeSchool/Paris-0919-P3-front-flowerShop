@@ -32,12 +32,12 @@
 @red            : #B03060;
 @blue           : #0E6EB8;
 @violet         : #EE82EE;
+@black          : #000000;
+@yellow         : #FFB284;
 @grey           : #DDD2C3;
 @teal           : #F4F1EA;
-@black          : #000000;
 @pink           : #EBBCAC;
 @purple         : #926B70;
-@yellow         : #FFB284;
 @orange         : #CC9026;
 @brown          : #9D5D41;
 @green          : #767864;
