@@ -1,57 +1,95 @@
-.caption {
-  display: flex;
-  justify-content: space-between;
-}
-.description {
-  padding: 10px;
+.home::after {
+  content: '';
+  background: fixed left bottom / 10%
+      url('https://cdn.clipart.email/ee6abd24ecc10680f9527aff4e02708d_decorative-purple-flower-png-transparent-ornament-gallery-_319-710.png')
+      no-repeat,
+    fixed right top 30% / 10%;
+  /* url('https://www.searchpng.com/wp-content/uploads/2018/12/Rose-Flower-PNG-Images-715x1298.png')
+      no-repeat; */
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
-.ui.basic.pink.label {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-}
-.item {
+.nav__item {
   word-wrap: break-word;
   flex-wrap: wrap;
 }
-.ui.cards > .card > .extra,
-.ui.card > .extra {
-  text-align: center;
-}
-.ui.menu .item > i.icon {
+.nav__icon {
   cursor: pointer;
   transition: 0.3s;
 }
-.ui.menu .item > i.icon:hover {
+.nav__icon:hover {
   color: #e79796;
 }
 
+.ui.container {
+  padding-bottom: 1rem;
+}
 .ui.container h1 {
   padding: 2rem 0rem 1rem 0rem;
 }
 
-.ui.container.forme {
-  max-width: 50vw;
+.productList__shop {
+  text-align: center;
 }
-.ask {
+.productList__ask {
   text-align: center;
   padding-top: 2rem;
 }
-.contact {
+.productList__contact {
   display: flex;
   justify-content: center;
   margin: 1rem 0rem 2rem 0rem;
 }
-.shop {
-  text-align: center;
+
+.productCard__caption {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.8rem 0;
+}
+.description {
+  padding: 10px;
+}
+.productCard__desc-btn {
+  border: 1px solid #ddd2c3;
+  border-radius: 5px;
+}
+.productCard__price {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
-.home {
-  background: fixed left bottom / 10%
-      url('https://cdn.clipart.email/ee6abd24ecc10680f9527aff4e02708d_decorative-purple-flower-png-transparent-ornament-gallery-_319-710.png')
-      no-repeat,
-    fixed right top 30% / 10%
-      url('https://www.searchpng.com/wp-content/uploads/2018/12/Rose-Flower-PNG-Images-715x1298.png')
-      no-repeat;
+.productDetails__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contextDelivery__card {
+  font-size: 0.8rem;
+}
+.contextDelivery_msg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+.contextDelivery_msg p {
+  margin: 0 1rem;
+}
+.deliveryCities {
+  margin: 0.5rem 0;
+}
+.contextDelivery__time {
+  text-align: center;
+}
+.deliveryTime {
+  display: flex;
+  align-items: center;
 }

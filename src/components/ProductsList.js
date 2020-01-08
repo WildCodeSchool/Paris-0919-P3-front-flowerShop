@@ -11,10 +11,11 @@ const ProductsList = ({
   deleteProduct,
   user
 }) => (
-  <div className='ui container shop'>
+  <div className='ui container productList__shop'>
     <h1>FLOWER SHOP / LA BOUTIQUE</h1>
     <p>
-      Éclosion vous propose des bouquets frais renouvelés chaque mercredi à 9h.
+      Éclosion vous propose des bouquets frais{' '}
+      <strong>renouvelés chaque mercredi</strong> à 9h.
     </p>
     <p>Des bouquets délicats, poétiques, un brin sauvage.</p>
     <div role='list' className='ui bulleted list'>
@@ -44,9 +45,11 @@ const ProductsList = ({
       )}
     </div>
 
-    <h3 className='ask'>Vous avez une demande particulière ?</h3>
-    <div className='contact'>
-      <button className='ui pink button contact'>Contactez-nous</button>
+    <h3 className='productList__ask'>Vous avez une demande particulière ?</h3>
+    <div className='productList__contact'>
+      <button className='ui pink button productList__contact'>
+        Contactez-nous
+      </button>
     </div>
   </div>
 );
