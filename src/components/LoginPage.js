@@ -13,6 +13,7 @@ class LoginPage extends React.Component {
     api.users.login(data).then(token => {
       this.props.login(token);
       this.props.history.push('/products');
+      this.props.setMessage('Vous êtes connecté à votre compte !');
     });
 
   render() {

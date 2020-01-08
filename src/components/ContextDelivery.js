@@ -3,13 +3,15 @@ import React from 'react';
 import DeliveryCities from './DeliveryCities';
 import DeliveryTime from './DeliveryTime';
 
+import fleur from '../fleurs_sechees.jpg';
+
 const ContextDelivery = () => {
   return (
     <div className='ui container'>
       <div className='ui stackable grid'>
         <div className='row'>
-          <div className='ten wide column'>
-            <h2>
+          <div className='nine wide column'>
+            <h2 className='green'>
               <span>
                 <i className='leaf icon'></i>
               </span>
@@ -38,8 +40,9 @@ const ContextDelivery = () => {
                 Recyclabilité des pertes en fleurs séchées
               </div>
             </div>
+            <img src={fleur} alt='' className='ui image' />
           </div>
-          <div className='six wide column'>
+          <div className='seven wide column'>
             <div className='ui centered card contextDelivery__card'>
               <div className='content'>
                 <div className='header'>

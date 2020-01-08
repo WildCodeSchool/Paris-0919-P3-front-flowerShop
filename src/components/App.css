@@ -1,7 +1,7 @@
 .home::after {
   content: '';
   background: fixed left bottom / 10%
-      url('https://cdn.clipart.email/ee6abd24ecc10680f9527aff4e02708d_decorative-purple-flower-png-transparent-ornament-gallery-_319-710.png')
+      url('https://www.salam-stick.com/866/sticker-fleur-papillon-arabesque.jpg')
       no-repeat,
     fixed right top 30% / 10%;
   /* url('https://www.searchpng.com/wp-content/uploads/2018/12/Rose-Flower-PNG-Images-715x1298.png')
@@ -15,9 +15,28 @@
   z-index: -1;
 }
 
-.nav__item {
-  word-wrap: break-word;
-  flex-wrap: wrap;
+.menu__image-container {
+  background-color: #f4f1ea;
+  padding: 0.5rem 0;
+}
+.ui.centered.medium.image {
+  display: block;
+}
+.image::after {
+  content: '';
+  display: block;
+  width: 300px;
+  height: 40px;
+  position: relative;
+  top: 0;
+  left: 40%;
+  background: center center / 50%
+    url('https://cdn140.picsart.com/260142883002212.png?r1024x1024') no-repeat;
+}
+
+.ui.secondary.pointing.menu {
+  background-color: #f4f1ea;
+  margin: 0;
 }
 .nav__icon {
   cursor: pointer;
@@ -71,7 +90,8 @@
   align-items: center;
 }
 
-.contextDelivery__card {
+.ui.centered.card.contextDelivery__card {
+  margin-top: 1.8rem;
   font-size: 0.8rem;
 }
 .contextDelivery_msg {
