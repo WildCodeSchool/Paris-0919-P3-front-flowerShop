@@ -11,9 +11,9 @@ const ContextDelivery = () => {
       <div className='ui stackable grid'>
         <div className='row'>
           <div className='nine wide column'>
-            <h2 className='green'>
+            <h2 className='environnement'>
               <span>
-                <i className='leaf icon'></i>
+                <i className='green leaf icon'></i>
               </span>
               {'  '}Environnement
             </h2>

@@ -7,7 +7,7 @@ import logo from '../logo.png';
 const TopNavigation = ({ isAuthenticated, logout, isAdmin }) => (
   <>
     <div className='menu__image-container'>
-      <img className='ui centered medium image' src={logo} alt='Logo' />
+      <img className='ui centered small image' src={logo} alt='Logo' />
     </div>
     <div className='ui stackable olive secondary pointing menu'>
       <NavLink exact to='/' className='item nav__item'>

@@ -16,22 +16,22 @@
 }
 
 .menu__image-container {
-  background-color: #f4f1ea;
   padding: 0.5rem 0;
 }
-.ui.centered.medium.image {
-  display: block;
+
+h2.environnement {
+  color: #767864;
 }
-.image::after {
+
+.menu__image-container::after {
   content: '';
   display: block;
   width: 300px;
   height: 40px;
-  position: relative;
-  top: 0;
+  position: absolute;
+  top: 3.5rem;
   left: 40%;
-  background: center center / 50%
-    url('https://cdn140.picsart.com/260142883002212.png?r1024x1024') no-repeat;
+  background: center center / 50% url(../arabesque.png) no-repeat;
 }
 
 .ui.secondary.pointing.menu {
