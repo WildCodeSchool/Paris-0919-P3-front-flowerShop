@@ -17,6 +17,7 @@
     "react-image-fallback": "^8.0.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
+    "react-social-icons": "^4.1.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-less": "^2.4.1",
     "semantic-ui-react": "^0.88.2",
@@ -32,7 +33,11 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",

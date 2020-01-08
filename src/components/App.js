@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 
@@ -9,6 +9,10 @@ import ProductsPage from './ProductsPage';
 import ShowProductPage from './ShowProductPage';
 import SignupPage from './SignupPage';
 import LoginPage from './LoginPage';
+
+import Footer from './Footer';
+import Contact from './Contact';
+import Faq from './Faq';
 
 const setAuthorizationHeader = (token = null) => {
   if (token) {
@@ -95,6 +99,16 @@ class App extends React.Component {
             <ShowProductPage {...props} user={this.state.user} />
           )}
         />
+        <Switch>
+         
+         <Route exact path="/Faq">
+           <Faq />
+         </Route>
+         <Route exact path="/Contact">
+           <Contact/>
+         </Route>
+       </Switch>
+       <Footer />
       </div>
     );
   }
