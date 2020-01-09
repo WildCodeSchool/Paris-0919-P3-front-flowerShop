@@ -3,6 +3,8 @@ import React from 'react';
 import DeliveryCities from './DeliveryCities';
 import DeliveryTime from './DeliveryTime';
 
+import ModalMailContact from './ModalMailContact';
+
 const ContextDelivery = () => {
   return (
     <div className='ui container'>
@@ -72,9 +74,7 @@ const ContextDelivery = () => {
                   Vous avez un doute, la ville choisie ne figure pas sur la
                   liste? Nous pouvons peut être assurer votre livraison!
                 </p>
-                <button className='ui pink button productList__contact '>
-                  Contactez-nous
-                </button>
+                <ModalMailContact />
               </div>
             </div>
           </div>
