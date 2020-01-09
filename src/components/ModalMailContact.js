@@ -45,7 +45,7 @@ const ModalMailContact = () => (
       console.log(values);
     }}
   >
-    {({ values, handleChange, errors }) => (
+    {({ values, handleChange, errors, handleBlur, touched }) => (
       <Modal
         trigger={
           <Button className='ui pink button productList__contact '>
@@ -55,7 +55,7 @@ const ModalMailContact = () => (
       >
         <Modal.Header>Eclosion - Demande particulière</Modal.Header>
         <Modal.Content>
-          {errors.firstName && (
+          {/* {errors.firstName && (
             <Message negative>
               <Message.Header>Formulaire non valide</Message.Header>
               <p>{errors.firstName}</p>
@@ -72,7 +72,7 @@ const ModalMailContact = () => (
               <Message.Header>Formulaire non valide</Message.Header>
               <p>{errors.email}</p>
             </Message>
-          )}
+          )} */}
           <Modal.Description>
             <Form>
               <Form.Group widths='equal'>
@@ -85,7 +85,8 @@ const ModalMailContact = () => (
                   name='firstName'
                   value={values.firstName}
                   onChange={handleChange}
-                  error={errors.firstName !== undefined}
+                  onBlur={handleBlur}
+                  error={touched.firstName && errors.firstName}
                 />
                 <Form.Input
                   required
@@ -96,7 +97,8 @@ const ModalMailContact = () => (
                   name='lastName'
                   value={values.lastName}
                   onChange={handleChange}
-                  error={errors.lastName !== undefined}
+                  onBlur={handleBlur}
+                  error={touched.lastName && errors.lastName}
                 />
               </Form.Group>
               <Form.Group widths='equal'>
@@ -108,7 +110,8 @@ const ModalMailContact = () => (
                   name='email'
                   value={values.email}
                   onChange={handleChange}
-                  error={errors.email !== undefined}
+                  onBlur={handleBlur}
+                  error={touched.email && errors.email}
                 />
                 <Form.Input
                   label='Téléphone'
@@ -117,6 +120,8 @@ const ModalMailContact = () => (
                   name='phone'
                   value={values.phone}
                   onChange={handleChange}
+                  onBlur={handleBlur}
+                  error={touched.phone && errors.phone}
                 />
                 <Form.Select
                   fluid
@@ -126,6 +131,8 @@ const ModalMailContact = () => (
                   name='city'
                   value={values.city}
                   onChange={handleChange}
+                  onBlur={handleBlur}
+                  error={touched.city && errors.city}
                 />
               </Form.Group>
               <Form.TextArea
@@ -134,6 +141,8 @@ const ModalMailContact = () => (
                 placeholder='Texte à entrer ici...'
                 value={values.textContent}
                 onChange={handleChange}
+                onBlur={handleBlur}
+                error={touched.textContent && errors.textContent}
               />
               <Button type='submit'>Envoyer</Button>
             </Form>
