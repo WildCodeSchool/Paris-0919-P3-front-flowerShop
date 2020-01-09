@@ -72,7 +72,7 @@ const ContextDelivery = () => {
                   Vous avez un doute, la ville choisie ne figure pas sur la
                   liste? Nous pouvons peut être assurer votre livraison!
                 </p>
-                <button className='ui pink button productList__contact'>
+                <button className='ui pink button productList__contact '>
                   Contactez-nous
                 </button>
               </div>

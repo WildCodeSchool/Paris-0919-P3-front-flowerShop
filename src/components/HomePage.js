@@ -11,7 +11,8 @@ import api from '../api';
 class HomePage extends React.Component {
   state = {
     products: [],
-    loading: true
+    loading: true,
+    modalActive: false
   };
 
   componentDidMount() {
@@ -55,21 +56,20 @@ class HomePage extends React.Component {
     return (
       <div className='home'>
         <div className='ui container'>
-          <h1>Bienvenue chez Eclosion !</h1>
-        </div>
-        <ContextDelivery />
-        <div className='ten wide column'>
-          {loading ? (
-            <LoadingMsg />
-          ) : (
-            <ProductsList
-              products={products}
-              toggleFeatured={this.toggleFeatured}
-              toggleDescription={this.toggleDescription}
-              deleteProduct={this.deleteProduct}
-              user={this.props.user}
-            />
-          )}
+          <ContextDelivery />
+          <div className='ten wide column'>
+            {loading ? (
+              <LoadingMsg />
+            ) : (
+              <ProductsList
+                products={products}
+                toggleFeatured={this.toggleFeatured}
+                toggleDescription={this.toggleDescription}
+                deleteProduct={this.deleteProduct}
+                user={this.props.user}
+              />
+            )}
+          </div>
         </div>
       </div>
     );
