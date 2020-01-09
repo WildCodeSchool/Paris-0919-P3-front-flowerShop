@@ -101,7 +101,9 @@ class ProductCard extends React.Component {
             />
           </div>
         </div>
-        {user.token && user.role === 'user' && addToCart}
+        {user.token &&
+          (user.role === 'user' || user.role === 'admin') &&
+          addToCart}
         {user.token && user.role === 'admin' && adminActions}
       </div>
     );

@@ -86,13 +86,7 @@ class App extends React.Component {
         />
         <Route
           path='/login'
-          render={props => (
-            <LoginPage
-              {...props}
-              login={this.login}
-              setMessage={this.setMessage}
-            />
-          )}
+          render={props => <LoginPage {...props} login={this.login} />}
         />
         {/* <Route path='/product/:_id' exact component={ShowProductPage} /> */}
         <Route

@@ -95,6 +95,9 @@ class ProductsPage extends React.Component {
     const { products, loading } = this.state;
     const numberOfColumns =
       this.props.location.pathname === '/products' ? 'sixteen' : 'ten';
+    const editPath =
+      this.props.location.pathname === '/products/new' ? 'Créer' : 'Editer';
+
     return (
       <div className='ui container'>
         <div className='ui stackable grid'>
@@ -107,6 +110,7 @@ class ProductsPage extends React.Component {
                   productTypes={productTypes}
                   submit={this.saveProduct}
                   product={{}}
+                  editPath={editPath}
                 />
               </div>
             )}
@@ -124,6 +128,7 @@ class ProductsPage extends React.Component {
                       _id: props.match.params._id
                     }) || {}
                   }
+                  editPath={editPath}
                 />
               </div>
             )}
@@ -139,6 +144,7 @@ class ProductsPage extends React.Component {
                 toggleDescription={this.toggleDescription}
                 deleteProduct={this.deleteProduct}
                 user={this.props.user}
+                editPath={editPath}
               />
             )}
           </div>

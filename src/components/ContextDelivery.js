@@ -40,7 +40,11 @@ const ContextDelivery = () => {
                 Recyclabilité des pertes en fleurs séchées
               </div>
             </div>
-            <img src={fleur} alt='' className='ui image' />
+            <img
+              src={fleur}
+              alt='Fleurs séchées'
+              className='ui image contextDelivery__img'
+            />
           </div>
           <div className='seven wide column'>
             <div className='ui centered card contextDelivery__card'>

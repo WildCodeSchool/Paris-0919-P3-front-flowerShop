@@ -7,7 +7,7 @@ class SignupPage extends Component {
   submit = data =>
     api.users.create(data).then(() => {
       this.props.setMessage(
-        'Vous avez créé un compte avec succès ! Vous pouvez vous connecter'
+        'Vous avez créé votre compte avec succès ! Vous pouvez vous connecter.'
       );
       this.props.history.push('/login');
     });

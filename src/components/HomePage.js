@@ -62,13 +62,15 @@ class HomePage extends React.Component {
           {loading ? (
             <LoadingMsg />
           ) : (
-            <ProductsList
-              products={products}
-              toggleFeatured={this.toggleFeatured}
-              toggleDescription={this.toggleDescription}
-              deleteProduct={this.deleteProduct}
-              user={this.props.user}
-            />
+            <div className='shop__container'>
+              <ProductsList
+                products={products}
+                toggleFeatured={this.toggleFeatured}
+                toggleDescription={this.toggleDescription}
+                deleteProduct={this.deleteProduct}
+                user={this.props.user}
+              />
+            </div>
           )}
         </div>
       </div>
