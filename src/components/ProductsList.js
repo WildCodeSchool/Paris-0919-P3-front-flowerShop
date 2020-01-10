@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 
 import ProductCard from './ProductCard';
 import Message from './Message';
+<<<<<<< HEAD
 import ModalMailContact from './ModalMailContact';
+=======
+>>>>>>> dev
 
 const ProductsList = ({
   products,
@@ -48,7 +51,13 @@ const ProductsList = ({
 
     <h3 className='productList__ask'>Vous avez une demande particulière ?</h3>
     <div className='productList__contact'>
+<<<<<<< HEAD
       <ModalMailContact />
+=======
+      <button className='ui pink button productList__contact'>
+        Contactez-nous
+      </button>
+>>>>>>> dev
     </div>
   </div>
 );

@@ -22,7 +22,11 @@ class App extends React.Component {
   state = {
     user: {
       token: null,
+<<<<<<< HEAD
       role: 'admin'
+=======
+      role: 'user'
+>>>>>>> dev
     },
     message: ''
   };

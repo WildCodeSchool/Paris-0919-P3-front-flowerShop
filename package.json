@@ -7,9 +7,13 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.0",
+<<<<<<< HEAD
     "formik": "^2.1.1",
     "gatsby-plugin-less": "^3.0.17",
     "jquery": "^3.4.1",
+=======
+    "gatsby-plugin-less": "^3.0.17",
+>>>>>>> dev
     "jwt-decode": "^2.2.0",
     "less": "^3.10.3",
     "lodash": "^4.17.15",
@@ -22,8 +26,12 @@
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-less": "^2.4.1",
     "semantic-ui-react": "^0.88.2",
+<<<<<<< HEAD
     "validator": "^12.1.0",
     "yup": "^0.28.0"
+=======
+    "validator": "^12.1.0"
+>>>>>>> dev
   },
   "scripts": {
     "start": "craco start",
@@ -35,11 +43,15 @@
     "extends": "react-app"
   },
   "browserslist": {
+<<<<<<< HEAD
     "production": [
       ">0.2%",
       "not dead",
       "not op_mini all"
     ],
+=======
+    "production": [">0.2%", "not dead", "not op_mini all"],
+>>>>>>> dev
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",

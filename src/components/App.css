@@ -1,11 +1,19 @@
 .home::after {
   content: '';
+<<<<<<< HEAD
   background: fixed left bottom / 10%
       url('https://cdn.clipart.email/ee6abd24ecc10680f9527aff4e02708d_decorative-purple-flower-png-transparent-ornament-gallery-_319-710.png')
       no-repeat,
     fixed right top 30% / 10%;
   /* url('https://www.searchpng.com/wp-content/uploads/2018/12/Rose-Flower-PNG-Images-715x1298.png')
       no-repeat; */
+=======
+  background: fixed left -2% bottom 18%/ 10%
+      url('https://www.salam-stick.com/866/sticker-fleur-papillon-arabesque.jpg')
+      no-repeat,
+    fixed right -12% bottom 25% / 30% url('https://www.salam-stick.com/866/sticker-fleur-papillon-arabesque.jpg')
+      no-repeat;
+>>>>>>> dev
   opacity: 0.3;
   top: 0;
   left: 0;
@@ -15,9 +23,69 @@
   z-index: -1;
 }
 
+<<<<<<< HEAD
 .nav__item {
   word-wrap: break-word;
   flex-wrap: wrap;
+=======
+.menu__image-container {
+  padding: 0.5rem 0;
+}
+
+.circular.ui.icon.button.menu__burger-btn {
+  display: none;
+  position: absolute;
+  top: 12px;
+  right: 5px;
+}
+@media screen and (max-width: 767px) {
+  .circular.ui.icon.button.menu__burger-btn {
+    display: block;
+  }
+  .ui.stackable.green.inverted.labeled.icon.menu {
+    height: 35.5rem;
+    animation: slide 1s ease-in-out 3.5s;
+    transition: 0.5s;
+  }
+  .ui.stackable.green.inverted.labeled.icon.menu.invisible {
+    height: 5rem;
+    overflow: hidden;
+    animation: slide 1s ease-in-out 3.5s;
+    transition: 0.5s;
+  }
+  @keyframes slide {
+    from {
+      height: 5rem;
+    }
+    to {
+      height: 35.5rem;
+    }
+  }
+  .bars.icon.invisible {
+    display: none;
+  }
+  .close.icon.invisible {
+    display: none;
+  }
+}
+
+.menu__image-container::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 1px;
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #e79796;
+  /* background: center center / 30% url(../arabesque.png) no-repeat; */
+}
+
+.ui.inverted.green.menu {
+  background-color: #f4f1ea;
+  margin: 0;
+>>>>>>> dev
 }
 .nav__icon {
   cursor: pointer;
@@ -34,6 +102,16 @@
   padding: 2rem 0rem 1rem 0rem;
 }
 
+<<<<<<< HEAD
+=======
+h1 {
+  color: #444c38;
+}
+h2 {
+  color: #767864;
+}
+
+>>>>>>> dev
 .productList__shop {
   text-align: center;
 }
@@ -71,15 +149,39 @@
   align-items: center;
 }
 
+<<<<<<< HEAD
 .contextDelivery__card {
   font-size: 0.8rem;
 }
 .contextDelivery_msg {
+=======
+.context__flex {
+  display: flex;
+  align-items: center;
+}
+.ui.bulleted.list {
+  margin: 0;
+}
+i.recycle.big.green.icon {
+  margin-right: 2rem;
+}
+.context__img {
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px darkgrey;
+  margin: 2rem 0;
+}
+.ui.centered.card.delivery__card {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+}
+.delivery_msg {
+>>>>>>> dev
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 1rem 0;
 }
+<<<<<<< HEAD
 .contextDelivery_msg p {
   margin: 0 1rem;
 }
@@ -89,7 +191,29 @@
 .contextDelivery__time {
   text-align: center;
 }
+=======
+.delivery_msg p {
+  margin: 0 1rem;
+}
+.delivery__time {
+  text-align: center;
+}
+.deliveryCities {
+  margin: 0.5rem 0;
+}
+>>>>>>> dev
 .deliveryTime {
   display: flex;
   align-items: center;
 }
+<<<<<<< HEAD
+=======
+
+.ui.grid.productForm__container {
+  padding-top: 1rem;
+}
+
+.shop__container {
+  background-color: #f4f1ea;
+}
+>>>>>>> dev

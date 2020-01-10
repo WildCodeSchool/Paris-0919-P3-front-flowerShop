@@ -4,15 +4,24 @@ import _find from 'lodash/find';
 
 import ProductsList from './ProductsList';
 import LoadingMsg from './LoadingMsg';
+<<<<<<< HEAD
 import ContextDelivery from './ContextDelivery';
+=======
+import Delivery from './Delivery';
+import Context from './Context';
+>>>>>>> dev
 
 import api from '../api';
 
 class HomePage extends React.Component {
   state = {
     products: [],
+<<<<<<< HEAD
     loading: true,
     modalActive: false
+=======
+    loading: true
+>>>>>>> dev
   };
 
   componentDidMount() {
@@ -56,11 +65,33 @@ class HomePage extends React.Component {
     return (
       <div className='home'>
         <div className='ui container'>
+<<<<<<< HEAD
           <ContextDelivery />
           <div className='ten wide column'>
             {loading ? (
               <LoadingMsg />
             ) : (
+=======
+          <h1>Bienvenue chez Eclosion !</h1>
+        </div>
+        <div className='ui container'>
+          <div className='ui stackable grid'>
+            <div className='row'>
+              <div className='ten wide column'>
+                <Context />
+              </div>
+              <div className='six wide column'>
+                <Delivery />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='ten wide column'>
+          {loading ? (
+            <LoadingMsg />
+          ) : (
+            <div className='shop__container'>
+>>>>>>> dev
               <ProductsList
                 products={products}
                 toggleFeatured={this.toggleFeatured}
@@ -68,8 +99,13 @@ class HomePage extends React.Component {
                 deleteProduct={this.deleteProduct}
                 user={this.props.user}
               />
+<<<<<<< HEAD
             )}
           </div>
+=======
+            </div>
+          )}
+>>>>>>> dev
         </div>
       </div>
     );
