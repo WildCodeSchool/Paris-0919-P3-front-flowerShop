@@ -1,7 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./Footer.css";
-import { SocialIcon } from "react-social-icons";
+import { Button, Icon } from 'semantic-ui-react'
 
 
 
@@ -9,25 +7,17 @@ function Footer() {
   return (
     <div>
       <div className="row">
-        <div className="one">
-          <Link to="/about">A propos</Link>
-
-          <Link to="/Contact">CONTACT</Link>
-        </div>
+        
 
     
    <div className="titre">
-     <h4> Rejoins-nous </h4> 
-     <div className="icons">
-    
-          <SocialIcon url="https://www.facebook.com/Eclosion33360/" />
-          <SocialIcon url="https://www.linkedin.com/company/eclosion-florale/about/" />
-          <SocialIcon url="https://www.instagram.com/eclosionfleuriste/" />
-        </div> 
+     <h4> Rejoins-nous </h4>      
         </div>
-        <div className="two">
-          <Link to="/Faq">FAQ</Link>
-
+        <div class="ui bottom attached button" tabindex="0">
+        <a href="https://www.facebook.com/"><i class="facebook square icon big"></i></a>
+        <a href="https://twitter.com/"><i class="twitter square icon big"></i></a>
+        <a href="https://www.linkedin.com/company/c"><i class="linkedin square icon big"></i></a>
+                
         </div>
       </div>
     </div>

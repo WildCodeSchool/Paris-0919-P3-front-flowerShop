@@ -11,8 +11,6 @@ import SignupPage from './SignupPage';
 import LoginPage from './LoginPage';
 
 import Footer from './Footer';
-import Contact from './Contact';
-import Faq from './Faq';
 
 const setAuthorizationHeader = (token = null) => {
   if (token) {
@@ -101,12 +99,7 @@ class App extends React.Component {
         />
         <Switch>
          
-         <Route exact path="/Faq">
-           <Faq />
-         </Route>
-         <Route exact path="/Contact">
-           <Contact/>
-         </Route>
+         
        </Switch>
        <Footer />
       </div>
