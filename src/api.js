@@ -17,5 +17,9 @@ export default {
     create: user => axios.post(`/api/users`, { user }),
     login: credentials =>
       axios.post('/api/auth', { credentials }).then(res => res.data.token)
+  },
+  email: {
+    send: values =>
+      axios.post('/api/email', { values }).then(res => res.data.message)
   }
 };
