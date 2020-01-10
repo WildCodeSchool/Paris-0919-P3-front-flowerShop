@@ -94,7 +94,7 @@ class ProductForm extends Component {
     const formClassNames = loading ? 'ui form loading' : 'ui form';
     return (
       <form className={formClassNames} onSubmit={this.handleSubmit}>
-        <div className='ui grid'>
+        <div className='ui grid productForm__container'>
           <div className='twelve wide column'>
             <div className={errors.name ? 'field error' : 'field'}>
               <label htmlFor='name'>Nom du produit</label>
@@ -159,17 +159,6 @@ class ProductForm extends Component {
             <FormInlineMessage content={errors.price} type='error' />
           </div>
 
-          {/* <div className={errors.duration ? 'field error' : 'field'}>
-            <label htmlFor='duration'>Duration (in minutes)</label>
-            <input
-              type='number'
-              id='duration'
-              name='duration'
-              value={data.duration}
-              onChange={this.handleChange}
-            />
-            <FormInlineMessage content={errors.duration} type='error' />
-          </div> */}
           <div className={errors.size ? 'field error' : 'field'}>
             <label htmlFor='size'>Taille</label>
             <input
@@ -182,16 +171,6 @@ class ProductForm extends Component {
             <FormInlineMessage content={errors.size} type='error' />
           </div>
         </div>
-        {/* <div className='inline field'>
-          <input
-            id='featured'
-            name='featured'
-            type='checkbox'
-            checked={this.state.featured}
-            onChange={this.handleCheckboxChange}
-          />
-          <label htmlFor='featured'>Featured?</label>
-        </div> */}
 
         <div className={errors.productType ? 'field error' : 'field'}>
           <label>Type de produit</label>
@@ -213,7 +192,7 @@ class ProductForm extends Component {
 
         <div className='ui fluid buttons'>
           <button className='ui primary button' type='submit'>
-            Créer
+            {this.props.editPath}
           </button>
           <div className='or' data-text='ou'></div>
           <Link to='/products' className='ui button'>
