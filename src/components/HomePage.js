@@ -4,7 +4,8 @@ import _find from 'lodash/find';
 
 import ProductsList from './ProductsList';
 import LoadingMsg from './LoadingMsg';
-import ContextDelivery from './ContextDelivery';
+import Delivery from './Delivery';
+import Context from './Context';
 
 import api from '../api';
 
@@ -57,7 +58,18 @@ class HomePage extends React.Component {
         <div className='ui container'>
           <h1>Bienvenue chez Eclosion !</h1>
         </div>
-        <ContextDelivery />
+        <div className='ui container'>
+          <div className='ui stackable grid'>
+            <div className='row'>
+              <div className='ten wide column'>
+                <Context />
+              </div>
+              <div className='six wide column'>
+                <Delivery />
+              </div>
+            </div>
+          </div>
+        </div>
         <div className='ten wide column'>
           {loading ? (
             <LoadingMsg />

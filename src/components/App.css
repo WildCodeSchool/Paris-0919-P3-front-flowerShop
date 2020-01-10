@@ -18,19 +18,57 @@
   padding: 0.5rem 0;
 }
 
+.circular.ui.icon.button.menu__burger-btn {
+  display: none;
+  position: absolute;
+  top: 12px;
+  right: 5px;
+}
+@media screen and (max-width: 767px) {
+  .circular.ui.icon.button.menu__burger-btn {
+    display: block;
+  }
+  .ui.stackable.green.inverted.labeled.icon.menu {
+    height: 35.5rem;
+    animation: slide 1s ease-in-out 3.5s;
+    transition: 0.5s;
+  }
+  .ui.stackable.green.inverted.labeled.icon.menu.invisible {
+    height: 5rem;
+    overflow: hidden;
+    animation: slide 1s ease-in-out 3.5s;
+    transition: 0.5s;
+  }
+  @keyframes slide {
+    from {
+      height: 5rem;
+    }
+    to {
+      height: 35.5rem;
+    }
+  }
+  .bars.icon.invisible {
+    display: none;
+  }
+  .close.icon.invisible {
+    display: none;
+  }
+}
+
 .menu__image-container::after {
   content: '';
   display: block;
-  width: 300px;
-  height: 40px;
+  width: 50px;
+  height: 1px;
   position: absolute;
-  top: 2.8rem;
+  top: 4rem;
   left: 50%;
   transform: translate(-50%);
-  background: center center / 30% url(../arabesque.png) no-repeat;
+  background-color: #e79796;
+  /* background: center center / 30% url(../arabesque.png) no-repeat; */
 }
 
-.ui.secondary.pointing.menu {
+.ui.inverted.green.menu {
   background-color: #f4f1ea;
   margin: 0;
 }
@@ -93,28 +131,39 @@ h2 {
   align-items: center;
 }
 
-.ui.centered.card.contextDelivery__card {
-  /* margin-top: 1.8rem; */
+.context__flex {
+  display: flex;
+  align-items: center;
+}
+.ui.bulleted.list {
+  margin: 0;
+}
+i.recycle.big.green.icon {
+  margin-right: 2rem;
+}
+.context__img {
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px darkgrey;
+  margin: 2rem 0;
+}
+.ui.centered.card.delivery__card {
+  margin-top: 0.6rem;
   font-size: 0.9rem;
 }
-.contextDelivery_msg {
+.delivery_msg {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 1rem 0;
 }
-.contextDelivery_msg p {
+.delivery_msg p {
   margin: 0 1rem;
+}
+.delivery__time {
+  text-align: center;
 }
 .deliveryCities {
   margin: 0.5rem 0;
-}
-.contextDelivery__time {
-  text-align: center;
-}
-.contextDelivery__img {
-  border-radius: 5px;
-  box-shadow: 5px 5px 5px darkgrey;
 }
 .deliveryTime {
   display: flex;

@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-//import { Dropdown } from 'semantic-ui-react';
+import Delivery from './Delivery';
+import Context from './Context';
 
 class ProductDetails extends React.Component {
   state = {
-    product: {}
+    size: ''
   };
-  handleChange = e => console.log(e.target.value);
+  handleChange = e => this.setState({ size: e.target.value });
 
   render() {
     const { product, user } = this.props;
+    const { size } = this.state;
     return (
       <div className='ui container'>
         <h1 className='ui center aligned dividing header'>{product.name}</h1>
@@ -33,7 +35,7 @@ class ProductDetails extends React.Component {
                       <td>
                         <select
                           name='productSize'
-                          value='Tailles'
+                          value={size}
                           onChange={this.handleChange}
                           className='ui dropdown'
                         >
@@ -49,10 +51,6 @@ class ProductDetails extends React.Component {
                       <td>{product.size}</td>
                     )}
                   </tr>
-                  {/* <tr>
-                <td>Duration:</td>
-                <td>{product.duration} minutes</td>
-              </tr> */}
                 </tbody>
               </table>
 
@@ -70,6 +68,16 @@ class ProductDetails extends React.Component {
             </div>
           </div>
         </div>
+        <div className='ui stackable grid'>
+          <div className='row'>
+            <div className='twelve wide column'>
+              <Context />
+            </div>
+            <div className='four wide column'>
+              <Delivery />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -82,7 +90,6 @@ ProductDetails.propTypes = {
     description: PropTypes.string.isRequired,
     size: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired
-    //duration: PropTypes.number.isRequired
   }).isRequired
 };
 
