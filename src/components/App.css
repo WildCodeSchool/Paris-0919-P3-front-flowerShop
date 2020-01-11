@@ -14,6 +14,9 @@
   z-index: -1;
 }
 
+#navbar {
+  position: sticky;
+}
 .menu__image-container {
   padding: 0.5rem 0;
 }
@@ -59,12 +62,12 @@
   content: '';
   display: block;
   width: 50px;
-  height: 1px;
+  height: 2px;
   position: absolute;
   top: 4rem;
   left: 50%;
   transform: translate(-50%);
-  background-color: #e79796;
+  background-color: #767864;
   /* background: center center / 30% url(../arabesque.png) no-repeat; */
 }
 
@@ -89,6 +92,7 @@
 
 h1 {
   color: #444c38;
+  text-align: center;
 }
 h2 {
   color: #767864;
@@ -176,4 +180,11 @@ i.recycle.big.green.icon {
 
 .shop__container {
   background-color: #f4f1ea;
+}
+
+.articles__img {
+  margin: 3rem 0;
+}
+hr {
+  width: 80%;
 }

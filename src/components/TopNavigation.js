@@ -30,7 +30,7 @@ const TopNavigation = ({ isAuthenticated, logout, isAdmin }) => (
       className='invisible ui stackable green inverted labeled icon menu'
     >
       <NavLink exact to='/' className='item nav__item' onClick={handleClick}>
-        <i className='large home icon'></i>
+        <i className='large home icon nav__icon'></i>
         Accueil
       </NavLink>
       <NavLink
@@ -39,24 +39,34 @@ const TopNavigation = ({ isAuthenticated, logout, isAdmin }) => (
         className='item nav__item'
         onClick={handleClick}
       >
-        <i className='shopping basket icon'></i>
+        <i className='shopping basket icon nav__icon'></i>
         Flower Shop
       </NavLink>
       <NavLink
         exact
-        to='/weddings'
+        to='/articles'
         className='item nav__item'
         onClick={handleClick}
       >
-        <i className='genderless big icon'></i>
+        <i className='genderless big icon nav__icon'></i>
         Mariages
       </NavLink>
-      <NavLink exact to='/pro' className='item nav__item' onClick={handleClick}>
-        <i className='briefcase icon'></i>
+      <NavLink
+        exact
+        to='/articles'
+        className='item nav__item'
+        onClick={handleClick}
+      >
+        <i className='briefcase icon nav__icon'></i>
         Professionnels
       </NavLink>
-      <NavLink exact to='/diy' className='item nav__item' onClick={handleClick}>
-        <i className='paint brush icon'></i>
+      <NavLink
+        exact
+        to='/articles'
+        className='item nav__item'
+        onClick={handleClick}
+      >
+        <i className='paint brush icon nav__icon'></i>
         Ateliers DIY
       </NavLink>
       {isAdmin && (

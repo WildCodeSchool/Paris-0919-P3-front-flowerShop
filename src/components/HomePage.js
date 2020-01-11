@@ -8,6 +8,7 @@ import Delivery from './Delivery';
 import Context from './Context';
 
 import api from '../api';
+import Articles from './Articles';
 
 class HomePage extends React.Component {
   state = {
@@ -85,6 +86,7 @@ class HomePage extends React.Component {
             </div>
           )}
         </div>
+        <Articles />
       </div>
     );
   }
