@@ -21,5 +21,17 @@ export default {
   email: {
     send: values =>
       axios.post('/api/email', { values }).then(res => res.data.message)
+  },
+  articles: {
+    fetchAll: () => axios.get('/api/articles').then(res => res.data.articles),
+    fetchById: id =>
+      axios.get(`/api/articles/${id}`).then(res => res.data.article),
+    create: article =>
+      axios.post('/api/articles', { article }).then(res => res.data.article),
+    update: article =>
+      axios
+        .put(`/api/articles/${article._id}`, { article })
+        .then(res => res.data.article),
+    delete: article => axios.delete(`/api/articles/${article._id}`)
   }
 };
