@@ -8,11 +8,12 @@ import Delivery from './Delivery';
 import Context from './Context';
 
 import api from '../api';
-import Articles from './Articles';
+import ArticlesList from './ArticlesList';
 
 class HomePage extends React.Component {
   state = {
     products: [],
+    articles: [],
     loading: true
   };
 
@@ -22,6 +23,9 @@ class HomePage extends React.Component {
       .then(products =>
         this.setState({ products: this.sortProducts(products), loading: false })
       );
+    api.articles
+      .fetchAll()
+      .then(articles => this.setState({ articles, loading: false }));
   }
 
   sortProducts(products) {
@@ -52,8 +56,15 @@ class HomePage extends React.Component {
       })
     );
 
+  deleteArticle = article =>
+    api.articles.delete(article).then(() =>
+      this.setState({
+        articles: this.state.articles.filter(item => item._id !== article._id)
+      })
+    );
+
   render() {
-    const { products, loading } = this.state;
+    const { products, articles, loading } = this.state;
     return (
       <div className='home'>
         <div className='ui container'>
@@ -86,7 +97,11 @@ class HomePage extends React.Component {
             </div>
           )}
         </div>
-        <Articles />
+        <ArticlesList
+          articles={articles}
+          deleteArticle={this.deleteArticle}
+          user={this.props.user}
+        />
       </div>
     );
   }

@@ -32,7 +32,7 @@
     display: block;
   }
   .ui.stackable.green.inverted.labeled.icon.menu {
-    height: 35.5rem;
+    height: 40.5rem;
     animation: slide 1s ease-in-out 3.5s;
     transition: 0.5s;
   }
@@ -47,7 +47,7 @@
       height: 5rem;
     }
     to {
-      height: 35.5rem;
+      height: 40.5rem;
     }
   }
   .bars.icon.invisible {

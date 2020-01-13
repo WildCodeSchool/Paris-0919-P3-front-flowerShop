@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _orderBy from 'lodash/orderBy';
 import _find from 'lodash/find';
 
 import ArticleForm from './ArticleForm';
@@ -35,13 +34,7 @@ class ArticlesPage extends React.Component {
   componentDidMount() {
     api.articles
       .fetchAll()
-      .then(articles =>
-        this.setState({ articles: this.sortArticles(articles), loading: false })
-      );
-  }
-
-  sortArticles(articles) {
-    return _orderBy(articles, ['featured', 'name'], ['desc', 'asc']);
+      .then(articles => this.setState({ articles: articles, loading: false }));
   }
 
   toggleFeatured = articleId => {
@@ -71,7 +64,7 @@ class ArticlesPage extends React.Component {
   addArticle = articleData =>
     api.articles.create(articleData).then(article =>
       this.setState({
-        articles: this.sortArticles([...this.state.articles, article]),
+        articles: [...this.state.articles, article],
         showArticleForm: false
       })
     );
@@ -79,10 +72,8 @@ class ArticlesPage extends React.Component {
   updateArticle = articleData =>
     api.articles.update(articleData).then(article =>
       this.setState({
-        articles: this.sortArticles(
-          this.state.articles.map(item =>
-            item._id === article._id ? article : item
-          )
+        articles: this.state.articles.map(item =>
+          item._id === article._id ? article : item
         ),
         showArticleForm: false
       })

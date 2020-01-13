@@ -77,7 +77,18 @@ const TopNavigation = ({ isAuthenticated, logout, isAdmin }) => (
           onClick={handleClick}
         >
           <i className='icon plus nav__icon' />
-          Ajouter un nouveau produit
+          Nouveau produit
+        </NavLink>
+      )}
+      {isAdmin && (
+        <NavLink
+          exact
+          to='/articles/new'
+          className='item nav__item'
+          onClick={handleClick}
+        >
+          <i className='icon plus nav__icon' />
+          Nouvel article
         </NavLink>
       )}
 
