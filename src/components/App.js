@@ -99,7 +99,10 @@ class App extends React.Component {
           )}
         />
 
-        <Route path='/articles' exact component={ArticlesPage} />
+        <Route
+          path='/articles'
+          render={props => <ArticlesPage {...props} user={this.state.user} />}
+        />
         <Route
           path='/article/:_id'
           render={props => (

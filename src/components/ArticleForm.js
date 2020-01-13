@@ -7,7 +7,6 @@ import FormInlineMessage from './FormInlineMessage';
 const initialData = {
   name: '',
   description: '',
-  price: 0,
   size: '',
   articleType: '0',
   thumbnail: ''
@@ -48,7 +47,6 @@ class ArticleForm extends Component {
     if (!data.size) errors.size = 'Champ requis';
     if (!data.articleType) errors.articleType = 'Champ requis';
     if (!data.thumbnail) errors.thumbnail = 'Champ requis';
-    if (data.price <= 0) errors.price = 'Doit être un nombre positif';
     return errors;
   }
 
@@ -77,11 +75,6 @@ class ArticleForm extends Component {
             ? parseInt(e.target.value, 10)
             : e.target.value
       }
-    });
-
-  handleCheckboxChange = e =>
-    this.setState({
-      data: { ...this.state.data, [e.target.name]: e.target.checked }
     });
 
   render() {
