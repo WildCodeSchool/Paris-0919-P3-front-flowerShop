@@ -80,6 +80,10 @@ const TopNavigation = ({ isAuthenticated, logout, isAdmin }) => (
         </div>
       ) : (
         <div className='right menu'>
+          <NavLink to='/cart' className='item nav__item' onClick={handleClick}>
+            <i class='shopping cart icon'></i>
+            Cart
+          </NavLink>
           <NavLink
             to='/signup'
             className='item nav__item'
