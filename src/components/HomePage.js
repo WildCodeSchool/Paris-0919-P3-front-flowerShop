@@ -63,9 +63,47 @@ class HomePage extends React.Component {
             src={flower}
             alt='Bouquets de fleur'
           /> */}
-          {/* <div className='ui container'>
-            <h1>Bienvenue chez Eclosion !</h1>
-          </div> */}
+
+          <div className='ui centered grid'>
+            <div className='computer only three column row'>
+              <div className='column'>
+                <div className='ui teal inverted center aligned segment'>
+                  <h3>Atelier de créations florales</h3>
+                  <h3>
+                    Livraison à vélo de bouquets uniques sur Marne la Vallée
+                  </h3>
+                  <h3>Commander votre bouquet éco responsable de la semaine</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class='ui centered grid'>
+            <div class='mobile only row'>
+              <div class='ui segment column'>
+                <h3>Atelier de créations florales</h3>
+                <h3>
+                  Livraison à vélo de bouquets uniques sur Marne la Vallée
+                </h3>
+                <h3>Commander votre bouquet éco responsable de la semaine</h3>
+              </div>
+            </div>
+            <div class='ui segment six wide tablet eight wide computer column'>
+              a
+            </div>
+            <div class='ui segment six wide tablet eight wide computer column'>
+              b
+            </div>
+            <div class='ui segment six wide tablet eight wide computer column'>
+              c
+            </div>
+            <div class='ui segment six wide tablet eight wide computer column'>
+              d
+            </div>
+            <div class='ui segment six wide tablet eight wide computer column'>
+              e
+            </div>
+          </div>
         </div>
 
         <div className='ten wide column'>

@@ -17,7 +17,7 @@ const handleClick = () => {
 
 const TopNavigation = ({ isAuthenticated, logout, isAdmin }) => (
   <div>
-    <div className='menu__image-container'>
+    <div className='menu__logo-container'>
       <img className='ui small image logo' src={logo} alt='Logo' />
       <button
         className='green circular ui icon button menu__burger-btn'
@@ -28,7 +28,7 @@ const TopNavigation = ({ isAuthenticated, logout, isAdmin }) => (
       </button>
     </div>
     <div id='menu' className='ui fixed stackable green inverted labeled menu'>
-      <NavLink exact to='/' className='item accueil' onClick={handleClick}>
+      <NavLink exact to='/' className='item' onClick={handleClick}>
         {/* <i className='home icon nav__icon'></i> */}
         ACCUEIL
       </NavLink>

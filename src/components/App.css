@@ -7,6 +7,12 @@
 .home__opening {
   width: 100%;
   height: 100vh;
+  padding-top: 10rem;
+}
+.ui.segment.opening-title.title {
+  margin-top: 30rem;
+  margin-left: 30rem;
+  width: fit-content;
 }
 .home::after {
   content: '';
@@ -21,14 +27,14 @@
   z-index: -1;
 }
 
-.menu__image-container {
+.menu__logo-container {
   position: fixed;
   width: 100%;
   padding: 0.5rem 0;
   background-color: #ddd2c3;
   z-index: 100;
 }
-.menu__image-container::after {
+.menu__logo-container::after {
   content: '';
   display: block;
   width: 50px;
@@ -38,7 +44,6 @@
   left: 50%;
   transform: translate(-50%);
   background-color: #767864;
-  /* background: center center / 30% url(../arabesque.png) no-repeat; */
 }
 .ui.stackable.green.inverted.labeled.menu {
   top: 5.5rem;
@@ -52,6 +57,9 @@
   right: 5px;
 }
 @media screen and (max-width: 767px) {
+  .ui.stackable.green.inverted.labeled.menu .item {
+    text-align: center;
+  }
   .circular.ui.icon.button.menu__burger-btn {
     display: block;
   }
@@ -108,7 +116,8 @@ h1 {
   color: #444c38;
   text-align: center;
 }
-h2 {
+h2,
+h3 {
   color: #767864;
 }
 
@@ -193,9 +202,9 @@ i.recycle.big.green.icon {
   align-items: center;
 }
 
-/* .ui.grid.productForm__container {
-  padding-top: 1rem;
-} */
+.ui.grid.productForm__container {
+  padding-top: 10rem;
+}
 
 /* .shop__container {
   background-color: #f4f1ea;
