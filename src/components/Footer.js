@@ -11,12 +11,11 @@ function Footer() {
 
     
    <div className="titre">
-     <h4> Rejoins-nous </h4>      
         </div>
         <div class="ui bottom attached button" tabindex="0">
-        <a href="https://www.facebook.com/"><i class="facebook square icon big"></i></a>
-        <a href="https://twitter.com/"><i class="twitter square icon big"></i></a>
-        <a href="https://www.linkedin.com/company/c"><i class="linkedin square icon big"></i></a>
+        <a href="https://www.facebook.com/"><i class="facebook square icon huge"></i></a>
+        <a href="https://twitter.com/"><i class="twitter square icon huge"></i></a>
+        <a href="https://www.linkedin.com/company/c"><i class="linkedin square icon huge"></i></a>
                 
         </div>
       </div>
