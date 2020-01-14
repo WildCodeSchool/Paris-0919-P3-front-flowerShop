@@ -6,9 +6,10 @@ import ProductsList from './ProductsList';
 import LoadingMsg from './LoadingMsg';
 import Delivery from './Delivery';
 import Context from './Context';
+import Articles from './Articles';
 
 import api from '../api';
-import Articles from './Articles';
+//import flower from '../flower_wallpaper.jpg';
 
 class HomePage extends React.Component {
   state = {
@@ -56,21 +57,17 @@ class HomePage extends React.Component {
     const { products, loading } = this.state;
     return (
       <div className='home'>
-        <div className='ui container'>
-          <h1>Bienvenue chez Eclosion !</h1>
+        <div className='home__opening'>
+          {/* <img
+            className='ui centered image'
+            src={flower}
+            alt='Bouquets de fleur'
+          /> */}
+          {/* <div className='ui container'>
+            <h1>Bienvenue chez Eclosion !</h1>
+          </div> */}
         </div>
-        <div className='ui container'>
-          <div className='ui stackable grid'>
-            <div className='row'>
-              <div className='ten wide column'>
-                <Context />
-              </div>
-              <div className='six wide column'>
-                <Delivery />
-              </div>
-            </div>
-          </div>
-        </div>
+
         <div className='ten wide column'>
           {loading ? (
             <LoadingMsg />
@@ -85,6 +82,20 @@ class HomePage extends React.Component {
               />
             </div>
           )}
+        </div>
+        <div className='context-delivery'>
+          <div className='ui container'>
+            <div className='ui stackable grid'>
+              <div className='row'>
+                <div className='ten wide column'>
+                  <Context />
+                </div>
+                <div className='six wide column'>
+                  <Delivery />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <Articles />
       </div>

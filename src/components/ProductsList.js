@@ -14,6 +14,7 @@ const ProductsList = ({
 }) => (
   <div className='ui container productList__shop'>
     <h1>FLOWER SHOP / LA BOUTIQUE</h1>
+    <h2>Bouquets</h2>
     <p>
       Éclosion vous propose des bouquets frais{' '}
       <strong>renouvelés chaque mercredi</strong> à 9h.
@@ -33,16 +34,54 @@ const ProductsList = ({
       {products.length === 0 ? (
         <Message header='header' content='message' />
       ) : (
-        products.map(product => (
-          <ProductCard
-            product={product}
-            key={product._id}
-            toggleFeatured={toggleFeatured}
-            toggleDescription={toggleDescription}
-            deleteProduct={deleteProduct}
-            user={user}
-          />
-        ))
+        products.map(
+          product =>
+            product.productType === '1' && (
+              <ProductCard
+                product={product}
+                key={product._id}
+                toggleFeatured={toggleFeatured}
+                toggleDescription={toggleDescription}
+                deleteProduct={deleteProduct}
+                user={user}
+              />
+            )
+        )
+      )}
+    </div>
+    <hr />
+    <h2>Accessoires</h2>
+    <div className='ui stackable grid three cards'>
+      {products.map(
+        product =>
+          product.productType === '2' && (
+            <ProductCard
+              product={product}
+              key={product._id}
+              toggleFeatured={toggleFeatured}
+              toggleDescription={toggleDescription}
+              deleteProduct={deleteProduct}
+              user={user}
+            />
+          )
+      )}
+    </div>
+
+    <hr />
+    <h2>Décoration</h2>
+    <div className='ui stackable grid three cards'>
+      {products.map(
+        product =>
+          product.productType === '3' && (
+            <ProductCard
+              product={product}
+              key={product._id}
+              toggleFeatured={toggleFeatured}
+              toggleDescription={toggleDescription}
+              deleteProduct={deleteProduct}
+              user={user}
+            />
+          )
       )}
     </div>
 
