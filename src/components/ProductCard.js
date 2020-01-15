@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import Price from './Price';
-// import Featured from './Featured';
 import ProductDescription from './ProductDescription';
-//import ProductDetails from './ProductDetails';
 
 class ProductCard extends React.Component {
   state = {
@@ -16,13 +14,7 @@ class ProductCard extends React.Component {
   hideConfirmation = () => this.setState({ showConfirmation: false });
 
   render() {
-    const {
-      product,
-      // toggleFeatured,
-      toggleDescription,
-      deleteProduct,
-      user
-    } = this.props;
+    const { product, toggleDescription, deleteProduct, user } = this.props;
     const adminActions = (
       <div className='extra content'>
         {this.state.showConfirmation ? (
@@ -71,13 +63,11 @@ class ProductCard extends React.Component {
         {!product.described ? (
           <div className='image'>
             <Price product={product} />
-            {/* <Featured
-                featured={product.featured}
-                toggleFeatured={toggleFeatured}
-                productId={product._id}
-              /> */}
-
-            <img src={product.thumbnail} alt='Bouquet' />
+            <img
+              className='productCard__image'
+              src={product.thumbnail}
+              alt='Bouquet'
+            />
           </div>
         ) : (
           <div className='ui justified container description'>
@@ -116,8 +106,6 @@ ProductCard.propTypes = {
     thumbnail: PropTypes.string.isRequired,
     size: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired
-    //duration: PropTypes.number.isRequired,
-    //featured: PropTypes.bool.isRequired
   }).isRequired,
   toggleFeatured: PropTypes.func.isRequired,
   deleteProduct: PropTypes.func.isRequired,
