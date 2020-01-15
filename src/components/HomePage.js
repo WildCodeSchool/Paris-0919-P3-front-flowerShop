@@ -8,6 +8,7 @@ import Delivery from './Delivery';
 import Context from './Context';
 
 import api from '../api';
+import Articles from './Articles';
 
 class HomePage extends React.Component {
   state = {
@@ -55,21 +56,22 @@ class HomePage extends React.Component {
     const { products, loading } = this.state;
     return (
       <div className='home'>
-        <div className='ui container'>
-          <h1>Bienvenue chez Eclosion !</h1>
-        </div>
-        <div className='ui container'>
-          <div className='ui stackable grid'>
+        <div className='home__opening'>
+          <div className='ui centered grid opening__text'>
             <div className='row'>
-              <div className='ten wide column'>
-                <Context />
-              </div>
-              <div className='six wide column'>
-                <Delivery />
+              <div className='sixteen wide mobile twelve wide tablet ten wide computer column'>
+                <div className='ui stackable teal inverted center aligned segment'>
+                  <h3>Ateliers de créations florales</h3>
+                  <h3>
+                    Livraison à vélo de bouquets uniques sur Marne la Vallée
+                  </h3>
+                  <h3>Commander votre bouquet éco responsable de la semaine</h3>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
         <div className='ten wide column'>
           {loading ? (
             <LoadingMsg />
@@ -85,6 +87,21 @@ class HomePage extends React.Component {
             </div>
           )}
         </div>
+        <div className='context-delivery'>
+          <div className='ui container'>
+            <div className='ui stackable grid'>
+              <div className='row'>
+                <div className='ten wide column'>
+                  <Context />
+                </div>
+                <div className='six wide column'>
+                  <Delivery />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <Articles />
       </div>
     );
   }
