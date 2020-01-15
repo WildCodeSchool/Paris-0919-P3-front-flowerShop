@@ -9,7 +9,9 @@ import ProductsPage from './ProductsPage';
 import ShowProductPage from './ShowProductPage';
 import SignupPage from './SignupPage';
 import LoginPage from './LoginPage';
-import Articles from './Articles';
+import ArticleWedding from './ArticleWedding';
+import ArticlePro from './ArticlePro';
+import ArticleDIY from './ArticleDIY';
 
 const setAuthorizationHeader = (token = null) => {
   if (token) {
@@ -97,7 +99,9 @@ class App extends React.Component {
           )}
         />
 
-        <Route path='/articles' exact component={Articles} />
+        <Route path='/wedding' exact component={ArticleWedding} />
+        <Route path='/pro' exact component={ArticlePro} />
+        <Route path='/DIY' exact component={ArticleDIY} />
       </div>
     );
   }
