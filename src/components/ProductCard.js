@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import jwtDecode from 'jwt-decode';
+import axios from 'axios';
+
 import Price from './Price';
 // import Featured from './Featured';
 import ProductDescription from './ProductDescription';
@@ -14,6 +17,16 @@ class ProductCard extends React.Component {
 
   showConfirmation = () => this.setState({ showConfirmation: true });
   hideConfirmation = () => this.setState({ showConfirmation: false });
+
+  handleClick = () => {
+    const { product, user } = this.props;
+    const userId = jwtDecode(user.token).user._id;
+    console.log(product);
+    console.log(userId);
+    axios.post(`/api/cart/${userId}`, {
+      product
+    });
+  };
 
   render() {
     const {
@@ -60,7 +73,7 @@ class ProductCard extends React.Component {
     );
     const addToCart = (
       <div className='extra content right'>
-        <button className='ui green basic button'>
+        <button className='ui green basic button' onClick={this.handleClick}>
           <i className='shopping basket icon'></i>Ajouter au panier
         </button>
       </div>
