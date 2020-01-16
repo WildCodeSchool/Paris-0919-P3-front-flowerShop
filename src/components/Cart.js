@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ModalMail from './ModalMail';
+
 import api from '../api';
 import jwtdecode from 'jwt-decode';
 
@@ -67,6 +69,17 @@ class Cart extends React.Component {
                   ))
                 )}
               </tbody>
+              <tfoot>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th>
+                    <div class='ui right floated small primary labeled button'>
+                      <ModalMail text='Commander' />
+                    </div>
+                  </th>
+                </tr>
+              </tfoot>
             </table>
           )}
         </div>
