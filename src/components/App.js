@@ -48,7 +48,6 @@ class App extends React.Component {
     this.setState({ user: { token: null, role: 'user' } });
     setAuthorizationHeader();
     localStorage.removeItem('bgshopToken');
-    this.props.router.push('/');
   };
 
   login = token => {
