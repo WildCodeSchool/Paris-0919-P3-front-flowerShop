@@ -23,10 +23,14 @@ class ArticleWedding extends React.Component {
                 remplie d’émotion et de partage.
               </div>
             </div>
-
-            <div className='four wide column articles'>
-              <ModalMail text='Faites nous part de vos envies !' />
+            <div className='four wide column'>
+              <img
+                src={wedding}
+                alt='Mariage'
+                className='ui image articles__img'
+              />
             </div>
+
             <div className='twelve wide column articles'>
               <div className='ui segment'>
                 Un mariage élégant, champêtre ou moderne, nous vous proposons
@@ -35,7 +39,9 @@ class ArticleWedding extends React.Component {
               </div>
             </div>
           </div>
-          <img src={wedding} alt='Mariage' className='ui image articles__img' />
+          <div className='row wedding'>
+            <ModalMail text='Faites nous part de vos envies !' />
+          </div>
         </div>
       </div>
     );

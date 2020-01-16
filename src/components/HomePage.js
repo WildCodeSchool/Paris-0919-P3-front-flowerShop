@@ -62,7 +62,7 @@ class HomePage extends React.Component {
           <div className='ui centered grid opening__text'>
             <div className='row'>
               <div className='sixteen wide mobile twelve wide tablet ten wide computer column'>
-                <div className='ui stackable teal inverted center aligned segment'>
+                <div className='ui stackable center aligned segment title'>
                   <h3>Ateliers de créations florales</h3>
                   <h3>
                     Livraison à vélo de bouquets uniques sur Marne la Vallée
