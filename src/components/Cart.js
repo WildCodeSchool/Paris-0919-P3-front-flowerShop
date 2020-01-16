@@ -28,41 +28,49 @@ class Cart extends React.Component {
 
   render() {
     return (
-      !this.state.loading && (
-        <div>
-          <div className='ui container'>
-            <h1>Votre Panier</h1>
+      <div>
+        <div className='ui container'>
+          <h1>Votre Panier</h1>
+          {this.state.loading ? (
+            <div class='ui active centered inline loader'></div>
+          ) : (
             <table className='ui table'>
               <tbody>
-                {this.state.cart[0].products.map(product => (
-                  <tr key={product._id}>
-                    <td>
-                      <img
-                        className='ui small image'
-                        src={product.thumbnail}
-                        alt=''
-                      />
-                    </td>
-                    <td>
-                      <p>{product.name}</p>
-                      <p>{product.size}</p>
-                    </td>
-                    <td className='right aligned'>
-                      <button
-                        className='ui labeled icon button'
-                        onClick={() => this.handleClick(product)}
-                      >
-                        <i className='trash alternate outline icon'></i>
-                        Supprimer
-                      </button>
-                    </td>
-                  </tr>
-                ))}
+                {this.state.cart[0].products.length === 0 ? (
+                  <div>
+                    <h2>Votre panier est vide</h2>
+                  </div>
+                ) : (
+                  this.state.cart[0].products.map(product => (
+                    <tr key={product._id}>
+                      <td>
+                        <img
+                          className='ui small image'
+                          src={product.thumbnail}
+                          alt=''
+                        />
+                      </td>
+                      <td>
+                        <p>{product.name}</p>
+                        <p>{product.size}</p>
+                      </td>
+                      <td className='right aligned'>
+                        <button
+                          className='ui labeled icon button'
+                          onClick={() => this.handleClick(product)}
+                        >
+                          <i className='trash alternate outline icon'></i>
+                          Supprimer
+                        </button>
+                      </td>
+                    </tr>
+                  ))
+                )}
               </tbody>
             </table>
-          </div>
+          )}
         </div>
-      )
+      </div>
     );
   }
 }
