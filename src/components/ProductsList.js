@@ -89,7 +89,7 @@ const ProductsList = ({
 
     <h3 className='productList__ask'>Vous avez une demande particulière ?</h3>
     <div className='productList__contact'>
-      <ModalMail content={'Contactez-nous'} />
+      <ModalMail text='Contactez-nous' />
     </div>
   </div>
 );

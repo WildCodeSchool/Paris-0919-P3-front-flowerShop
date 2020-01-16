@@ -89,7 +89,7 @@ hr {
     transition: 0.3s;
   }
   .ui.stackable.green.inverted.menu.invisible {
-    height: 20.9rem;
+    height: 24rem;
     animation: slide 1s ease-in-out 3.5s;
     transition: 0.3s;
   }
@@ -98,7 +98,7 @@ hr {
       height: 2.9rem;
     }
     to {
-      height: 20.9rem;
+      height: 24rem;
     }
   }
   .bars.icon.invisible {

@@ -25,7 +25,7 @@ class ArticleWedding extends React.Component {
             </div>
 
             <div className='four wide column articles'>
-              <ModalMail content={'Faites nous part de vos envies !'} />
+              <ModalMail text='Faites nous part de vos envies !' />
             </div>
             <div className='twelve wide column articles'>
               <div className='ui segment'>

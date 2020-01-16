@@ -25,7 +25,7 @@ class ArticleDIY extends React.Component {
             </div>
 
             <div className='four wide column'>
-              <ModalMail content={'Plus de détails'} />
+              <ModalMail text='Plus de détails' />
             </div>
             <div className='twelve wide column'>
               <div className='ui segment'>
