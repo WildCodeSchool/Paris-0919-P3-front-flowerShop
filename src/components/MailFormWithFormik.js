@@ -13,6 +13,7 @@ const MailFormWithFormik = withFormik({
     email: '',
     phone: '',
     city: '',
+    subject: '',
     textContent: ''
   }),
   validationSchema: () => {
@@ -32,6 +33,7 @@ const MailFormWithFormik = withFormik({
         "Le numéro entré n'est pas valide"
       ),
       city: Yup.string(),
+      subject: Yup.string(),
       textContent: Yup.string()
         .min(10, 'Votre message doit au moins contenir 20 caractères')
         .required('Un message doit être écrit')

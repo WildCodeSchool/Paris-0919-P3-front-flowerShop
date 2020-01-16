@@ -23,3 +23,9 @@ export const cityOptions = [
   { key: 'bm', value: 'bm', text: '94 - Bry-sur-Marne' },
   { key: 'vm', value: 'vm', text: '94 - Villiers-sur-Marne' }
 ];
+
+export const mailSubjects = [
+  { key: 'cp', value: 'cp', text: 'Commande de produits' },
+  { key: 'dr', value: 'dr', text: 'Demande de renseignements' },
+  { key: 'ql', value: 'ql', text: 'Question sur le lieu de livraison' }
+];

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Form } from 'semantic-ui-react';
-import { cityOptions } from '../cityOptions';
+import { cityOptions, mailSubjects } from '../listData';
 
 const MailForm = ({
   values,
@@ -75,6 +75,16 @@ const MailForm = ({
           error={errors.city}
         />
       </Form.Group>
+      <Form.Dropdown
+        fluid
+        selection
+        label='Objet'
+        placeholder='Objet'
+        options={mailSubjects}
+        name='subject'
+        onChange={handleDropdownChange}
+        error={errors.subject}
+      />
       <Form.TextArea
         name='textContent'
         label='Demande'
