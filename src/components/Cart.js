@@ -38,6 +38,7 @@ class Cart extends React.Component {
           ) : (
             <table className='ui table'>
               <tbody>
+                {console.log(this.state.cart)}
                 {this.state.cart[0].products.length === 0 ? (
                   <div>
                     <h2>Votre panier est vide</h2>
