@@ -3,26 +3,29 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import Price from './Price';
-// import Featured from './Featured';
 import ProductDescription from './ProductDescription';
-//import ProductDetails from './ProductDetails';
 
+import jwtdecode from 'jwt-decode';
+
+import api from '../api';
 class ProductCard extends React.Component {
   state = {
-    showConfirmation: false
+    showConfirmation: false,
+    size: ''
   };
 
   showConfirmation = () => this.setState({ showConfirmation: true });
   hideConfirmation = () => this.setState({ showConfirmation: false });
 
+  handleClick = () => {
+    const userId = jwtdecode(this.props.user.token).user._id;
+    api.cart.add(userId, this.props.product);
+  };
+  handleChange = e => this.setState({ size: e.target.value });
+
   render() {
-    const {
-      product,
-      // toggleFeatured,
-      toggleDescription,
-      deleteProduct,
-      user
-    } = this.props;
+    const { product, toggleDescription, deleteProduct, user } = this.props;
+    const { size } = this.state;
     const adminActions = (
       <div className='extra content'>
         {this.state.showConfirmation ? (
@@ -60,7 +63,7 @@ class ProductCard extends React.Component {
     );
     const addToCart = (
       <div className='extra content right'>
-        <button className='ui green basic button'>
+        <button className='ui green basic button' onClick={this.handleClick}>
           <i className='shopping basket icon'></i>Ajouter au panier
         </button>
       </div>
@@ -71,16 +74,14 @@ class ProductCard extends React.Component {
         {!product.described ? (
           <div className='image'>
             <Price product={product} />
-            {/* <Featured
-                featured={product.featured}
-                toggleFeatured={toggleFeatured}
-                productId={product._id}
-              /> */}
-
-            <img src={product.thumbnail} alt='Bouquet' />
+            <img
+              className='productCard__image'
+              src={product.thumbnail}
+              alt='Bouquet'
+            />
           </div>
         ) : (
-          <div className='ui justified container description'>
+          <div className='ui justified content description'>
             <p>{product.description}</p>
           </div>
         )}
@@ -92,7 +93,19 @@ class ProductCard extends React.Component {
           <div className='meta caption productCard__caption'>
             <div className='product__icon'>
               <i className='icon sort' /> <strong>Tailles :</strong>{' '}
-              {product.size}
+              <select
+                name='productSize'
+                value={size}
+                onChange={this.handleChange}
+                className='ui dropdown'
+              >
+                <option value=''>Choisir la taille</option>
+                {product.size.split(' / ').map((taille, index) => (
+                  <option value={taille} key={index}>
+                    {taille}
+                  </option>
+                ))}
+              </select>
             </div>
             <ProductDescription
               described={product.described}
@@ -116,8 +129,6 @@ ProductCard.propTypes = {
     thumbnail: PropTypes.string.isRequired,
     size: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired
-    //duration: PropTypes.number.isRequired,
-    //featured: PropTypes.bool.isRequired
   }).isRequired,
   toggleFeatured: PropTypes.func.isRequired,
   deleteProduct: PropTypes.func.isRequired,

@@ -20,8 +20,8 @@ const MailForm = ({
         <Form.Input
           required
           fluid
-          label='Nom'
-          placeholder='Nom'
+          label='Prénom'
+          placeholder='Prénom'
           type='text'
           name='firstName'
           value={values.firstName}
@@ -32,8 +32,8 @@ const MailForm = ({
         <Form.Input
           required
           fluid
-          label='Prénom'
-          placeholder='Prénom'
+          label='Nom'
+          placeholder='Nom'
           type='text'
           name='lastName'
           value={values.lastName}

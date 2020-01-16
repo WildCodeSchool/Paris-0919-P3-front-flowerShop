@@ -9,6 +9,10 @@ import ProductsPage from './ProductsPage';
 import ShowProductPage from './ShowProductPage';
 import SignupPage from './SignupPage';
 import LoginPage from './LoginPage';
+import Cart from './Cart';
+import ArticleWedding from './ArticleWedding';
+import ArticlePro from './ArticlePro';
+import ArticleDIY from './ArticleDIY';
 
 const setAuthorizationHeader = (token = null) => {
   if (token) {
@@ -95,6 +99,15 @@ class App extends React.Component {
             <ShowProductPage {...props} user={this.state.user} />
           )}
         />
+
+        <Route
+          path='/cart'
+          exact
+          render={props => <Cart {...props} user={this.state.user} />}
+        />
+        <Route path='/wedding' exact component={ArticleWedding} />
+        <Route path='/pro' exact component={ArticlePro} />
+        <Route path='/DIY' exact component={ArticleDIY} />
       </div>
     );
   }

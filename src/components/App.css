@@ -1,50 +1,104 @@
-.home::after {
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400&display=swap');
+/* GENERAL SETTINGS */
+.ui.container {
+  padding: 1rem 0 1rem 0;
+}
+.ui.container h1 {
+  padding: 2rem 0rem 3rem 0rem;
+}
+
+h1 {
+  color: #444c38;
+  text-align: center;
+}
+h1::after {
   content: '';
-  background: fixed left -2% bottom 18%/ 10%
-      url('https://www.salam-stick.com/866/sticker-fleur-papillon-arabesque.jpg')
-      no-repeat,
-    fixed right -12% bottom 25% / 30% url('https://www.salam-stick.com/866/sticker-fleur-papillon-arabesque.jpg')
-      no-repeat;
-  opacity: 0.3;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
+  display: block;
+  width: 6rem;
+  height: 1px;
+  position: relative;
+  top: 1rem;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #767864;
 }
+h2,
+h3 {
+  color: #767864;
+}
+hr {
+  width: 80%;
+  height: 1px;
+  margin: 3rem auto;
+}
+/* GENERAL SETTINGS END */
 
-.menu__image-container {
+/* NAVBAR */
+.navbar {
+  height: 8rem;
+}
+.navbar__container {
+  position: fixed;
+  width: 100%;
+  height: fit-content;
+  z-index: 100;
+}
+.menu__logo-container {
   padding: 0.5rem 0;
+  background-color: #ddd2c3;
 }
-
-.circular.ui.icon.button.menu__burger-btn {
+.menu__logo-container::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #767864;
+}
+.ui.small.image.logo {
+  min-width: 200px;
+  height: 65px;
+  margin: 0 auto;
+}
+.ui.stackable.green.inverted.menu {
+  margin-top: 0;
+  top: 5.5rem;
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+}
+.circular.ui.button.menu__burger-btn {
   display: none;
   position: absolute;
-  top: 12px;
+  top: 20px;
   right: 5px;
 }
 @media screen and (max-width: 767px) {
+  .ui.stackable.green.inverted.menu .item {
+    text-align: center;
+  }
   .circular.ui.icon.button.menu__burger-btn {
     display: block;
   }
-  .ui.stackable.green.inverted.labeled.icon.menu {
-    height: 35.5rem;
-    animation: slide 1s ease-in-out 3.5s;
-    transition: 0.5s;
-  }
-  .ui.stackable.green.inverted.labeled.icon.menu.invisible {
-    height: 5rem;
+  .ui.stackable.green.inverted.menu {
+    height: 2.9rem;
     overflow: hidden;
     animation: slide 1s ease-in-out 3.5s;
-    transition: 0.5s;
+    transition: 0.3s;
+  }
+  .ui.stackable.green.inverted.menu.invisible {
+    height: 24rem;
+    animation: slide 1s ease-in-out 3.5s;
+    transition: 0.3s;
   }
   @keyframes slide {
     from {
-      height: 5rem;
+      height: 2.9rem;
     }
     to {
-      height: 35.5rem;
+      height: 24rem;
     }
   }
   .bars.icon.invisible {
@@ -54,24 +108,6 @@
     display: none;
   }
 }
-
-.menu__image-container::after {
-  content: '';
-  display: block;
-  width: 50px;
-  height: 1px;
-  position: absolute;
-  top: 4rem;
-  left: 50%;
-  transform: translate(-50%);
-  background-color: #e79796;
-  /* background: center center / 30% url(../arabesque.png) no-repeat; */
-}
-
-.ui.inverted.green.menu {
-  background-color: #f4f1ea;
-  margin: 0;
-}
 .nav__icon {
   cursor: pointer;
   transition: 0.3s;
@@ -79,22 +115,43 @@
 .nav__icon:hover {
   color: #e79796;
 }
+/* NAVBAR END */
 
-.ui.container {
-  padding-bottom: 1rem;
+/* HOME PAGE */
+.home__opening {
+  width: 100%;
+  height: 88vh;
+  padding: 25rem 0 0 25rem;
 }
-.ui.container h1 {
-  padding: 2rem 0rem 1rem 0rem;
+.home::after {
+  content: '';
+  background: url('https://images.unsplash.com/photo-1578030011717-592b32b82ff3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')
+    fixed top center / cover no-repeat;
+  opacity: 0.8;
+  top: 6rem;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
+.home__opening h3 {
+  font-style: italic;
+}
+@media screen and (max-width: 768px) {
+  .home__opening {
+    padding: 0;
+    margin-top: 25rem;
+    margin-bottom: -25rem;
+  }
+  .ui.centered.grid.opening__text {
+    margin: 0;
+  }
+}
+/* HOME PAGE END */
 
-h1 {
-  color: #444c38;
-}
-h2 {
-  color: #767864;
-}
-
-.productList__shop {
+/* PRODUCT LIST */
+.ui.container.productList__shop {
   text-align: center;
 }
 .productList__ask {
@@ -106,7 +163,12 @@ h2 {
   justify-content: center;
   margin: 1rem 0rem 2rem 0rem;
 }
+.productList__pres {
+  padding-top: 1rem;
+}
+/* PRODUCT LIST END */
 
+/* PRODUCT CARD */
 .productCard__caption {
   display: flex;
   justify-content: space-between;
@@ -124,13 +186,36 @@ h2 {
   bottom: 10px;
   right: 10px;
 }
+.ui.cards > .card > .image > img,
+.ui.card > .image > img {
+  /* min-height: 350px; */
+  width: auto;
+}
+/* PRODUCT CARD END */
 
+/* PRODUCT-FORM */
+.ui.grid.productForm__container {
+  padding-top: 4em;
+}
+/* PRODUCT-FORM END */
+
+/* PRODUCT DETAILS */
 .productDetails__buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+.ui.center.aligned.dividing.header {
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+/* PRODUCT DETAILS END */
 
+/* CONTEXT-DELIVERY */
+.context-delivery {
+  background-color: #f4f1ea;
+  padding: 2rem 0;
+}
 .context__flex {
   display: flex;
   align-items: center;
@@ -169,11 +254,25 @@ i.recycle.big.green.icon {
   display: flex;
   align-items: center;
 }
+/* CONTEXT-DELIVERY END */
 
-.ui.grid.productForm__container {
-  padding-top: 1rem;
+/* ARTICLES */
+.articles__img {
+  margin: 3rem 0;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px darkgrey;
 }
-
-.shop__container {
+.ui.container h1.articles__title {
+  margin-top: 2rem;
+}
+.pro {
   background-color: #f4f1ea;
 }
+
+.ui.stackable.grid.articles > .column:not(.row),
+.ui.grid > .row > .column.articles {
+  display: flex;
+  justify-content: center;
+}
+
+/* ARTICLES END */

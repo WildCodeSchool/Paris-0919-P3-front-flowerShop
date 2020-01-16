@@ -27,28 +27,69 @@ const ProductsList = ({
         2 tailles
       </div>
     </div>
-    <p>La livraison est incluse dans le prix du bouquet affiché.</p>
+    <p className='productList__pres'>
+      La livraison est incluse dans le prix du bouquet affiché.
+    </p>
+    <h2>Bouquets</h2>
 
     <div className='ui stackable grid three cards'>
       {products.length === 0 ? (
         <Message header='header' content='message' />
       ) : (
-        products.map(product => (
-          <ProductCard
-            product={product}
-            key={product._id}
-            toggleFeatured={toggleFeatured}
-            toggleDescription={toggleDescription}
-            deleteProduct={deleteProduct}
-            user={user}
-          />
-        ))
+        products.map(
+          product =>
+            product.productType === '1' && (
+              <ProductCard
+                product={product}
+                key={product._id}
+                toggleFeatured={toggleFeatured}
+                toggleDescription={toggleDescription}
+                deleteProduct={deleteProduct}
+                user={user}
+              />
+            )
+        )
+      )}
+    </div>
+    <hr />
+    <h2>Accessoires</h2>
+    <div className='ui stackable grid three cards'>
+      {products.map(
+        product =>
+          product.productType === '2' && (
+            <ProductCard
+              product={product}
+              key={product._id}
+              toggleFeatured={toggleFeatured}
+              toggleDescription={toggleDescription}
+              deleteProduct={deleteProduct}
+              user={user}
+            />
+          )
+      )}
+    </div>
+
+    <hr />
+    <h2>Décoration</h2>
+    <div className='ui stackable grid three cards'>
+      {products.map(
+        product =>
+          product.productType === '3' && (
+            <ProductCard
+              product={product}
+              key={product._id}
+              toggleFeatured={toggleFeatured}
+              toggleDescription={toggleDescription}
+              deleteProduct={deleteProduct}
+              user={user}
+            />
+          )
       )}
     </div>
 
     <h3 className='productList__ask'>Vous avez une demande particulière ?</h3>
     <div className='productList__contact'>
-      <ModalMail />
+      <ModalMail text='Contactez-nous' />
     </div>
   </div>
 );
