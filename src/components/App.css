@@ -255,5 +255,14 @@ i.recycle.big.green.icon {
 /* ARTICLES */
 .articles__img {
   margin: 3rem 0;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px darkgrey;
 }
+.ui.container h1.articles__title {
+  margin-top: 2rem;
+}
+.pro {
+  background-color: #f4f1ea;
+}
+
 /* ARTICLES END */

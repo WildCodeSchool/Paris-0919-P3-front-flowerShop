@@ -8,7 +8,9 @@ import Delivery from './Delivery';
 import Context from './Context';
 
 import api from '../api';
-import Articles from './Articles';
+import ArticleWedding from './ArticleWedding';
+import ArticlePro from './ArticlePro';
+import ArticleDIY from './ArticleDIY';
 
 class HomePage extends React.Component {
   state = {
@@ -101,7 +103,9 @@ class HomePage extends React.Component {
             </div>
           </div>
         </div>
-        <Articles />
+        <ArticleWedding />
+        <ArticlePro />
+        <ArticleDIY />
       </div>
     );
   }
