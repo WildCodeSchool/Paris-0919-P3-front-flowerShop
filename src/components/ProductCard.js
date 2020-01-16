@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 import Price from './Price';
 import ProductDescription from './ProductDescription';
 
+import jwtdecode from 'jwt-decode';
+
+import api from '../api';
 class ProductCard extends React.Component {
   state = {
     showConfirmation: false
@@ -12,6 +15,11 @@ class ProductCard extends React.Component {
 
   showConfirmation = () => this.setState({ showConfirmation: true });
   hideConfirmation = () => this.setState({ showConfirmation: false });
+
+  handleClick = () => {
+    const userId = jwtdecode(this.props.user.token).user._id;
+    api.cart.add(userId, this.props.product);
+  };
 
   render() {
     const { product, toggleDescription, deleteProduct, user } = this.props;
@@ -52,7 +60,7 @@ class ProductCard extends React.Component {
     );
     const addToCart = (
       <div className='extra content right'>
-        <button className='ui green basic button'>
+        <button className='ui green basic button' onClick={this.handleClick}>
           <i className='shopping basket icon'></i>Ajouter au panier
         </button>
       </div>

@@ -9,6 +9,8 @@ import ProductsPage from './ProductsPage';
 import ShowProductPage from './ShowProductPage';
 import SignupPage from './SignupPage';
 import LoginPage from './LoginPage';
+import Articles from './Articles';
+import Cart from './Cart';
 import ArticleWedding from './ArticleWedding';
 import ArticlePro from './ArticlePro';
 import ArticleDIY from './ArticleDIY';
@@ -99,6 +101,12 @@ class App extends React.Component {
           )}
         />
 
+        <Route path='/articles' exact component={Articles} />
+        <Route
+          path='/cart'
+          exact
+          render={props => <Cart {...props} user={this.state.user} />}
+        />
         <Route path='/wedding' exact component={ArticleWedding} />
         <Route path='/pro' exact component={ArticlePro} />
         <Route path='/DIY' exact component={ArticleDIY} />
