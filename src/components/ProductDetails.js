@@ -70,10 +70,10 @@ class ProductDetails extends React.Component {
         </div>
         <div className='ui stackable grid'>
           <div className='row'>
-            <div className='twelve wide column'>
+            <div className='ten wide column'>
               <Context />
             </div>
-            <div className='four wide column'>
+            <div className='six wide column'>
               <Delivery />
             </div>
           </div>

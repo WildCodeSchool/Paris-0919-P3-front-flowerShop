@@ -19,6 +19,10 @@ const productTypes = [
   {
     _id: '2',
     name: 'Accessoire'
+  },
+  {
+    _id: '3',
+    name: 'Décoration'
   }
 ];
 

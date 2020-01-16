@@ -70,7 +70,7 @@ class ProductCard extends React.Component {
             />
           </div>
         ) : (
-          <div className='ui justified container description'>
+          <div className='ui justified content description'>
             <p>{product.description}</p>
           </div>
         )}
