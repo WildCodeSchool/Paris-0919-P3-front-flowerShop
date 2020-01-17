@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Icon, Grid } from 'semantic-ui-react'
+import { Image, Grid } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 
 
@@ -35,7 +35,7 @@ function Footer() {
         <div class="ui bottom attached button" tabindex="0">
           <Grid columns={2} divided>
             <Grid.Column>     
-              <p>Logo</p>
+            <Image src="/static/media/logo.129f7ba9.png" size="small" />
             </Grid.Column>  
             <Grid.Column>
               <p> Copyright© 2020 Wild Code School</p>  
