@@ -112,16 +112,16 @@ class App extends React.Component {
         <Route path='/wedding' exact component={ArticleWedding} />
         <Route path='/pro' exact component={ArticlePro} />
         <Route path='/DIY' exact component={ArticleDIY} />
-              <Switch>
-                <Route path="/LegalMentions">
-                  <LegalMentions />
-                </Route>
-                <Route path="/Delivery">
-                  <Delivery />
-                </Route>
-                
-            </Switch>
-            <Footer />
+
+        <Switch>
+          <Route path='/LegalMentions'>
+            <LegalMentions />
+          </Route>
+          <Route path='/Delivery'>
+            <Delivery />
+          </Route>
+        </Switch>
+        <Footer />
       </div>
     );
   }
