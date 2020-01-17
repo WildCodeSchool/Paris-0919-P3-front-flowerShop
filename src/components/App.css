@@ -7,11 +7,13 @@
   padding: 2rem 0rem 3rem 0rem;
 }
 
-h1 {
+h1,
+h1.ui.header {
   color: #444c38;
   text-align: center;
 }
-h1::after {
+h1::after,
+.ui.container.productList__shop h2::after {
   content: '';
   display: block;
   width: 6rem;
@@ -121,7 +123,9 @@ hr {
 .home__opening {
   width: 100%;
   height: 88vh;
-  padding: 25rem 0 0 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .home::after {
   content: '';
@@ -137,17 +141,14 @@ hr {
 }
 .home__opening h3 {
   font-style: italic;
+  color: #444c38;
 }
-@media screen and (max-width: 768px) {
-  .home__opening {
-    padding: 0;
-    margin-top: 25rem;
-    margin-bottom: -25rem;
-  }
-  .ui.centered.grid.opening__text {
-    margin: 0;
-  }
+.ui.stackable.center.aligned.segment.title {
+  background-color: rgba(244, 241, 234, 0.6);
+  max-width: 35rem;
+  padding: 2rem 1rem;
 }
+
 /* HOME PAGE END */
 
 /* PRODUCT LIST */
@@ -166,6 +167,10 @@ hr {
 .productList__pres {
   padding-top: 1rem;
 }
+.ui.container.productList__shop h2 {
+  padding: 1rem 0 2rem 0;
+}
+
 /* PRODUCT LIST END */
 
 /* PRODUCT CARD */
@@ -191,6 +196,10 @@ hr {
   /* min-height: 350px; */
   width: auto;
 }
+.ui.dropdown.product_select {
+  color: #767864;
+}
+
 /* PRODUCT CARD END */
 
 /* PRODUCT-FORM */
@@ -208,6 +217,10 @@ hr {
 .ui.center.aligned.dividing.header {
   padding: 2rem 0;
   margin-top: 2rem;
+}
+.productDetails__img {
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px darkgrey;
 }
 /* PRODUCT DETAILS END */
 
@@ -273,6 +286,41 @@ i.recycle.big.green.icon {
 .ui.grid > .row > .column.articles {
   display: flex;
   justify-content: center;
+}
+
+.container.wedding {
+  margin: 3rem 4rem;
+}
+
+.column.wedding {
+  padding: 5rem 0;
+  justify-content: center;
+  align-items: center;
+}
+.wedding-flex {
+  display: flex;
+  justify-content: space-between;
+}
+.wedding-flex .five.wide.column {
+  width: 48%;
+}
+.middle {
+  margin: 2rem 0;
+}
+
+@media screen and (max-width: 767px) {
+  .container.wedding {
+    margin: 3rem 0.5rem;
+  }
+  .wedding-flex {
+    flex-direction: column;
+  }
+  .wedding-flex .five.wide.column {
+    width: 100%;
+  }
+  .wedding-flex .five.wide.column:first-child {
+    margin-bottom: 2rem;
+  }
 }
 
 /* ARTICLES END */

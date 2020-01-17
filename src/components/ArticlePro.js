@@ -10,7 +10,7 @@ class ArticlePro extends React.Component {
       <div className='pro'>
         <div className='ui container'>
           <h1 className='articles__title'>ENTREPRISES</h1>
-          <div className='ui stackable grid'>
+          <div className='ui stackable grid articles'>
             <div className='six wide column'>
               <div className='ui segment'>
                 Un dîner d’entreprise, une inauguration, une décoration de
