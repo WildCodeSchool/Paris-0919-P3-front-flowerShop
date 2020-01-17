@@ -3,6 +3,8 @@ import React from 'react';
 import wedding from '../wedding.jpg';
 import event from '../event.jpg';
 import diy from '../diy.jpg';
+import ModalMail from './ModalMail';
+import MailFormWithFormik from './MailFormWithFormik';
 
 class Articles extends React.Component {
   state = {};
@@ -26,9 +28,9 @@ class Articles extends React.Component {
             </div>
 
             <div className='four wide column'>
-              <button className='ui pink button productList__contact'>
-                Faites nous part de vos envies !
-              </button>
+              <ModalMail btnText='Faites nous part de vos envies !'>
+                <MailFormWithFormik />
+              </ModalMail>
             </div>
             <div className='twelve wide column'>
               <div className='ui segment'>
@@ -57,9 +59,9 @@ class Articles extends React.Component {
             </div>
 
             <div className='four wide column'>
-              <button className='ui pink button productList__contact'>
-                Contactez-nous
-              </button>
+              <ModalMail btnText='Contactez-nous'>
+                <MailFormWithFormik />
+              </ModalMail>
             </div>
             <div className='twelve wide column'>
               <div className='ui segment'>
@@ -92,9 +94,9 @@ class Articles extends React.Component {
             </div>
 
             <div className='four wide column'>
-              <button className='ui pink button productList__contact'>
-                Plus de détails
-              </button>
+              <ModalMail btnText='Plus de détails'>
+                <MailFormWithFormik />
+              </ModalMail>
             </div>
             <div className='twelve wide column'>
               <div className='ui segment'>

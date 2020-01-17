@@ -78,7 +78,7 @@ class Cart extends React.Component {
                   <th></th>
                   <th>
                     <div className='ui right floated small primary labeled button'>
-                      <ModalMail text='Commander' />
+                      <ModalMail btnText='Commander' />
                     </div>
                   </th>
                 </tr>

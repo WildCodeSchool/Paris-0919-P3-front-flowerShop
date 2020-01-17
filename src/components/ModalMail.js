@@ -1,8 +1,6 @@
 import React from 'react';
 import { Button, Modal, Message } from 'semantic-ui-react';
 
-import MailFormWithFormik from './MailFormWithFormik';
-
 class ModalMail extends React.Component {
   state = {
     isSent: false
@@ -13,7 +11,7 @@ class ModalMail extends React.Component {
       <Modal
         trigger={
           <Button className='ui pink button productList__contact '>
-            {this.props.text}
+            {this.props.btnText}
           </Button>
         }
       >
@@ -30,9 +28,7 @@ class ModalMail extends React.Component {
               </p>
             </Message>
           ) : null}
-          <Modal.Description>
-            <MailFormWithFormik />
-          </Modal.Description>
+          <Modal.Description>{this.props.children}</Modal.Description>
         </Modal.Content>
       </Modal>
     );
