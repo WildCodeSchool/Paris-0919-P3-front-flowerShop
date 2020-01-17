@@ -12,7 +12,8 @@ class ModalMailContact extends React.Component {
     return (
       <Modal
         trigger={
-          <Button className='ui pink button productList__contact '>
+          <Button className='ui pink labeled icon button'>
+            <i className='icon paper plane'></i>
             {this.props.text}
           </Button>
         }

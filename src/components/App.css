@@ -162,7 +162,7 @@ hr {
 .productList__contact {
   display: flex;
   justify-content: center;
-  margin: 1rem 0rem 2rem 0rem;
+  margin: 2rem 0rem 2rem 0rem;
 }
 .productList__pres {
   padding-top: 1rem;
@@ -199,7 +199,9 @@ hr {
 .ui.dropdown.product_select {
   color: #767864;
 }
-
+.ui.card > .content > a.header {
+  color: rgba(118, 120, 100, 0.8) !important;
+}
 /* PRODUCT CARD END */
 
 /* PRODUCT-FORM */

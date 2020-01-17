@@ -63,7 +63,10 @@ class ProductCard extends React.Component {
     );
     const addToCart = (
       <div className='extra content right'>
-        <button className='ui green basic button' onClick={this.handleClick}>
+        <button
+          className='ui green labeled icon button'
+          onClick={this.handleClick}
+        >
           <i className='shopping basket icon'></i>Ajouter au panier
         </button>
       </div>
@@ -89,15 +92,13 @@ class ProductCard extends React.Component {
         {!product.described ? (
           <div className='image'>
             <Price product={product} />
-            <img
-              className='productCard__image'
-              src={product.thumbnail}
-              alt='Bouquet'
-            />
+            <img src={product.thumbnail} alt='Bouquet' />
           </div>
         ) : (
           <div className='ui justified content description'>
-            <p>{product.description}</p>
+            {product.description.split('\n').map(line => (
+              <p>{line}</p>
+            ))}
           </div>
         )}
         <div className='content'>
