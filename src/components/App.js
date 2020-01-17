@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 
@@ -11,6 +11,8 @@ import SignupPage from './SignupPage';
 import LoginPage from './LoginPage';
 
 import Footer from './Footer';
+import LegalMentions from './LegalMentions';
+import Contact from './Contact';
 
 const setAuthorizationHeader = (token = null) => {
   if (token) {
@@ -98,8 +100,12 @@ class App extends React.Component {
           )}
         />
         <Switch>
-         
-         
+          <Route path="/LegalMentions">
+            <LegalMentions />
+          </Route>
+          <Route exact path="/Contact">
+            <Contact />
+          </Route>
        </Switch>
        <Footer />
       </div>
