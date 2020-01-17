@@ -25,7 +25,9 @@ export const cityOptions = [
 ];
 
 export const mailSubjects = [
-  { key: 'cp', value: 'cp', text: 'Commande de produits' },
-  { key: 'dr', value: 'dr', text: 'Demande de renseignements' },
-  { key: 'ql', value: 'ql', text: 'Question sur le lieu de livraison' }
+  { key: 'ma', value: 'ma', text: 'Mariages' },
+  { key: 'en', value: 'en', text: 'Entreprises' },
+  { key: 'di', value: 'di', text: 'Ateliers DIY' },
+  { key: 'pr', value: 'pr', text: 'Produits' },
+  { key: 'ot', value: 'ot', text: 'Autre' }
 ];

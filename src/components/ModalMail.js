@@ -3,7 +3,7 @@ import { Button, Modal, Message } from 'semantic-ui-react';
 
 import MailFormWithFormik from './MailFormWithFormik';
 
-class ModalMailContact extends React.Component {
+class ModalMail extends React.Component {
   state = {
     isSent: false
   };
@@ -39,4 +39,4 @@ class ModalMailContact extends React.Component {
   }
 }
 
-export default ModalMailContact;
+export default ModalMail;
