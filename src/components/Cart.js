@@ -34,7 +34,7 @@ class Cart extends React.Component {
         <div className='ui container'>
           <h1>Votre Panier</h1>
           {this.state.loading ? (
-            <div class='ui active centered inline loader'></div>
+            <div className='ui active centered inline loader'></div>
           ) : (
             <table className='ui single line table'>
               <tbody>
@@ -75,7 +75,7 @@ class Cart extends React.Component {
                   <th></th>
                   <th></th>
                   <th>
-                    <div class='ui right floated small primary button'>
+                    <div className='ui right floated small primary button'>
                       <ModalMail text='Commander' />
                     </div>
                   </th>
