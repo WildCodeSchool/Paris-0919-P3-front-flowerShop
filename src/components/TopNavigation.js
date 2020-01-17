@@ -37,15 +37,15 @@ const TopNavigation = ({ isAuthenticated, logout, isAdmin }) => (
           {/* <i className='shopping basket icon nav__icon'></i> */}
           FLOWER SHOP
         </NavLink>
-        <NavLink exact to='/articles' className='item' onClick={handleClick}>
+        <NavLink exact to='/wedding' className='item' onClick={handleClick}>
           {/* <i className='genderless big icon nav__icon'></i> */}
           MARIAGES
         </NavLink>
-        <NavLink exact to='/articles' className='item' onClick={handleClick}>
+        <NavLink exact to='/pro' className='item' onClick={handleClick}>
           {/* <i className='briefcase icon nav__icon'></i> */}
           ENTREPRISES
         </NavLink>
-        <NavLink exact to='/articles' className='item' onClick={handleClick}>
+        <NavLink exact to='/diy' className='item' onClick={handleClick}>
           {/* <i className='paint brush icon nav__icon'></i> */}
           ATELIERS DIY
         </NavLink>

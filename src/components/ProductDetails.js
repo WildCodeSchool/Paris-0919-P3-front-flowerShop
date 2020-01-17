@@ -20,7 +20,11 @@ class ProductDetails extends React.Component {
           <div className='row'>
             <div className='six wide column'>
               <div className='ui fluid image'>
-                <img src={product.thumbnail} alt='Bouquet' />
+                <img
+                  className='productDetails__img'
+                  src={product.thumbnail}
+                  alt='Bouquet'
+                />
               </div>
             </div>
 
@@ -70,10 +74,10 @@ class ProductDetails extends React.Component {
         </div>
         <div className='ui stackable grid'>
           <div className='row'>
-            <div className='twelve wide column'>
+            <div className='ten wide column'>
               <Context />
             </div>
-            <div className='four wide column'>
+            <div className='six wide column'>
               <Delivery />
             </div>
           </div>
