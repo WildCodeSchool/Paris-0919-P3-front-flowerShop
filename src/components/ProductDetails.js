@@ -20,7 +20,11 @@ class ProductDetails extends React.Component {
           <div className='row'>
             <div className='six wide column'>
               <div className='ui fluid image'>
-                <img src={product.thumbnail} alt='Bouquet' />
+                <img
+                  className='productDetails__img'
+                  src={product.thumbnail}
+                  alt='Bouquet'
+                />
               </div>
             </div>
 

@@ -9,8 +9,6 @@ const initialData = {
   description: '',
   price: 0,
   size: '',
-  //duration: 0,
-  //featured: false,
   productType: '0',
   thumbnail: ''
 };
@@ -216,9 +214,7 @@ ProductForm.propTypes = {
     _id: PropTypes.string,
     name: PropTypes.string,
     thumbnail: PropTypes.string,
-    size: PropTypes.string,
-    featured: PropTypes.bool
-    //duration: PropTypes.number
+    size: PropTypes.string
   }).isRequired
 };
 

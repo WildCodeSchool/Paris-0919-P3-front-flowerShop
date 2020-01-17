@@ -68,6 +68,21 @@ class ProductCard extends React.Component {
         </button>
       </div>
     );
+    const chooseSize = (
+      <select
+        name='productSize'
+        value={size}
+        onChange={this.handleChange}
+        className='ui dropdown product_select'
+      >
+        <option value=''>Choisir la taille</option>
+        {product.size.split(' / ').map((taille, index) => (
+          <option value={taille} key={index}>
+            {taille}
+          </option>
+        ))}
+      </select>
+    );
 
     return (
       <div className='ui card'>
@@ -92,20 +107,7 @@ class ProductCard extends React.Component {
 
           <div className='meta caption productCard__caption'>
             <div className='product__icon'>
-              <i className='icon sort' /> <strong>Tailles :</strong>{' '}
-              <select
-                name='productSize'
-                value={size}
-                onChange={this.handleChange}
-                className='ui dropdown'
-              >
-                <option value=''>Choisir la taille</option>
-                {product.size.split(' / ').map((taille, index) => (
-                  <option value={taille} key={index}>
-                    {taille}
-                  </option>
-                ))}
-              </select>
+              <strong>Tailles :</strong> {product.size}
             </div>
             <ProductDescription
               described={product.described}
@@ -114,6 +116,9 @@ class ProductCard extends React.Component {
             />
           </div>
         </div>
+        {user.token &&
+          (user.role === 'user' || user.role === 'admin') &&
+          chooseSize}
         {user.token &&
           (user.role === 'user' || user.role === 'admin') &&
           addToCart}
