@@ -12,7 +12,7 @@ import LoginPage from './LoginPage';
 
 import Footer from './Footer';
 import LegalMentions from './LegalMentions';
-import Contact from './Contact';
+import ContextDelivery from './ContextDelivery';
 
 const setAuthorizationHeader = (token = null) => {
   if (token) {
@@ -103,9 +103,10 @@ class App extends React.Component {
           <Route path="/LegalMentions">
             <LegalMentions />
           </Route>
-          <Route exact path="/Contact">
-            <Contact />
+          <Route path="/ContextDelivery">
+            <ContextDelivery/>
           </Route>
+          
        </Switch>
        <Footer />
       </div>
