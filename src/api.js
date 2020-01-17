@@ -19,8 +19,8 @@ export default {
       axios.post('/api/auth', { credentials }).then(res => res.data.token)
   },
   email: {
-    send: values =>
-      axios.post('/api/email', { values }).then(res => res.data.message)
+    send: (type, values) =>
+      axios.post(`/api/email/${type}`, { values }).then(res => res.data.message)
   },
   cart: {
     fetchAll: userId => axios.get(`/api/cart/${userId}`).then(res => res.data),

@@ -41,7 +41,7 @@ const MailFormWithFormik = withFormik({
     });
   },
   handleSubmit: (values, actions) => {
-    api.email.send(values);
+    api.email.send('questions', values);
     actions.resetForm();
     this.setState({ isSent: true });
     actions.setSubmitting(false);
