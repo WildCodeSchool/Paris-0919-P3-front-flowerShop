@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 
@@ -13,6 +13,10 @@ import Cart from './Cart';
 import ArticleWedding from './ArticleWedding';
 import ArticlePro from './ArticlePro';
 import ArticleDIY from './ArticleDIY';
+
+import Footer from './Footer';
+import LegalMentions from './LegalMentions';
+import Delivery from './Delivery';
 
 const setAuthorizationHeader = (token = null) => {
   if (token) {
@@ -108,6 +112,16 @@ class App extends React.Component {
         <Route path='/wedding' exact component={ArticleWedding} />
         <Route path='/pro' exact component={ArticlePro} />
         <Route path='/DIY' exact component={ArticleDIY} />
+
+        <Switch>
+          <Route path='/LegalMentions'>
+            <LegalMentions />
+          </Route>
+          <Route path='/Delivery'>
+            <Delivery />
+          </Route>
+        </Switch>
+        <Footer />
       </div>
     );
   }

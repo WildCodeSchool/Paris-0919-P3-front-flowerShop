@@ -36,7 +36,7 @@ class Cart extends React.Component {
           {this.state.loading ? (
             <div class='ui active centered inline loader'></div>
           ) : (
-            <table className='ui table'>
+            <table className='ui single line table'>
               <tbody>
                 {console.log(this.state.cart)}
                 {this.state.cart[0].products.length === 0 ? (
@@ -48,7 +48,7 @@ class Cart extends React.Component {
                     <tr key={product._id}>
                       <td>
                         <img
-                          className='ui small image'
+                          className='ui tiny image productDetails__img'
                           src={product.thumbnail}
                           alt=''
                         />
@@ -75,7 +75,7 @@ class Cart extends React.Component {
                   <th></th>
                   <th></th>
                   <th>
-                    <div class='ui right floated small primary labeled button'>
+                    <div class='ui right floated small primary button'>
                       <ModalMail text='Commander' />
                     </div>
                   </th>

@@ -20,12 +20,18 @@ class ProductDetails extends React.Component {
           <div className='row'>
             <div className='six wide column'>
               <div className='ui fluid image'>
-                <img src={product.thumbnail} alt='Bouquet' />
+                <img
+                  className='productDetails__img'
+                  src={product.thumbnail}
+                  alt='Bouquet'
+                />
               </div>
             </div>
 
             <div className='ten wide column'>
-              <p>{product.description}</p>
+              {product.description.split('\n').map(line => (
+                <p>{line}</p>
+              ))}
               <table className='ui table'>
                 <tbody>
                   <tr>
@@ -59,7 +65,7 @@ class ProductDetails extends React.Component {
 
                 {user.token && (user.role === 'user' || user.role === 'admin') && (
                   <div className='extra content right'>
-                    <button className='ui green basic button'>
+                    <button className='ui green labeled icon button'>
                       <i className='shopping basket icon'></i>Ajouter au panier
                     </button>
                   </div>

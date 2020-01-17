@@ -63,10 +63,28 @@ class ProductCard extends React.Component {
     );
     const addToCart = (
       <div className='extra content right'>
-        <button className='ui green basic button' onClick={this.handleClick}>
+        <button
+          className='ui green labeled icon button'
+          onClick={this.handleClick}
+        >
           <i className='shopping basket icon'></i>Ajouter au panier
         </button>
       </div>
+    );
+    const chooseSize = (
+      <select
+        name='productSize'
+        value={size}
+        onChange={this.handleChange}
+        className='ui dropdown product_select'
+      >
+        <option value=''>Choisir la taille</option>
+        {product.size.split(' / ').map((taille, index) => (
+          <option value={taille} key={index}>
+            {taille}
+          </option>
+        ))}
+      </select>
     );
 
     return (
@@ -74,15 +92,13 @@ class ProductCard extends React.Component {
         {!product.described ? (
           <div className='image'>
             <Price product={product} />
-            <img
-              className='productCard__image'
-              src={product.thumbnail}
-              alt='Bouquet'
-            />
+            <img src={product.thumbnail} alt='Bouquet' />
           </div>
         ) : (
           <div className='ui justified content description'>
-            <p>{product.description}</p>
+            {product.description.split('\n').map(line => (
+              <p>{line}</p>
+            ))}
           </div>
         )}
         <div className='content'>
@@ -92,20 +108,7 @@ class ProductCard extends React.Component {
 
           <div className='meta caption productCard__caption'>
             <div className='product__icon'>
-              <i className='icon sort' /> <strong>Tailles :</strong>{' '}
-              <select
-                name='productSize'
-                value={size}
-                onChange={this.handleChange}
-                className='ui dropdown'
-              >
-                <option value=''>Choisir la taille</option>
-                {product.size.split(' / ').map((taille, index) => (
-                  <option value={taille} key={index}>
-                    {taille}
-                  </option>
-                ))}
-              </select>
+              <strong>Tailles :</strong> {product.size}
             </div>
             <ProductDescription
               described={product.described}
@@ -114,6 +117,9 @@ class ProductCard extends React.Component {
             />
           </div>
         </div>
+        {user.token &&
+          (user.role === 'user' || user.role === 'admin') &&
+          chooseSize}
         {user.token &&
           (user.role === 'user' || user.role === 'admin') &&
           addToCart}
