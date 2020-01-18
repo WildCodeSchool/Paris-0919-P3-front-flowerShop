@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Form } from 'semantic-ui-react';
-import { cityOptions, mailSubjects } from '../listData';
+import { cityOptions } from '../listData';
 
 const OrderForm = ({
   values,
@@ -9,7 +9,8 @@ const OrderForm = ({
   handleBlur,
   touched,
   setFieldValue,
-  handleSubmit
+  handleSubmit,
+  cart
 }) => {
   const handleDropdownChange = (e, { name }) => {
     setFieldValue(name, e.target.textContent);
@@ -64,6 +65,18 @@ const OrderForm = ({
           onBlur={handleBlur}
           error={touched.phone && errors.phone}
         />
+      </Form.Group>
+      <Form.Group widths='equal'>
+        <Form.Input
+          label='Adresse'
+          placeholder='Adresse'
+          type='text'
+          name='address'
+          value={values.address}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.address && errors.address}
+        />
         <Form.Dropdown
           fluid
           selection
@@ -75,19 +88,20 @@ const OrderForm = ({
           error={errors.city}
         />
       </Form.Group>
-      <Form.Dropdown
-        fluid
-        selection
-        label='Objet'
-        placeholder='Objet'
-        options={mailSubjects}
-        name='subject'
-        onChange={handleDropdownChange}
-        error={errors.subject}
-      />
+      <h4>Récapitulatif de la commande</h4>
+      {cart.products.map(product => (
+        <table className='ui celled table' key={product._id}>
+          <tbody>
+            <tr>
+              <td>{product.name}</td>
+              <td>{product.size}</td>
+            </tr>
+          </tbody>
+        </table>
+      ))}
       <Form.TextArea
         name='textContent'
-        label='Demande'
+        label='Demande particulière'
         placeholder='Texte à entrer ici...'
         value={values.textContent}
         onChange={handleChange}

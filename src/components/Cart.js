@@ -72,17 +72,19 @@ class Cart extends React.Component {
                   })
                 )}
               </tbody>
-              <tfoot>
-                <tr>
-                  <th></th>
-                  <th></th>
-                  <th>
-                    <div className='ui right floated small primary labeled button'>
-                      <OrderModalMail cart={this.state.cart} />
-                    </div>
-                  </th>
-                </tr>
-              </tfoot>
+              {this.state.cart.products.length > 0 && (
+                <tfoot>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th>
+                      <div className='ui right floated small primary labeled button'>
+                        <OrderModalMail cart={this.state.cart} />
+                      </div>
+                    </th>
+                  </tr>
+                </tfoot>
+              )}
             </table>
           )}
         </div>
