@@ -37,7 +37,7 @@ class Cart extends React.Component {
           {this.state.loading ? (
             <div className='ui active centered inline loader'></div>
           ) : (
-            <table className='ui table'>
+            <table className='ui single line table'>
               <tbody>
                 {this.state.cart.products.length === 0 ? (
                   <div>

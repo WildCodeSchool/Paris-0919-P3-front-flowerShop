@@ -21,7 +21,8 @@ export const cityOptions = [
   { key: 'vc', value: 'vc', text: '77 - Villeneuve le Comte' },
   { key: 'ng', value: 'ng', text: '93 - Noisy-le-Grand' },
   { key: 'bm', value: 'bm', text: '94 - Bry-sur-Marne' },
-  { key: 'vm', value: 'vm', text: '94 - Villiers-sur-Marne' }
+  { key: 'vm', value: 'vm', text: '94 - Villiers-sur-Marne' },
+  { key: 'au', value: 'au', text: 'Autre' }
 ];
 
 export const mailSubjects = [

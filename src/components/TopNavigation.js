@@ -64,7 +64,7 @@ const TopNavigation = ({ isAuthenticated, logout, isAdmin }) => (
         {isAuthenticated ? (
           <div className='right menu'>
             <NavLink to='/cart' className='item' onClick={handleClick}>
-              <i className='large shopping cart icon'></i>
+              <i className='large shopping basket icon'></i>
               PANIER
             </NavLink>
             <div onClick={logout} className='item'>
