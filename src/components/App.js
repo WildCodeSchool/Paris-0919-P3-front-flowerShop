@@ -84,7 +84,13 @@ class App extends React.Component {
         />
         <Route
           path='/products'
-          render={props => <ProductsPage {...props} user={this.state.user} />}
+          render={props => (
+            <ProductsPage
+              {...props}
+              user={this.state.user}
+              setMessage={this.setMessage}
+            />
+          )}
         />
         <Route
           path='/signup'

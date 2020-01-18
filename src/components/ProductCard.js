@@ -19,7 +19,11 @@ class ProductCard extends React.Component {
 
   handleClick = () => {
     const userId = jwtdecode(this.props.user.token).user._id;
-    api.cart.add(userId, this.props.product);
+    api.cart
+      .add(userId, { ...this.props.product, size: this.state.size })
+      .then(data => {
+        this.props.setMessage(data.message);
+      });
   };
   handleChange = e => this.setState({ size: e.target.value });
 

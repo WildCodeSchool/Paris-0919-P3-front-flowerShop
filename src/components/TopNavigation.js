@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 import logo from '../logo.png';
+import { Message } from 'semantic-ui-react';
 
 const handleClick = () => {
   if (window.innerWidth <= 767) {

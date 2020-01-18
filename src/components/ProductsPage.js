@@ -149,6 +149,7 @@ class ProductsPage extends React.Component {
                 deleteProduct={this.deleteProduct}
                 user={this.props.user}
                 editPath={editPath}
+                setMessage={this.props.setMessage}
               />
             )}
           </div>
