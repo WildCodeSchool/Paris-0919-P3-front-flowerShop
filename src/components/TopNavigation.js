@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 import logo from '../logo.png';
-import { Message } from 'semantic-ui-react';
+import MessageWithType from './MessageWithType';
 
 const handleClick = () => {
   if (window.innerWidth <= 767) {
@@ -16,7 +16,7 @@ const handleClick = () => {
   }
 };
 
-const TopNavigation = ({ isAuthenticated, logout, isAdmin }) => (
+const TopNavigation = ({ isAuthenticated, logout, isAdmin, message }) => (
   <div className='navbar'>
     <div className='navbar__container'>
       <div className='menu__logo-container'>
@@ -86,6 +86,7 @@ const TopNavigation = ({ isAuthenticated, logout, isAdmin }) => (
           </div>
         )}
       </div>
+      {message.text && <MessageWithType message={message} />}
     </div>
   </div>
 );
