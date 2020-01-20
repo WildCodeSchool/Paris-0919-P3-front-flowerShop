@@ -25,6 +25,7 @@ class Cart extends React.Component {
   componentDidMount() {
     const userId = jwtdecode(this.token).user._id;
     api.cart.fetchAll(userId).then(cart => {
+      console.log(cart);
       this.setState({ cart: cart.cart, loading: false });
     });
   }
