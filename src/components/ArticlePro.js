@@ -24,7 +24,7 @@ class ArticlePro extends React.Component {
             </div>
 
             <div className='four wide column'>
-              <ModalMail text='Contactez-nous' />
+              <ModalMail btnText='Contactez-nous' />
             </div>
             <div className='twelve wide column'>
               <div className='ui segment'>

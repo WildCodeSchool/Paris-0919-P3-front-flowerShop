@@ -3,8 +3,10 @@
 .ui.container {
   padding: 1rem 0 1rem 0;
 }
-.ui.container h1 {
+.ui.container h1,
+.ui.container h2 {
   padding: 2rem 0rem 3rem 0rem;
+  font-weight: 200;
 }
 
 h1,
@@ -27,6 +29,7 @@ h1::after,
 h2,
 h3 {
   color: #767864;
+  font-weight: lighter;
 }
 hr {
   width: 80%;
@@ -46,10 +49,10 @@ hr {
   z-index: 100;
 }
 .menu__logo-container {
-  padding: 0.5rem 0;
-  background-color: #ddd2c3;
+  padding: 1.5rem 0;
+  background-color: #f4f1ea;
 }
-.menu__logo-container::after {
+/* .menu__logo-container::after {
   content: '';
   display: block;
   width: 50px;
@@ -59,7 +62,7 @@ hr {
   left: 50%;
   transform: translate(-50%);
   background-color: #767864;
-}
+} */
 .ui.small.image.logo {
   min-width: 200px;
   height: 65px;
@@ -78,6 +81,9 @@ hr {
   right: 5px;
 }
 @media screen and (max-width: 767px) {
+  .menu__logo-container {
+    padding: 0.5rem 0;
+  }
   .ui.stackable.green.inverted.menu .item {
     text-align: center;
   }
@@ -85,22 +91,22 @@ hr {
     display: block;
   }
   .ui.stackable.green.inverted.menu {
-    height: 2.9rem;
+    height: 2.3rem;
     overflow: hidden;
     animation: slide 1s ease-in-out 3.5s;
     transition: 0.3s;
   }
   .ui.stackable.green.inverted.menu.invisible {
-    height: 24rem;
+    height: 19.5rem;
     animation: slide 1s ease-in-out 3.5s;
     transition: 0.3s;
   }
   @keyframes slide {
     from {
-      height: 2.9rem;
+      height: 2.3rem;
     }
     to {
-      height: 24rem;
+      height: 19.5rem;
     }
   }
   .bars.icon.invisible {
@@ -141,14 +147,24 @@ hr {
 }
 .home__opening h3 {
   font-style: italic;
+  font-weight: 200;
   color: #444c38;
+}
+.home__opening strong h3 {
+  font-weight: 300;
+  transition: 0.3s;
+}
+.home__opening strong h3:hover {
+  color: #e79796;
 }
 .ui.stackable.center.aligned.segment.title {
   background-color: rgba(244, 241, 234, 0.6);
   max-width: 35rem;
   padding: 2rem 1rem;
 }
-
+.home__bg {
+  background-color: #fff;
+}
 /* HOME PAGE END */
 
 /* PRODUCT LIST */
@@ -217,8 +233,8 @@ hr {
   align-items: center;
 }
 .ui.center.aligned.dividing.header {
-  padding: 2rem 0;
-  margin-top: 2rem;
+  padding-bottom: 2rem;
+  /* margin-top: 2rem; */
 }
 .productDetails__img {
   border-radius: 5px;
@@ -281,7 +297,7 @@ i.recycle.big.green.icon {
   margin-top: 2rem;
 }
 .pro {
-  background-color: #f4f1ea;
+  background-color: #ddd2c3;
 }
 
 .ui.stackable.grid.articles > .column:not(.row),
@@ -292,6 +308,9 @@ i.recycle.big.green.icon {
 
 .container.wedding {
   margin: 3rem 4rem;
+}
+.container h1 {
+  font-weight: 200;
 }
 
 .column.wedding {
@@ -324,5 +343,92 @@ i.recycle.big.green.icon {
     margin-bottom: 2rem;
   }
 }
-
 /* ARTICLES END */
+
+/* CART */
+.ui.unstackable.table.cart {
+  margin-bottom: 5rem;
+}
+td.right.aligned.delete {
+  max-width: fit-content !important;
+}
+/* CART END */
+
+/* FOOTER */
+.footer__container {
+  margin-bottom: 0;
+  margin-top: 2rem;
+}
+.footer p {
+  font-size: 0.8rem;
+}
+.footer h4 {
+  font-weight: 200;
+}
+.footer .footer-contact {
+  margin-bottom: 0;
+  line-height: inherit;
+}
+.inverted.teal.row.footer .column {
+  color: #767864;
+}
+.inverted.teal.row.footer .segment {
+  padding: 0 1rem;
+}
+.footer .ui.grid > .column:not(.row),
+.ui.grid > .row > .column {
+  padding-left: 2rem;
+}
+.footer__link,
+.footer__container i.green.icon {
+  color: #767864;
+  transition: 0.3s;
+}
+.footer__link:hover,
+.footer__container i.green.icon:hover {
+  color: #e79796 !important;
+}
+.footer__container > .ui.grid {
+  margin: 0;
+}
+.footer .ui.grid > .column:not(.row) {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.inverted.grey.row.footer.logo {
+  padding: 0.2rem 0;
+}
+@media screen and (max-width: 767px) {
+  .footer .ui.grid > .column:not(.row),
+  .ui.grid > .row > .column {
+    text-align: center;
+  }
+  .footer .column.eight.wide.logo {
+    display: flex;
+    justify-content: center;
+  }
+  .footer__container > .ui.grid .ui.stackable.grid {
+    margin-left: 0 !important;
+  }
+  .inverted.grey.row.footer.logo
+    .ui.grid.two.stackable.column
+    .column.eight.wide.logo {
+    padding: 0 !important;
+  }
+}
+
+/* FOOTER POSITION */
+.app {
+  position: relative;
+  min-height: 100vh;
+}
+.app__content {
+  padding-bottom: 12rem;
+}
+.footer__container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 12rem;
+}
+/* FOOTER END */

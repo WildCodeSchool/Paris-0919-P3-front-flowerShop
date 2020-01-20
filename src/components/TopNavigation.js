@@ -29,7 +29,7 @@ const TopNavigation = ({ isAuthenticated, logout, isAdmin, message }) => (
           <i id='menuCloseBtn' className='teal close icon invisible'></i>
         </button>
       </div>
-      <div id='menu' className='ui stackable green inverted menu'>
+      <div id='menu' className='ui stackable green inverted small menu'>
         <NavLink exact to='/' className='item' onClick={handleClick}>
           {/* <i className='large home icon nav__icon'></i> */}
           ACCUEIL
@@ -68,10 +68,10 @@ const TopNavigation = ({ isAuthenticated, logout, isAdmin, message }) => (
               <i className='large shopping basket icon'></i>
               PANIER
             </NavLink>
-            <div onClick={logout} className='item'>
+            <NavLink to='/' className='item' onClick={logout}>
               <i className='large user times icon nav__icon'></i>
               DECONNEXION
-            </div>
+            </NavLink>
           </div>
         ) : (
           <div className='right menu'>
