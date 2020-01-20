@@ -71,38 +71,40 @@ class HomePage extends React.Component {
           </div>
         </div>
 
-        <div className='ten wide column'>
-          {loading ? (
-            <LoadingMsg />
-          ) : (
-            <div className='shop__container'>
-              <ProductsList
-                products={products}
-                toggleFeatured={this.toggleFeatured}
-                toggleDescription={this.toggleDescription}
-                deleteProduct={this.deleteProduct}
-                user={this.props.user}
-              />
-            </div>
-          )}
-        </div>
-        <div className='context-delivery'>
-          <div className='ui container'>
-            <div className='ui stackable grid'>
-              <div className='row'>
-                <div className='ten wide column'>
-                  <Context />
-                </div>
-                <div className='six wide column'>
-                  <Delivery />
+        <div className='home__bg'>
+          <div className='ten wide column'>
+            {loading ? (
+              <LoadingMsg />
+            ) : (
+              <div className='shop__container'>
+                <ProductsList
+                  products={products}
+                  toggleFeatured={this.toggleFeatured}
+                  toggleDescription={this.toggleDescription}
+                  deleteProduct={this.deleteProduct}
+                  user={this.props.user}
+                />
+              </div>
+            )}
+          </div>
+          <div className='context-delivery'>
+            <div className='ui container'>
+              <div className='ui stackable grid'>
+                <div className='row'>
+                  <div className='ten wide column'>
+                    <Context />
+                  </div>
+                  <div className='six wide column'>
+                    <Delivery />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <ArticleWedding />
+          <ArticlePro />
+          <ArticleDIY />
         </div>
-        <ArticleWedding />
-        <ArticlePro />
-        <ArticleDIY />
       </div>
     );
   }
