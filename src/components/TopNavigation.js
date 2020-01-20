@@ -57,7 +57,7 @@ const TopNavigation = ({ isAuthenticated, logout, isAdmin, message }) => (
             className='item'
             onClick={handleClick}
           >
-            <i className='icon plus nav__icon' />
+            <i className='icon plus' />
             Nouveau produit
           </NavLink>
         )}
@@ -68,19 +68,19 @@ const TopNavigation = ({ isAuthenticated, logout, isAdmin, message }) => (
               <i className='large shopping basket icon'></i>
               PANIER
             </NavLink>
-            <NavLink to='/' className='item' onClick={logout}>
-              <i className='large user times icon nav__icon'></i>
+            <NavLink to='/products' className='ui item' onClick={logout}>
+              <i className='large user times icon'></i>
               DECONNEXION
             </NavLink>
           </div>
         ) : (
           <div className='right menu'>
             <NavLink to='/signup' className='item' onClick={handleClick}>
-              <i className='large user plus icon nav__icon'></i>
+              <i className='large user plus icon'></i>
               CREER UN COMPTE
             </NavLink>
             <NavLink to='/login' className='item' onClick={handleClick}>
-              <i className='large user outline icon nav__icon'></i>
+              <i className='large user outline icon'></i>
               CONNEXION
             </NavLink>
           </div>

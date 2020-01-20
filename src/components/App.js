@@ -146,7 +146,7 @@ class App extends React.Component {
               <LegalMentions />
             </Route>
             <Route path='/delivery'>
-              <div className='ui container'>
+              <div className='ui container delivery_alone'>
                 <Delivery />
               </div>
             </Route>

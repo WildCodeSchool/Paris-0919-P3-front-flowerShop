@@ -45,47 +45,47 @@ class Cart extends React.Component {
                   <h2>Votre panier est vide</h2>
                 </div>
               ) : (
-                <table className='ui table'>
-                  <tbody>
+                <div className='cart'>
+                  {/* <thead>
+                    <tr>
+                      <th className='three wide'></th>
+                      <th className='twelve wide'>Produit</th>
+                      <th className='one wide'></th>
+                    </tr>
+                  </thead> */}
+                  <div className='cart__items'>
                     {this.state.cart.products.map(product => {
                       return (
-                        <tr key={product._id}>
-                          <td>
+                        <div className='cart__item' key={product._id}>
+                          <div className='cart__item-photo'>
                             <img
-                              className='ui small image'
+                              className='ui tiny image productDetails__img'
                               src={product.thumbnail}
-                              alt=''
+                              alt='Miniature du produit'
                             />
-                          </td>
-                          <td>
+                          </div>
+                          <div className='cart__item-description'>
                             <p>{product.name}</p>
                             <p>{product.size}</p>
-                          </td>
-                          <td className='right aligned'>
-                            <button
-                              className='ui labeled icon button'
+                          </div>
+                          <div className='cart__item-btn'>
+                            <div
+                              className='ui icon button'
                               onClick={() => this.handleClick(product)}
                             >
                               <i className='trash alternate outline icon'></i>
-                              Supprimer
-                            </button>
-                          </td>
-                        </tr>
+                            </div>
+                          </div>
+                        </div>
                       );
                     })}
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <th></th>
-                      <th></th>
-                      <th>
-                        <div className='ui right floated small primary labeled button'>
-                          <OrderModalMail cart={this.state.cart} />
-                        </div>
-                      </th>
-                    </tr>
-                  </tfoot>
-                </table>
+                  </div>
+                  <div className='cart__footer'>
+                    <div className='ui right floated right aligned sixteen wide column'>
+                      <OrderModalMail cart={this.state.cart} />
+                    </div>
+                  </div>
+                </div>
               )}
             </>
           )}
