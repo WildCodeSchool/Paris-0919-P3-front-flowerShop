@@ -2,6 +2,8 @@ import React from 'react';
 import { Button, Modal, Message } from 'semantic-ui-react';
 import MailFormWithFormik from './MailFormWithFormik';
 
+import MailFormWithFormik from './MailFormWithFormik';
+
 class ModalMail extends React.Component {
   state = {
     isSent: false

@@ -15,7 +15,7 @@ const ProductsList = ({
   user
 }) => (
   <div className='ui container productList__shop'>
-    <h1>FLOWER SHOP / LA BOUTIQUE</h1>
+    <h1>FLOWER SHOP</h1>
     <p>
       Éclosion vous propose des bouquets frais{' '}
       <strong>renouvelés chaque mercredi</strong> à 9h.
