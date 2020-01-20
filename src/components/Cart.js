@@ -22,7 +22,6 @@ class Cart extends React.Component {
 
   componentDidMount() {
     const userId = jwtdecode(this.props.user.token).user._id;
-    console.log(userId);
     api.cart
       .fetchAll(userId)
       .then(cart => this.setState({ cart: cart.cart, loading: false }));
@@ -36,9 +35,8 @@ class Cart extends React.Component {
           {this.state.loading ? (
             <div className='ui active centered inline loader'></div>
           ) : (
-            <table className='ui single line table'>
+            <table className='ui unstackable table cart'>
               <tbody>
-                {console.log(this.state.cart)}
                 {this.state.cart[0].products.length === 0 ? (
                   <div>
                     <h2>Votre panier est vide</h2>
@@ -59,11 +57,10 @@ class Cart extends React.Component {
                       </td>
                       <td className='right aligned'>
                         <button
-                          className='ui labeled icon button'
+                          className='ui icon button'
                           onClick={() => this.handleClick(product)}
                         >
                           <i className='trash alternate outline icon'></i>
-                          Supprimer
                         </button>
                       </td>
                     </tr>
@@ -75,7 +72,7 @@ class Cart extends React.Component {
                   <th></th>
                   <th></th>
                   <th>
-                    <div className='ui right floated small primary button'>
+                    <div className='ui right floated right aligned sixteen wide column'>
                       <ModalMail text='Commander' />
                     </div>
                   </th>

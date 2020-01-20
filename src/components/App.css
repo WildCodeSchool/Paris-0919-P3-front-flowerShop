@@ -324,5 +324,17 @@ i.recycle.big.green.icon {
     margin-bottom: 2rem;
   }
 }
-
 /* ARTICLES END */
+
+/* CART */
+.ui.unstackable.table.cart {
+  margin-bottom: 5rem;
+}
+td.right.aligned.delete {
+  max-width: fit-content !important;
+}
+/* CART END */
+
+/* FOOTER */
+
+/* FOOTER END */

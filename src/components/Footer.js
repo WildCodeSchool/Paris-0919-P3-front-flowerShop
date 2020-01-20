@@ -4,25 +4,23 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-    <div>
+    <div className='footer'>
       <div className='row'>
         <div className='ui bottom attached button' tabIndex='0'>
           <Grid columns={3} divided>
             <Grid.Column>
-              <h3>ECLOSION</h3>
+              <h4>ECLOSION</h4>
               <Link to='/Delivery'>Livraison</Link> <br />
               <Link to='/LegalMentions'>Mentions Légales</Link>
             </Grid.Column>
             <Grid.Column>
-              <h3>CONTACT</h3>
-              <p>
-                adresse mail: atshabo.corinne@gmail.com <br />
-                teléphone: 06 25 33 34 38<br></br>
-                adresse postale:{' '}
-              </p>
+              <h4>CONTACT</h4>
+              <p>atshabo.corinne@gmail.com </p>
+              <p> 06 25 33 34 38</p>
+              <p> adresse postale </p>
             </Grid.Column>
             <Grid.Column>
-              <h3>RESEAUX SOCIAUX</h3>
+              <h4>RESEAUX SOCIAUX</h4>
               <a href='https://www.facebook.com/'>
                 <i className='facebook square icon huge'></i>
               </a>
@@ -49,7 +47,7 @@ function Footer() {
             </Grid.Column>
             <Grid.Column>
               <Segment basic textAlign={'center'}>
-                <p> Copyright© 2020 Wild Code School</p>
+                <p>© 2020 Eclosion - Wild Code School</p>
               </Segment>
             </Grid.Column>
           </Grid>
