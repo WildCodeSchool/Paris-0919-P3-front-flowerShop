@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Modal, Message } from 'semantic-ui-react';
+import MailFormWithFormik from './MailFormWithFormik';
 
 class ModalMail extends React.Component {
   state = {
@@ -28,7 +29,9 @@ class ModalMail extends React.Component {
               </p>
             </Message>
           ) : null}
-          <Modal.Description>{this.props.children}</Modal.Description>
+          <Modal.Description>
+            <MailFormWithFormik />
+          </Modal.Description>
         </Modal.Content>
       </Modal>
     );
