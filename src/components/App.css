@@ -7,6 +7,7 @@
 .ui.container h2 {
   padding: 2rem 0rem 3rem 0rem;
   font-weight: 200;
+  letter-spacing: 0.2rem;
 }
 
 h1,
@@ -29,7 +30,6 @@ h1::after,
 h2,
 h3 {
   color: #767864;
-  font-weight: lighter;
 }
 hr {
   width: 80%;
@@ -148,10 +148,11 @@ hr {
 .home__opening h3 {
   font-style: italic;
   font-weight: 200;
+  letter-spacing: 0.1rem;
   color: #444c38;
 }
 .home__opening strong h3 {
-  font-weight: 300;
+  font-weight: 400;
   transition: 0.3s;
 }
 .home__opening strong h3:hover {
@@ -311,6 +312,7 @@ i.recycle.big.green.icon {
 }
 .container h1 {
   font-weight: 200;
+  letter-spacing: 0.2rem;
 }
 
 .column.wedding {
@@ -364,6 +366,7 @@ td.right.aligned.delete {
 }
 .footer h4 {
   font-weight: 200;
+  letter-spacing: 0.1rem;
 }
 .footer .footer-contact {
   margin-bottom: 0;
