@@ -26,13 +26,17 @@ const setAuthorizationHeader = (token = null) => {
   }
 };
 
+let messageTimeout;
+
 class App extends React.Component {
   state = {
     user: {
       token: null,
       role: 'user'
     },
-    message: ''
+    message: {
+      visible: false
+    }
   };
 
   componentDidMount() {
@@ -47,7 +51,15 @@ class App extends React.Component {
     }
   }
 
-  setMessage = message => this.setState({ message });
+  setMessage = message => {
+    clearInterval(messageTimeout);
+    this.setState({ message: { visible: false } });
+    this.setState({ message: { visible: true, ...message } });
+    messageTimeout = setTimeout(
+      () => this.setState({ message: { visible: false } }),
+      5000
+    );
+  };
 
   logout = () => {
     this.setState({ user: { token: null, role: 'user' } });
@@ -68,14 +80,15 @@ class App extends React.Component {
           isAuthenticated={!!this.state.user.token}
           logout={this.logout}
           isAdmin={!!this.state.user.token && this.state.user.role === 'admin'}
+          message={this.state.message}
         />
 
-        {this.state.message && (
+        {/* {this.state.message && (
           <div className='ui info message'>
             <i className='close icon' onClick={() => this.setMessage('')} />
             {this.state.message}
           </div>
-        )}
+        )} */}
 
         <Route
           exact
@@ -84,7 +97,13 @@ class App extends React.Component {
         />
         <Route
           path='/products'
-          render={props => <ProductsPage {...props} user={this.state.user} />}
+          render={props => (
+            <ProductsPage
+              {...props}
+              user={this.state.user}
+              setMessage={this.setMessage}
+            />
+          )}
         />
         <Route
           path='/signup'
@@ -107,7 +126,7 @@ class App extends React.Component {
         <Route
           path='/cart'
           exact
-          render={props => <Cart {...props} user={this.state.user} />}
+          render={props => <Cart {...props} user={this.state.user} setMessage={this.setMessage} />}
         />
         <Route path='/wedding' exact component={ArticleWedding} />
         <Route path='/pro' exact component={ArticlePro} />
