@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ModalMail from './ModalMail';
+import OrderModalMail from './OrderModalMail';
 
 import api from '../api';
 import jwtdecode from 'jwt-decode';
@@ -11,9 +11,11 @@ class Cart extends React.Component {
     loading: true
   };
 
+  token = window.localStorage.getItem('bgshopToken');
+
   handleClick = async product => {
     await this.setState({ loading: true });
-    const userId = jwtdecode(this.props.user.token).user._id;
+    const userId = jwtdecode(this.token).user._id;
     const productId = product._id;
     await api.cart.delete(userId, productId);
     const updatedCart = await api.cart.fetchAll(userId);
@@ -21,10 +23,10 @@ class Cart extends React.Component {
   };
 
   componentDidMount() {
-    const userId = jwtdecode(this.props.user.token).user._id;
-    api.cart
-      .fetchAll(userId)
-      .then(cart => this.setState({ cart: cart.cart, loading: false }));
+    const userId = jwtdecode(this.token).user._id;
+    api.cart.fetchAll(userId).then(cart => {
+      this.setState({ cart: cart.cart, loading: false });
+    });
   }
 
   render() {
@@ -37,47 +39,52 @@ class Cart extends React.Component {
           ) : (
             <table className='ui unstackable table cart'>
               <tbody>
-                {this.state.cart[0].products.length === 0 ? (
+                {this.state.cart.products.length === 0 ? (
                   <div>
                     <h2>Votre panier est vide</h2>
                   </div>
                 ) : (
-                  this.state.cart[0].products.map(product => (
-                    <tr key={product._id}>
-                      <td>
-                        <img
-                          className='ui tiny image productDetails__img'
-                          src={product.thumbnail}
-                          alt=''
-                        />
-                      </td>
-                      <td>
-                        <p>{product.name}</p>
-                        <p>{product.size}</p>
-                      </td>
-                      <td className='right aligned'>
-                        <button
-                          className='ui icon button'
-                          onClick={() => this.handleClick(product)}
-                        >
-                          <i className='trash alternate outline icon'></i>
-                        </button>
-                      </td>
-                    </tr>
-                  ))
+                  this.state.cart.products.map(product => {
+                    return (
+                      <tr key={product._id}>
+                        <td>
+                          <img
+                            className='ui small image'
+                            src={product.thumbnail}
+                            alt=''
+                          />
+                        </td>
+                        <td>
+                          <p>{product.name}</p>
+                          <p>{product.size}</p>
+                        </td>
+                        <td className='right aligned'>
+                          <button
+                            className='ui labeled icon button'
+                            onClick={() => this.handleClick(product)}
+                          >
+                            <i className='trash alternate outline icon'></i>
+                            Supprimer
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })
                 )}
               </tbody>
-              <tfoot>
-                <tr>
-                  <th></th>
-                  <th></th>
-                  <th>
-                    <div className='ui right floated right aligned sixteen wide column'>
-                      <ModalMail text='Commander' />
-                    </div>
-                  </th>
-                </tr>
-              </tfoot>
+              {this.state.cart.products.length > 0 && (
+                <tfoot>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th>
+                      <div className='ui right floated small primary labeled button'>
+                        <OrderModalMail cart={this.state.cart} />
+                      </div>
+                    </th>
+                  </tr>
+                </tfoot>
+              )}
             </table>
           )}
         </div>

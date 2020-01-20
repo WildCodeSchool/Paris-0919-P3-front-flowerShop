@@ -11,6 +11,7 @@ import api from '../api';
 import ArticleWedding from './ArticleWedding';
 import ArticlePro from './ArticlePro';
 import ArticleDIY from './ArticleDIY';
+import { Link } from 'react-router-dom';
 
 class HomePage extends React.Component {
   state = {
@@ -62,7 +63,11 @@ class HomePage extends React.Component {
           <div className='ui stackable center aligned segment title'>
             <h3>Ateliers de créations florales</h3>
             <h3>Livraison à vélo de bouquets uniques sur Marne la Vallée</h3>
-            <h3>Commander votre bouquet éco responsable de la semaine</h3>
+            <Link to='/products'>
+              <strong>
+                <h3>Commander votre bouquet éco responsable de la semaine</h3>
+              </strong>
+            </Link>
           </div>
         </div>
 

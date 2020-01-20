@@ -6,21 +6,21 @@
      Fonts
 --------------------*/
 
-@headerFont        : 'Roboto', 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-@pageFont          : 'Roboto', 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@headerFont        : 'Lora', 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@pageFont          : 'Lora', 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 @fontSmoothing     : antialiased;
 
 @importGoogleFonts : true;
-@googleFontName    : 'Roboto';
-@googleFontSizes   : '300,300italic';
+@googleFontName    : 'Lora';
+@googleFontSizes   : '200,200italic';
 @googleFontFamily  : '@{googleFontName}:@{googleFontSizes}';
 
 /*-------------------
     Base Sizes
 --------------------*/
 
-@emSize      : 14px;
-@fontSize    : 14px;
+@emSize      : 16px;
+@fontSize    : 16px;
 
 
 /*-------------------

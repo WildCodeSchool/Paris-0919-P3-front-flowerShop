@@ -28,7 +28,7 @@ const TopNavigation = ({ isAuthenticated, logout, isAdmin }) => (
           <i id='menuCloseBtn' className='teal close icon invisible'></i>
         </button>
       </div>
-      <div id='menu' className='ui stackable green inverted menu'>
+      <div id='menu' className='ui stackable green inverted small menu'>
         <NavLink exact to='/' className='item' onClick={handleClick}>
           {/* <i className='large home icon nav__icon'></i> */}
           ACCUEIL

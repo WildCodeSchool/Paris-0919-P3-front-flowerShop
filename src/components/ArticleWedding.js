@@ -42,7 +42,7 @@ class ArticleWedding extends React.Component {
                   </div>
                 </div>
                 <div className='ten wide column'>
-                  <ModalMail text='Faites nous part de vos envies !' />
+                  <ModalMail btnText='Faites nous part de vos envies !' />
                 </div>
               </div>
             </div>

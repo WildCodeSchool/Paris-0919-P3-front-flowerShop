@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import ProductCard from './ProductCard';
 import Message from './Message';
 import ModalMail from './ModalMail';
+import MailFormWithFormik from './MailFormWithFormik';
 
 const ProductsList = ({
   products,
@@ -13,7 +14,7 @@ const ProductsList = ({
   user
 }) => (
   <div className='ui container productList__shop'>
-    <h1>FLOWER SHOP / LA BOUTIQUE</h1>
+    <h1>FLOWER SHOP</h1>
     <p>
       Éclosion vous propose des bouquets frais{' '}
       <strong>renouvelés chaque mercredi</strong> à 9h.
@@ -89,7 +90,9 @@ const ProductsList = ({
 
     <h3 className='productList__ask'>Vous avez une demande particulière ?</h3>
     <div className='productList__contact'>
-      <ModalMail text='Contactez-nous' />
+      <ModalMail btnText='Contactez-nous'>
+        <MailFormWithFormik />
+      </ModalMail>
     </div>
   </div>
 );
