@@ -17,7 +17,9 @@ class Cart extends React.Component {
     await this.setState({ loading: true });
     const userId = jwtdecode(this.token).user._id;
     const productId = product._id;
-    await api.cart.delete(userId, productId);
+    await api.cart.delete(userId, productId).then(data => {
+      this.props.setMessage(data.message);
+    });
     const updatedCart = await api.cart.fetchAll(userId);
     this.setState({ cart: updatedCart.cart, loading: false });
   };

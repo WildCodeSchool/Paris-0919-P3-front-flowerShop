@@ -2,7 +2,6 @@ import React from 'react';
 import { Message } from 'semantic-ui-react';
 
 const MessageWithType = ({ message }) => {
-  console.log(message);
   return (
     <Message
       positive={message.isPositive}

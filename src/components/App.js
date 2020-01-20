@@ -126,7 +126,7 @@ class App extends React.Component {
         <Route
           path='/cart'
           exact
-          render={props => <Cart {...props} user={this.state.user} />}
+          render={props => <Cart {...props} user={this.state.user} setMessage={this.setMessage} />}
         />
         <Route path='/wedding' exact component={ArticleWedding} />
         <Route path='/pro' exact component={ArticlePro} />
