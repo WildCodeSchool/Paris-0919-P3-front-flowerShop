@@ -47,7 +47,7 @@ class ArticleWedding extends React.Component {
               </div>
             </div>
           </div>
-          <div className='ui four column stackable grid bouquets'>
+          <div className='ui three column stackable grid bouquets'>
             <div className='column'>
               <img
                 className='ui image articles__img'
@@ -66,13 +66,6 @@ class ArticleWedding extends React.Component {
               <img
                 className='ui image articles__img'
                 src='https://images.squarespace-cdn.com/content/v1/57fe73e8d2b857dc0c054038/1554621863822-Z9OT14VFNP2IIKV02ZX0/ke17ZwdGBToddI8pDm48kMSMspqi29JcQ05LSM5hkzJ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UbSTBh6IcLKvNH_DpUeQbKUqJH7P7IyYZ1WbS_9FACYx6kSrJ3a5Sgz-k5JEO5jghA/London+wedding+floristry?format=750w'
-                alt='Bouquet de mariée'
-              />
-            </div>
-            <div className='column'>
-              <img
-                className='ui image articles__img'
-                src='https://images.squarespace-cdn.com/content/v1/57fe73e8d2b857dc0c054038/1554621807903-42T4EU4F1O9XUVJ0XAHM/ke17ZwdGBToddI8pDm48kMSMspqi29JcQ05LSM5hkzJ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UbSTBh6IcLKvNH_DpUeQbKUqJH7P7IyYZ1WbS_9FACYx6kSrJ3a5Sgz-k5JEO5jghA/London+wedding+floristry?format=750w'
                 alt='Bouquet de mariée'
               />
             </div>

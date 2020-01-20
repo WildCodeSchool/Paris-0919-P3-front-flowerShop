@@ -7,6 +7,7 @@
 .ui.container h2 {
   padding: 2rem 0rem 3rem 0rem;
   font-weight: 200;
+  letter-spacing: 0.2rem;
 }
 
 h1,
@@ -29,7 +30,6 @@ h1::after,
 h2,
 h3 {
   color: #767864;
-  font-weight: lighter;
 }
 hr {
   width: 80%;
@@ -116,12 +116,11 @@ hr {
     display: none;
   }
 }
-.nav__icon {
-  cursor: pointer;
+.ui.inverted.menu .item {
   transition: 0.3s;
 }
-.nav__icon:hover {
-  color: #e79796;
+.ui.inverted.menu .item:hover {
+  color: #e79796 !important;
 }
 /* NAVBAR END */
 
@@ -148,10 +147,11 @@ hr {
 .home__opening h3 {
   font-style: italic;
   font-weight: 200;
+  letter-spacing: 0.1rem;
   color: #444c38;
 }
 .home__opening strong h3 {
-  font-weight: 300;
+  font-weight: 400;
   transition: 0.3s;
 }
 .home__opening strong h3:hover {
@@ -186,7 +186,6 @@ hr {
 .ui.container.productList__shop h2 {
   padding: 1rem 0 2rem 0;
 }
-
 /* PRODUCT LIST END */
 
 /* PRODUCT CARD */
@@ -207,11 +206,7 @@ hr {
   bottom: 10px;
   right: 10px;
 }
-.ui.cards > .card > .image > img,
-.ui.card > .image > img {
-  /* min-height: 350px; */
-  width: auto;
-}
+
 .ui.dropdown.product_select {
   color: #767864;
 }
@@ -285,11 +280,14 @@ i.recycle.big.green.icon {
   display: flex;
   align-items: center;
 }
+.delivery_alone {
+  margin-top: 1rem;
+}
 /* CONTEXT-DELIVERY END */
 
 /* ARTICLES */
 .articles__img {
-  margin: 3rem 0;
+  margin: 1rem 0;
   border-radius: 5px;
   box-shadow: 5px 5px 5px darkgrey;
 }
@@ -311,6 +309,7 @@ i.recycle.big.green.icon {
 }
 .container h1 {
   font-weight: 200;
+  letter-spacing: 0.2rem;
 }
 
 .column.wedding {
@@ -346,11 +345,38 @@ i.recycle.big.green.icon {
 /* ARTICLES END */
 
 /* CART */
-.ui.unstackable.table.cart {
-  margin-bottom: 5rem;
+.cart {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  margin-bottom: 3rem;
 }
-td.right.aligned.delete {
-  max-width: fit-content !important;
+.cart__item {
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart__item-photo {
+  margin: 1rem;
+  width: 5rem;
+}
+.cart__item-description {
+  width: 78%;
+}
+.cart__item-description p {
+  margin-bottom: 0;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+.cart__item-btn {
+  margin: 0.5rem;
+}
+.cart__footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  background-color: #f0f0f0;
 }
 /* CART END */
 
@@ -364,6 +390,7 @@ td.right.aligned.delete {
 }
 .footer h4 {
   font-weight: 200;
+  letter-spacing: 0.1rem;
 }
 .footer .footer-contact {
   margin-bottom: 0;
