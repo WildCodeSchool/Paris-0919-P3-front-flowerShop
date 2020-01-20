@@ -24,10 +24,10 @@ export default {
   },
   cart: {
     fetchAll: userId => axios.get(`/api/cart/${userId}`).then(res => res.data),
-    add: (userId, product) =>
-      axios.post(`/api/cart/${userId}`, product).then(res => res.data),
-    createCart: userId =>
-      axios.post(`/api/cart/${userId}`).then(res => res.data),
+    add: (userId, productId, size) =>
+      axios
+        .post(`/api/cart/${userId}/${productId}`, size)
+        .then(res => res.data),
     delete: (userId, productId) =>
       axios.delete(`/api/cart/${userId}/${productId}`).then(res => res.data)
   }

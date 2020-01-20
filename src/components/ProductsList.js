@@ -11,6 +11,7 @@ const ProductsList = ({
   toggleFeatured,
   toggleDescription,
   deleteProduct,
+  setMessage,
   user
 }) => (
   <div className='ui container productList__shop'>
@@ -47,6 +48,7 @@ const ProductsList = ({
                 toggleDescription={toggleDescription}
                 deleteProduct={deleteProduct}
                 user={user}
+                setMessage={setMessage}
               />
             )
         )
@@ -65,6 +67,7 @@ const ProductsList = ({
               toggleDescription={toggleDescription}
               deleteProduct={deleteProduct}
               user={user}
+              setMessage={setMessage}
             />
           )
       )}
@@ -83,6 +86,7 @@ const ProductsList = ({
               toggleDescription={toggleDescription}
               deleteProduct={deleteProduct}
               user={user}
+              setMessage={setMessage}
             />
           )
       )}
