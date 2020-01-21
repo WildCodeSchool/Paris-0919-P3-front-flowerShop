@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ModalMail from './ModalMail';
-import event from '../event.jpg';
+import event from '../img/event.jpg';
 
 class ArticlePro extends React.Component {
   state = {};

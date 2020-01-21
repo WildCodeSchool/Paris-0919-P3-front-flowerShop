@@ -39,10 +39,12 @@ hr {
 p,
 .item,
 td,
-select {
+select,
+.segment {
   font-weight: 300;
   letter-spacing: 0.03rem;
 }
+
 /* GENERAL SETTINGS END */
 
 /* NAVBAR */
@@ -172,6 +174,9 @@ select {
 .home__bg {
   background-color: #fff;
 }
+.home__pro {
+  background-color: #f4f1ea;
+}
 /* HOME PAGE END */
 
 /* PRODUCT LIST */
@@ -219,6 +224,10 @@ select {
 }
 .ui.card > .content > a.header {
   color: rgba(118, 120, 100, 0.8) !important;
+  transition: 0.3s !important;
+}
+.ui.card > .content > a.header:hover {
+  color: #e79796 !important;
 }
 /* PRODUCT CARD END */
 
@@ -304,9 +313,6 @@ i.recycle.big.green.icon {
 }
 .ui.container h1.articles__title {
   margin-top: 2rem;
-}
-.pro {
-  background-color: #ddd2c3;
 }
 
 .ui.stackable.grid.articles > .column:not(.row),

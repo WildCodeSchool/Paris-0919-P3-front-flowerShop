@@ -137,7 +137,7 @@ class App extends React.Component {
               <ShowProductPage
                 {...props}
                 user={this.state.user}
-                setMessage={this.setMessage}
+                setMessage={this.props.setMessage}
               />
             )}
           />

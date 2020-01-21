@@ -6,12 +6,12 @@
      Fonts
 --------------------*/
 
-@headerFont        : 'Lora', 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-@pageFont          : 'Lora', 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@headerFont        : 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@pageFont          : 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 @fontSmoothing     : antialiased;
 
 @importGoogleFonts : true;
-@googleFontName    : 'Lora';
+@googleFontName    : 'Lato';
 @googleFontSizes   : '200,200italic';
 @googleFontFamily  : '@{googleFontName}:@{googleFontSizes}';
 
