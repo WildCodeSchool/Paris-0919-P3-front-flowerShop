@@ -1,48 +1,62 @@
-import React from "react";
-import { Image, Grid, Button, Segment } from 'semantic-ui-react'
-import { Link } from "react-router-dom";
-
-
+import React from 'react';
+import { Image, Grid, Segment } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import logo from '../logo.png';
 
 function Footer() {
   return (
-    <div>
-      <div className="row">
-      <div class="ui bottom attached button" tabindex="0">
-        <Grid columns={3} divided>
-            <Grid.Column>
-              <h3>ECLOSION</h3>
-              <Link to="/Delivery">Livraison</Link> <br/>
-              <Link to="/LegalMentions">Mentions Légales</Link>
+    <div className='footer__container'>
+      <div className='ui grid footer'>
+        <div className='inverted teal row footer'>
+          <Grid className='three stackable column'>
+            <Grid.Column className='six wide column'>
+              <h4>ECLOSION</h4>
+              <Link className='footer__link' to='/delivery'>
+                Livraison
+              </Link>{' '}
+              <br />
+              <Link className='footer__link' to='/legal-mentions'>
+                Mentions Légales
+              </Link>
             </Grid.Column>
-            <Grid.Column>
-              <h3>CONTACT</h3>
-              <p>adresse mail: atshabo.corinne@gmail.com <br/>
-              teléphone: 06 25 33 34 38<br></br>
-              adresse postale:  </p>
+            <Grid.Column className='six wide column'>
+              <h4>CONTACT</h4>
+              <p className='footer-contact'>atshabo.corinne@gmail.com</p>
+              <p className='footer-contact'>06 25 33 34 38</p>
+              <p className='footer-contact'>adresse postale </p>
             </Grid.Column>
-            <Grid.Column>
-              <h3>RESEAUX SOCIAUX</h3>
-            <a href="https://www.facebook.com/"><i class="facebook square icon huge"></i></a>
-            <a href="https://.instagram.com/"><Button circular color='instagram' icon='instagram' size="huge"  /></a>
-            
+            <Grid.Column className='four wide column'>
+              <h4>RESEAUX SOCIAUX</h4>
+              <a
+                href='https://www.facebook.com/eclosionfleurs'
+                target='__blank'
+              >
+                <i className='facebook green square big icon reseaux'></i>
+              </a>
+              <a href='https://instagram.com/eclosionfleurs' target='__blank'>
+                <i className='instagram green big icon reseaux'></i>
+              </a>
             </Grid.Column>
-        
-        </Grid>
-      
-      </div>
+          </Grid>
+        </div>
 
-        <div class="ui bottom attached button" tabindex="0">
-          <Grid columns={2} divided>
-            <Grid.Column>     
-            <Image src="/static/media/logo.129f7ba9.png" size="small" centered/>
-            </Grid.Column>  
-            <Grid.Column>
-                <Segment basic textAlign={"center"}>
-              <p> Copyright© 2020 Wild Code School</p>  
-                </Segment>
+        <div className='inverted grey row footer logo'>
+          <Grid className='two stackable column'>
+            <Grid.Column className='eight wide logo'>
+              <Image src={logo} size='small' />
             </Grid.Column>
-          </Grid>      
+            <Grid.Column className='eight wide logo'>
+              <Segment basic textAlign={'right'}>
+                <p>
+                  © 2020 Eclosion - Made by{' '}
+                  <span role='img' aria-label='coeur'>
+                    ❤️
+                  </span>{' '}
+                  par des élèves de la Wild Code School
+                </p>
+              </Segment>
+            </Grid.Column>
+          </Grid>
         </div>
       </div>
     </div>

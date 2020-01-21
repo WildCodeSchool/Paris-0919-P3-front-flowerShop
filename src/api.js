@@ -19,13 +19,15 @@ export default {
       axios.post('/api/auth', { credentials }).then(res => res.data.token)
   },
   email: {
-    send: values =>
-      axios.post('/api/email', { values }).then(res => res.data.message)
+    send: (type, values) =>
+      axios.post(`/api/email/${type}`, { values }).then(res => res.data.message)
   },
   cart: {
     fetchAll: userId => axios.get(`/api/cart/${userId}`).then(res => res.data),
-    add: (userId, product) =>
-      axios.post(`/api/cart/${userId}`, product).then(res => res.data),
+    add: (userId, productId, size) =>
+      axios
+        .post(`/api/cart/${userId}/${productId}`, size)
+        .then(res => res.data),
     delete: (userId, productId) =>
       axios.delete(`/api/cart/${userId}/${productId}`).then(res => res.data)
   }

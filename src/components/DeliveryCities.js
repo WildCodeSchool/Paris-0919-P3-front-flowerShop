@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Dropdown } from 'semantic-ui-react';
 
-import { cityOptions } from '../cityOptions';
+import { cityOptions } from '../listData';
 
 const DeliveryCities = () => {
   return (

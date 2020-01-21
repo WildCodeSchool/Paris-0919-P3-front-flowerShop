@@ -18,6 +18,9 @@ import Footer from './Footer';
 import LegalMentions from './LegalMentions';
 import Delivery from './Delivery';
 
+import requireAuth from './hoc/requireAuth';
+import requireNotAuth from './hoc/requireNotAuth';
+
 const setAuthorizationHeader = (token = null) => {
   if (token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -26,13 +29,17 @@ const setAuthorizationHeader = (token = null) => {
   }
 };
 
+let messageTimeout;
+
 class App extends React.Component {
   state = {
     user: {
       token: null,
       role: 'user'
     },
-    message: ''
+    message: {
+      visible: false
+    }
   };
 
   componentDidMount() {
@@ -47,7 +54,15 @@ class App extends React.Component {
     }
   }
 
-  setMessage = message => this.setState({ message });
+  setMessage = message => {
+    clearInterval(messageTimeout);
+    this.setState({ message: { visible: false } });
+    this.setState({ message: { visible: true, ...message } });
+    messageTimeout = setTimeout(
+      () => this.setState({ message: { visible: false } }),
+      5000
+    );
+  };
 
   logout = () => {
     this.setState({ user: { token: null, role: 'user' } });
@@ -63,64 +78,95 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <TopNavigation
-          isAuthenticated={!!this.state.user.token}
-          logout={this.logout}
-          isAdmin={!!this.state.user.token && this.state.user.role === 'admin'}
-        />
+      <div className='app'>
+        <div className='app__content'>
+          <TopNavigation
+            isAuthenticated={!!this.state.user.token}
+            logout={this.logout}
+            isAdmin={
+              !!this.state.user.token && this.state.user.role === 'admin'
+            }
+            message={this.state.message}
+          />
 
-        {this.state.message && (
-          <div className='ui info message'>
-            <i className='close icon' onClick={() => this.setMessage('')} />
-            {this.state.message}
-          </div>
-        )}
+          {/* {this.state.message && (
+            <div className='ui info message'>
+              <i className='close icon' onClick={() => this.setMessage('')} />
+              {this.state.message}
+            </div>
+          )} */}
 
-        <Route
-          exact
-          path='/'
-          render={props => <HomePage {...props} user={this.state.user} />}
-        />
-        <Route
-          path='/products'
-          render={props => <ProductsPage {...props} user={this.state.user} />}
-        />
-        <Route
-          path='/signup'
-          render={props => (
-            <SignupPage {...props} setMessage={this.setMessage} />
-          )}
-        />
-        <Route
-          path='/login'
-          render={props => <LoginPage {...props} login={this.login} />}
-        />
-        {/* <Route path='/product/:_id' exact component={ShowProductPage} /> */}
-        <Route
-          path='/product/:_id'
-          render={props => (
-            <ShowProductPage {...props} user={this.state.user} />
-          )}
-        />
+          <Route
+            exact
+            path='/'
+            render={props => <HomePage {...props} user={this.state.user} />}
+          />
+          <Route
+            path='/products'
+            render={props => (
+              <ProductsPage
+                {...props}
+                user={this.state.user}
+                setMessage={this.setMessage}
+              />
+            )}
+          />
+          <Route
+            path='/signup'
+            render={props => {
+              const SignupPageWithProtection = requireNotAuth(SignupPage);
+              return (
+                <SignupPageWithProtection
+                  {...props}
+                  setMessage={this.setMessage}
+                />
+              );
+            }}
+          />
+          <Route
+            path='/login'
+            render={props => {
+              const LoginPageWithProtection = requireNotAuth(LoginPage);
+              return <LoginPageWithProtection {...props} login={this.login} />;
+            }}
+          />
+          {/* <Route path='/product/:_id' exact component={ShowProductPage} /> */}
+          <Route
+            path='/product/:_id'
+            render={props => (
+              <ShowProductPage {...props} user={this.state.user} />
+            )}
+          />
 
-        <Route
-          path='/cart'
-          exact
-          render={props => <Cart {...props} user={this.state.user} />}
-        />
-        <Route path='/wedding' exact component={ArticleWedding} />
-        <Route path='/pro' exact component={ArticlePro} />
-        <Route path='/DIY' exact component={ArticleDIY} />
+          <Route
+            path='/cart'
+            exact
+            render={props => {
+              const CartWithProtection = requireAuth(Cart);
+              return (
+                <CartWithProtection
+                  {...props}
+                  user={this.state.user}
+                  setMessage={this.setMessage}
+                />
+              );
+            }}
+          />
+          <Route path='/wedding' exact component={ArticleWedding} />
+          <Route path='/pro' exact component={ArticlePro} />
+          <Route path='/DIY' exact component={ArticleDIY} />
 
-        <Switch>
-          <Route path='/LegalMentions'>
-            <LegalMentions />
-          </Route>
-          <Route path='/Delivery'>
-            <Delivery />
-          </Route>
-        </Switch>
+          <Switch>
+            <Route path='/legal-mentions'>
+              <LegalMentions />
+            </Route>
+            <Route path='/delivery'>
+              <div className='ui container delivery_alone'>
+                <Delivery />
+              </div>
+            </Route>
+          </Switch>
+        </div>
         <Footer />
       </div>
     );

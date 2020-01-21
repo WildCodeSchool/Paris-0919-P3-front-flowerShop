@@ -24,3 +24,11 @@ export const cityOptions = [
   { key: 'vm', value: 'vm', text: '94 - Villiers-sur-Marne' },
   { key: 'au', value: 'au', text: 'Autre' }
 ];
+
+export const mailSubjects = [
+  { key: 'ma', value: 'ma', text: 'Mariages' },
+  { key: 'en', value: 'en', text: 'Entreprises' },
+  { key: 'di', value: 'di', text: 'Ateliers DIY' },
+  { key: 'pr', value: 'pr', text: 'Produits' },
+  { key: 'ot', value: 'ot', text: 'Autre' }
+];
