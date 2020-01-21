@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import jwtdecode from 'jwt-decode';
+import api from '../api';
 
 import Price from './Price';
 import ProductDescription from './ProductDescription';
 
-import jwtdecode from 'jwt-decode';
-
-import api from '../api';
 class ProductCard extends React.Component {
   state = {
     showConfirmation: false,

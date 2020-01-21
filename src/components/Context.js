@@ -5,7 +5,7 @@ import fleur from '../fleurs_sechees.jpg';
 const Context = () => {
   return (
     <>
-      <h2>
+      <h2 className='context__title'>
         <span>
           <i className='green leaf icon'></i>
         </span>

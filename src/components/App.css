@@ -36,6 +36,13 @@ hr {
   height: 1px;
   margin: 3rem auto;
 }
+p,
+.item,
+td,
+select {
+  font-weight: 300;
+  letter-spacing: 0.03rem;
+}
 /* GENERAL SETTINGS END */
 
 /* NAVBAR */
@@ -242,6 +249,10 @@ hr {
   background-color: #f4f1ea;
   padding: 2rem 0;
 }
+.ui.container h2.context__title {
+  padding-top: 0;
+  padding-bottom: 1rem;
+}
 .context__flex {
   display: flex;
   align-items: center;
@@ -387,6 +398,9 @@ i.recycle.big.green.icon {
 }
 .footer p {
   font-size: 0.8rem;
+}
+.footer a {
+  font-size: 0.9rem;
 }
 .footer h4 {
   font-weight: 200;
