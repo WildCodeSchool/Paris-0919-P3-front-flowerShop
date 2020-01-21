@@ -18,6 +18,9 @@ import Footer from './Footer';
 import LegalMentions from './LegalMentions';
 import Delivery from './Delivery';
 
+import requireAuth from './hoc/requireAuth';
+import requireNotAuth from './hoc/requireNotAuth';
+
 const setAuthorizationHeader = (token = null) => {
   if (token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -110,13 +113,22 @@ class App extends React.Component {
           />
           <Route
             path='/signup'
-            render={props => (
-              <SignupPage {...props} setMessage={this.setMessage} />
-            )}
+            render={props => {
+              const SignupPageWithProtection = requireNotAuth(SignupPage);
+              return (
+                <SignupPageWithProtection
+                  {...props}
+                  setMessage={this.setMessage}
+                />
+              );
+            }}
           />
           <Route
             path='/login'
-            render={props => <LoginPage {...props} login={this.login} />}
+            render={props => {
+              const LoginPageWithProtection = requireNotAuth(LoginPage);
+              return <LoginPageWithProtection {...props} login={this.login} />;
+            }}
           />
           {/* <Route path='/product/:_id' exact component={ShowProductPage} /> */}
           <Route
@@ -129,13 +141,16 @@ class App extends React.Component {
           <Route
             path='/cart'
             exact
-            render={props => (
-              <Cart
-                {...props}
-                user={this.state.user}
-                setMessage={this.setMessage}
-              />
-            )}
+            render={props => {
+              const CartWithProtection = requireAuth(Cart);
+              return (
+                <CartWithProtection
+                  {...props}
+                  user={this.state.user}
+                  setMessage={this.setMessage}
+                />
+              );
+            }}
           />
           <Route path='/wedding' exact component={ArticleWedding} />
           <Route path='/pro' exact component={ArticlePro} />

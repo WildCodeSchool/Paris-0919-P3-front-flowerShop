@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Modal, Message } from 'semantic-ui-react';
+import MailFormWithFormik from './MailFormWithFormik';
 
 import MailFormWithFormik from './MailFormWithFormik';
 
