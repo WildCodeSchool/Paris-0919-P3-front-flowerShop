@@ -42,10 +42,10 @@ function Footer() {
 
         <div className='inverted grey row footer logo'>
           <Grid className='two stackable column'>
-            <Grid.Column className='eight wide logo'>
+            <Grid.Column className='four wide logo'>
               <Image src={logo} size='small' />
             </Grid.Column>
-            <Grid.Column className='eight wide logo'>
+            <Grid.Column className='twelve wide logo'>
               <Segment basic textAlign={'right'}>
                 <p>
                   © 2020 Eclosion - Made by{' '}
