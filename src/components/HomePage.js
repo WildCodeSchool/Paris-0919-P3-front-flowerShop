@@ -95,15 +95,15 @@ class HomePage extends React.Component {
                     <Context />
                   </div>
                   <div className='six wide column'>
-                    <Delivery />
+                    <Delivery setMessage={this.props.setMessage} />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <ArticleWedding />
-          <ArticlePro />
-          <ArticleDIY />
+          <ArticleWedding setMessage={this.props.setMessage} />
+          <ArticlePro setMessage={this.props.setMessage} />
+          <ArticleDIY setMessage={this.props.setMessage} />
         </div>
       </div>
     );

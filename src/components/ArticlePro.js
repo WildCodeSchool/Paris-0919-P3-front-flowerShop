@@ -24,7 +24,10 @@ class ArticlePro extends React.Component {
             </div>
 
             <div className='four wide column'>
-              <ModalMail btnText='Contactez-nous' />
+              <ModalMail
+                btnText='Contactez-nous'
+                setMessage={this.props.setMessage}
+              />
             </div>
             <div className='twelve wide column'>
               <div className='ui segment'>

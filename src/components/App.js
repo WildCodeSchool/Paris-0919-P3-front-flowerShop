@@ -55,6 +55,7 @@ class App extends React.Component {
   }
 
   setMessage = message => {
+    console.log(message);
     clearInterval(messageTimeout);
     this.setState({ message: { visible: false } });
     this.setState({ message: { visible: true, ...message } });
@@ -99,7 +100,13 @@ class App extends React.Component {
           <Route
             exact
             path='/'
-            render={props => <HomePage {...props} user={this.state.user} />}
+            render={props => (
+              <HomePage
+                {...props}
+                user={this.state.user}
+                setMessage={this.setMessage}
+              />
+            )}
           />
           <Route
             path='/products'
@@ -152,9 +159,27 @@ class App extends React.Component {
               );
             }}
           />
-          <Route path='/wedding' exact component={ArticleWedding} />
-          <Route path='/pro' exact component={ArticlePro} />
-          <Route path='/DIY' exact component={ArticleDIY} />
+          <Route
+            path='/wedding'
+            exact
+            render={props => (
+              <ArticleWedding {...props} setMessage={this.setMessage} />
+            )}
+          />
+          <Route
+            path='/pro'
+            exact
+            render={props => (
+              <ArticlePro {...props} setMessage={this.setMessage} />
+            )}
+          />
+          <Route
+            path='/DIY'
+            exact
+            render={props => (
+              <ArticleDIY {...props} setMessage={this.setMessage} />
+            )}
+          />
 
           <Switch>
             <Route path='/legal-mentions'>
