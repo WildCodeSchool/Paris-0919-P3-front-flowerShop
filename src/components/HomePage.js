@@ -83,6 +83,7 @@ class HomePage extends React.Component {
                   toggleDescription={this.toggleDescription}
                   deleteProduct={this.deleteProduct}
                   user={this.props.user}
+                  setMessage={this.props.setMessage}
                 />
               </div>
             )}
@@ -95,17 +96,17 @@ class HomePage extends React.Component {
                     <Context />
                   </div>
                   <div className='six wide column'>
-                    <Delivery />
+                    <Delivery setMessage={this.props.setMessage} />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <ArticleWedding />
+          <ArticleWedding setMessage={this.props.setMessage} />
           <div className='home__pro'>
-            <ArticlePro />
+            <ArticlePro setMessage={this.props.setMessage} />
           </div>
-          <ArticleDIY />
+          <ArticleDIY setMessage={this.props.setMessage} />
         </div>
       </div>
     );

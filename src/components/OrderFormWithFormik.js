@@ -38,18 +38,18 @@ class OrderFormWithFormik extends React.Component {
           ),
           address: Yup.string().required('Une adresse est requise'),
           city: Yup.string().required('Une ville est requise'),
-          textContent: Yup.string()
-            .min(10, 'Votre message doit au moins contenir 20 caractères')
-            .trim()
+          textContent: Yup.string().trim()
         })}
         onSubmit={(values, actions) => {
-          api.email.send('orders', {
-            ...values,
-            products: this.props.cart.products
-          });
+          api.email
+            .send('orders', {
+              ...values,
+              products: this.props.cart.products
+            })
+            .then(data => this.props.setMessage(data));
           actions.resetForm();
-          this.setState({ isSent: true });
           actions.setSubmitting(false);
+          this.props.closeModal();
         }}
       >
         {props => (

@@ -82,7 +82,10 @@ class Cart extends React.Component {
                   </div>
                   <div className='cart__footer'>
                     <div className='ui right floated right aligned sixteen wide column'>
-                      <OrderModalMail cart={this.state.cart} />
+                      <OrderModalMail
+                        cart={this.state.cart}
+                        setMessage={this.props.setMessage}
+                      />
                     </div>
                   </div>
                 </div>

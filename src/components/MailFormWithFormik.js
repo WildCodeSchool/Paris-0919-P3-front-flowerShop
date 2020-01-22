@@ -7,14 +7,16 @@ import api from '../api';
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
 const MailFormWithFormik = withFormik({
-  mapPropsToValues: () => ({
+  mapPropsToValues: props => ({
     firstName: '',
     lastName: '',
     email: '',
     phone: '',
     city: '',
     subject: '',
-    textContent: ''
+    textContent: '',
+    closeModal: props.closeModal,
+    setMessage: props.setMessage
   }),
   validationSchema: () => {
     return Yup.object().shape({
@@ -40,11 +42,12 @@ const MailFormWithFormik = withFormik({
         .trim()
     });
   },
-  handleSubmit: (values, actions) => {
-    api.email.send('questions', values);
-    actions.resetForm();
-    this.setState({ isSent: true });
-    actions.setSubmitting(false);
+  handleSubmit: async (values, actions) => {
+    const data = await api.email.send('questions', values);
+    await values.setMessage(data);
+    await actions.resetForm();
+    await actions.setSubmitting(false);
+    values.closeModal();
   }
 })(MailForm);
 

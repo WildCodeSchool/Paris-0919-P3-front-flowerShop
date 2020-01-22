@@ -5,20 +5,37 @@ import OrderFormWithFormik from './OrderFormWithFormik';
 
 class OrderModalMail extends React.Component {
   state = {
-    isSent: false
+    isSent: false,
+    open: false,
+    closeOnDimmerClick: true
+  };
+
+  closeModal = () => {
+    this.setState({ open: false });
+  };
+
+  handleBtnClick = () => {
+    this.setState({ open: true });
   };
 
   render() {
     return (
       <Modal
         trigger={
-          <Button className='ui pink button productList__contact '>
+          <Button
+            className='ui pink button productList__contact '
+            onClick={this.handleBtnClick}
+          >
             Commander
           </Button>
         }
+        open={this.state.open}
+        closeOnDimmerClick={this.state.closeOnDimmerClick}
+        onClose={this.closeModal}
+        closeIcon
       >
         <Modal.Header>Eclosion - Contact Mail</Modal.Header>
-        <Modal.Content>
+        <Modal.Content scrolling>
           {this.state.isSent ? (
             <Message positive>
               <Message.Header>
@@ -31,7 +48,11 @@ class OrderModalMail extends React.Component {
             </Message>
           ) : null}
           <Modal.Description>
-            <OrderFormWithFormik cart={this.props.cart} />
+            <OrderFormWithFormik
+              cart={this.props.cart}
+              closeModal={this.closeModal}
+              setMessage={this.props.setMessage}
+            />
           </Modal.Description>
         </Modal.Content>
       </Modal>

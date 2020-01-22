@@ -3,9 +3,8 @@ import React from 'react';
 import DeliveryCities from './DeliveryCities';
 import DeliveryTime from './DeliveryTime';
 import ModalMail from './ModalMail';
-import MailFormWithFormik from './MailFormWithFormik';
 
-const Delivery = () => {
+const Delivery = props => {
   return (
     <div className='ui centered card delivery__card'>
       <div className='content'>
@@ -36,9 +35,7 @@ const Delivery = () => {
           Vous avez un doute, la ville choisie ne figure pas sur la liste? Nous
           pouvons peut être assurer votre livraison!
         </p>
-        <ModalMail btnText='Contactez-nous'>
-          <MailFormWithFormik />
-        </ModalMail>
+        <ModalMail btnText='Contactez-nous' setMessage={props.setMessage} />
       </div>
     </div>
   );

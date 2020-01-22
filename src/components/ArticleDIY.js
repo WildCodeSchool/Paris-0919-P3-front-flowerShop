@@ -24,7 +24,10 @@ class ArticleDIY extends React.Component {
           </div>
 
           <div className='four wide column'>
-            <ModalMail btnText='Plus de détails' />
+            <ModalMail
+              btnText='Plus de détails'
+              setMessage={this.props.setMessage}
+            />
           </div>
           <div className='twelve wide column'>
             <div className='ui segment articles'>
