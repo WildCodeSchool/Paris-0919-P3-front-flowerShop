@@ -102,8 +102,6 @@ select,
   .ui.stackable.green.inverted.menu {
     height: 2.3rem;
     overflow: hidden;
-    animation: slide 1s ease-in-out 3.5s;
-    transition: 0.3s;
   }
   .ui.stackable.green.inverted.menu.invisible {
     height: 19.5rem;
@@ -450,16 +448,19 @@ i.recycle.big.green.icon {
   .ui.grid > .row > .column {
     text-align: center;
   }
-  .footer .column.eight.wide.logo {
+  .footer .column.four.wide.logo {
     display: flex;
     justify-content: center;
+  }
+  .footer .column.twelve.wide.logo p {
+    text-align: center;
   }
   .footer__container > .ui.grid .ui.stackable.grid {
     margin-left: 0 !important;
   }
   .inverted.grey.row.footer.logo
     .ui.grid.two.stackable.column
-    .column.eight.wide.logo {
+    .column.wide.logo {
     padding: 0 !important;
   }
 }
