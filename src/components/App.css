@@ -36,6 +36,15 @@ hr {
   height: 1px;
   margin: 3rem auto;
 }
+p,
+.item,
+td,
+select,
+.segment {
+  font-weight: 300;
+  letter-spacing: 0.03rem;
+}
+
 /* GENERAL SETTINGS END */
 
 /* NAVBAR */
@@ -93,8 +102,6 @@ hr {
   .ui.stackable.green.inverted.menu {
     height: 2.3rem;
     overflow: hidden;
-    animation: slide 1s ease-in-out 3.5s;
-    transition: 0.3s;
   }
   .ui.stackable.green.inverted.menu.invisible {
     height: 19.5rem;
@@ -165,6 +172,9 @@ hr {
 .home__bg {
   background-color: #fff;
 }
+.home__pro {
+  background-color: #f4f1ea;
+}
 /* HOME PAGE END */
 
 /* PRODUCT LIST */
@@ -212,6 +222,10 @@ hr {
 }
 .ui.card > .content > a.header {
   color: rgba(118, 120, 100, 0.8) !important;
+  transition: 0.3s !important;
+}
+.ui.card > .content > a.header:hover {
+  color: #e79796 !important;
 }
 /* PRODUCT CARD END */
 
@@ -241,6 +255,10 @@ hr {
 .context-delivery {
   background-color: #f4f1ea;
   padding: 2rem 0;
+}
+.ui.container h2.context__title {
+  padding-top: 0;
+  padding-bottom: 1rem;
 }
 .context__flex {
   display: flex;
@@ -293,9 +311,6 @@ i.recycle.big.green.icon {
 }
 .ui.container h1.articles__title {
   margin-top: 2rem;
-}
-.pro {
-  background-color: #ddd2c3;
 }
 
 .ui.stackable.grid.articles > .column:not(.row),
@@ -388,6 +403,9 @@ i.recycle.big.green.icon {
 .footer p {
   font-size: 0.8rem;
 }
+.footer a {
+  font-size: 0.9rem;
+}
 .footer h4 {
   font-weight: 200;
   letter-spacing: 0.1rem;
@@ -430,16 +448,19 @@ i.recycle.big.green.icon {
   .ui.grid > .row > .column {
     text-align: center;
   }
-  .footer .column.eight.wide.logo {
+  .footer .column.four.wide.logo {
     display: flex;
     justify-content: center;
+  }
+  .footer .column.twelve.wide.logo p {
+    text-align: center;
   }
   .footer__container > .ui.grid .ui.stackable.grid {
     margin-left: 0 !important;
   }
   .inverted.grey.row.footer.logo
     .ui.grid.two.stackable.column
-    .column.eight.wide.logo {
+    .column.wide.logo {
     padding: 0 !important;
   }
 }

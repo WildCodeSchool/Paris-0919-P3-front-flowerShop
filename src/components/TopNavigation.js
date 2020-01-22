@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
-import logo from '../logo.png';
+import logo from '../img/logo.png';
 import MessageWithType from './MessageWithType';
 
 const handleClick = () => {

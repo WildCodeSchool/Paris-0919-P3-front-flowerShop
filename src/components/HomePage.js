@@ -102,7 +102,9 @@ class HomePage extends React.Component {
             </div>
           </div>
           <ArticleWedding />
-          <ArticlePro />
+          <div className='home__pro'>
+            <ArticlePro />
+          </div>
           <ArticleDIY />
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ModalMail from './ModalMail';
-import diy from '../diy.jpg';
+import diy from '../img/diy.jpg';
 
 class ArticleDIY extends React.Component {
   state = {};

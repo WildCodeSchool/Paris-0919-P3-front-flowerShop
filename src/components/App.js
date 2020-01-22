@@ -60,7 +60,7 @@ class App extends React.Component {
     this.setState({ message: { visible: true, ...message } });
     messageTimeout = setTimeout(
       () => this.setState({ message: { visible: false } }),
-      5000
+      3000
     );
   };
 
@@ -134,7 +134,11 @@ class App extends React.Component {
           <Route
             path='/product/:_id'
             render={props => (
-              <ShowProductPage {...props} user={this.state.user} />
+              <ShowProductPage
+                {...props}
+                user={this.state.user}
+                setMessage={this.props.setMessage}
+              />
             )}
           />
 

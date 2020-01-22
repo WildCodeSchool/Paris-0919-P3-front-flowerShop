@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import jwtdecode from 'jwt-decode';
+import api from '../api';
 
 import Price from './Price';
 import ProductDescription from './ProductDescription';
 
-import jwtdecode from 'jwt-decode';
-
-import api from '../api';
 class ProductCard extends React.Component {
   state = {
     showConfirmation: false,
@@ -96,7 +95,9 @@ class ProductCard extends React.Component {
         {!product.described ? (
           <div className='image'>
             <Price product={product} />
-            <img src={product.thumbnail} alt='Bouquet' />
+            <Link to={`/product/${product._id}`} className='ui image' {...user}>
+              <img src={product.thumbnail} alt='Bouquet' />
+            </Link>
           </div>
         ) : (
           <div className='ui justified content description'>
@@ -106,14 +107,24 @@ class ProductCard extends React.Component {
           </div>
         )}
         <div className='content'>
-          <Link to={`/product/${product._id}`} className='header' {...user}>
+          <Link
+            to={`/product/${product._id}`}
+            className='header title'
+            {...user}
+          >
             {product.name}
           </Link>
 
           <div className='meta caption productCard__caption'>
-            <div className='product__icon'>
-              <strong>Tailles :</strong> {product.size}
-            </div>
+            <p className='product__icon'>
+              {user.token && (user.role === 'user' || user.role === 'admin') ? (
+                chooseSize
+              ) : (
+                <>
+                  <strong>Tailles :</strong> {product.size}{' '}
+                </>
+              )}
+            </p>
             <ProductDescription
               described={product.described}
               toggleDescription={toggleDescription}
@@ -121,12 +132,17 @@ class ProductCard extends React.Component {
             />
           </div>
         </div>
-        {user.token &&
-          (user.role === 'user' || user.role === 'admin') &&
-          chooseSize}
-        {user.token &&
-          (user.role === 'user' || user.role === 'admin') &&
-          addToCart}
+
+        {user.token && (user.role === 'user' || user.role === 'admin') ? (
+          addToCart
+        ) : (
+          <div className='extra content right'>
+            <Link to={`/signup`} className='ui green basic labeled icon button'>
+              <i className='ui user plus icon' /> Pour commander, créer un
+              compte
+            </Link>
+          </div>
+        )}
         {user.token && user.role === 'admin' && adminActions}
       </div>
     );
