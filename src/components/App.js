@@ -55,7 +55,6 @@ class App extends React.Component {
   }
 
   setMessage = message => {
-    console.log(message);
     clearInterval(messageTimeout);
     this.setState({ message: { visible: false } });
     this.setState({ message: { visible: true, ...message } });

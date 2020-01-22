@@ -43,7 +43,6 @@ const MailFormWithFormik = withFormik({
     });
   },
   handleSubmit: async (values, actions) => {
-    console.log(values);
     const data = await api.email.send('questions', values);
     await values.setMessage(data);
     await actions.resetForm();

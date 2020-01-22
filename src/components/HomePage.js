@@ -83,6 +83,7 @@ class HomePage extends React.Component {
                   toggleDescription={this.toggleDescription}
                   deleteProduct={this.deleteProduct}
                   user={this.props.user}
+                  setMessage={this.props.setMessage}
                 />
               </div>
             )}
