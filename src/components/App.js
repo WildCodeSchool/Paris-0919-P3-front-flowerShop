@@ -20,6 +20,7 @@ import Delivery from './Delivery';
 
 import requireAuth from './hoc/requireAuth';
 import requireNotAuth from './hoc/requireNotAuth';
+import Contact from './Contact';
 
 const setAuthorizationHeader = (token = null) => {
   if (token) {
@@ -141,6 +142,7 @@ class App extends React.Component {
               />
             )}
           />
+          <Route path='/contact' exact component={Contact} />
 
           <Route
             path='/cart'

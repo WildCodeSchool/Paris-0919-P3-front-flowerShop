@@ -5,14 +5,12 @@ import api from '../api';
 
 class SignupPage extends Component {
   submit = data =>
-    api.users
-      .create(data)
-      .then(() => {
-        this.props.setMessage(
-          'Vous avez créé votre compte avec succès ! Vous pouvez vous connecter.'
-        );
-        this.props.history.push('/login');
-      });
+    api.users.create(data).then(() => {
+      this.props.setMessage(
+        'Vous avez créé votre compte avec succès ! Vous pouvez vous connecter.'
+      );
+      this.props.history.push('/login');
+    });
 
   render() {
     return (
