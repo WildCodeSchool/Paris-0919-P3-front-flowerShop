@@ -16,8 +16,8 @@ const Delivery = props => {
         </div>
         <div className='description'>
           <p className='justified'>
-            Nous livrons vos bouquets, en véhicule propre: vélo, hybride,
-            électrique sur le <strong>secteur de Marne-la-Vallée</strong>.
+            Nous livrons vos bouquets dans le{' '}
+            <strong>secteur de Marne-la-Vallée</strong>.
           </p>
           <DeliveryCities />
           <div className='delivery_msg'>

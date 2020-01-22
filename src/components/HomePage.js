@@ -103,7 +103,9 @@ class HomePage extends React.Component {
             </div>
           </div>
           <ArticleWedding setMessage={this.props.setMessage} />
-          <ArticlePro setMessage={this.props.setMessage} />
+          <div className='home__pro'>
+            <ArticlePro setMessage={this.props.setMessage} />
+          </div>
           <ArticleDIY setMessage={this.props.setMessage} />
         </div>
       </div>

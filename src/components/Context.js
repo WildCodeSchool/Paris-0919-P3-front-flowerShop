@@ -1,11 +1,11 @@
 import React from 'react';
 
-import fleur from '../fleurs_sechees.jpg';
+import fleur from '../img/fleurs_sechees.jpg';
 
 const Context = () => {
   return (
     <>
-      <h2>
+      <h2 className='context__title'>
         <span>
           <i className='green leaf icon'></i>
         </span>

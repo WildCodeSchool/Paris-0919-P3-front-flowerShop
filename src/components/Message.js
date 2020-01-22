@@ -6,7 +6,7 @@ const Message = ({ content, header }) => (
       <i className='icon thumbs up'></i>
       <div className={content}>
         <div className={header}>
-          Il n'y a aucun bouquet dans votre boutique.
+          Il n'y a aucun produit dans votre boutique.
         </div>
         <p>Vous devriez en ajouter, qu'en dites-vous?</p>
       </div>

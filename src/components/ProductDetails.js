@@ -2,12 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Delivery from './Delivery';
 import Context from './Context';
+import jwtdecode from 'jwt-decode';
+
+import api from '../api';
 
 class ProductDetails extends React.Component {
   state = {
     size: ''
   };
   handleChange = e => this.setState({ size: e.target.value });
+
+  handleClick = () => {
+    const userId = jwtdecode(this.props.user.token).user._id;
+    api.cart
+      .add(userId, this.props.product._id, { size: this.state.size })
+      .then(data => {
+        this.props.setMessage(data.message);
+      });
+  };
 
   render() {
     const { product, user } = this.props;
@@ -29,8 +41,8 @@ class ProductDetails extends React.Component {
             </div>
 
             <div className='ten wide column'>
-              {product.description.split('\n').map(line => (
-                <p>{line}</p>
+              {product.description.split('\n').map((line, ind) => (
+                <p key={ind}>{line}</p>
               ))}
               <table className='ui table'>
                 <tbody>
@@ -65,7 +77,10 @@ class ProductDetails extends React.Component {
 
                 {user.token && (user.role === 'user' || user.role === 'admin') && (
                   <div className='extra content right'>
-                    <button className='ui green labeled icon button'>
+                    <button
+                      className='ui green labeled icon button'
+                      onClick={this.handleClick}
+                    >
                       <i className='shopping basket icon'></i>Ajouter au panier
                     </button>
                   </div>
