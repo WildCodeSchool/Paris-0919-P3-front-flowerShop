@@ -23,7 +23,7 @@ function Footer() {
               <h4>CONTACT</h4>
               <p className='footer-contact'>atshabo.corinne@gmail.com</p>
               <p className='footer-contact'>06 25 33 34 38</p>
-              <p className='footer-contact'>adresse postale </p>
+              <p className='footer-contact'>Marne la Vallée</p>
             </Grid.Column>
             <Grid.Column className='four wide column'>
               <h4>RESEAUX SOCIAUX</h4>
@@ -51,7 +51,8 @@ function Footer() {
                   © 2020 Eclosion - Made by{' '}
                   <span role='img' aria-label='coeur'>
                     ❤️
-                  </span>{' '}
+                  </span>
+                  {''}
                   par des élèves de la Wild Code School
                 </p>
               </Segment>

@@ -44,7 +44,9 @@ select,
   font-weight: 300;
   letter-spacing: 0.03rem;
 }
-
+.ui.segment.articles {
+  background: #ddd2c3;
+}
 /* GENERAL SETTINGS END */
 
 /* NAVBAR */
@@ -105,7 +107,12 @@ select,
   }
   .ui.stackable.green.inverted.menu.invisible {
     height: 19.5rem;
-    animation: slide 1s ease-in-out 3.5s;
+    animation: slide 1s ease-in-out;
+    transition: 0.3s;
+  }
+  .ui.stackable.green.inverted.menu.invisible.admin {
+    height: 21.9rem;
+    animation: slide 1s ease-in-out;
     transition: 0.3s;
   }
   @keyframes slide {
@@ -213,6 +220,7 @@ select,
 }
 .productCard__price {
   position: absolute;
+  z-index: 1;
   bottom: 10px;
   right: 10px;
 }
@@ -276,7 +284,7 @@ i.recycle.big.green.icon {
   margin: 2rem 0;
 }
 .ui.centered.card.delivery__card {
-  margin-top: 0.6rem;
+  margin-top: 3.5rem;
   font-size: 0.9rem;
 }
 .delivery_msg {
@@ -305,7 +313,7 @@ i.recycle.big.green.icon {
 
 /* ARTICLES */
 .articles__img {
-  margin: 1rem 0;
+  margin: 3rem 0;
   border-radius: 5px;
   box-shadow: 5px 5px 5px darkgrey;
 }
@@ -394,6 +402,11 @@ i.recycle.big.green.icon {
   background-color: #f0f0f0;
 }
 /* CART END */
+
+/* CONTACT */
+.ui.container.contact {
+  padding-bottom: 3rem;
+}
 
 /* FOOTER */
 .footer__container {
