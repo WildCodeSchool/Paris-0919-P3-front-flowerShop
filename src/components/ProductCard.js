@@ -1,34 +1,34 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import jwtdecode from 'jwt-decode';
-import api from '../api';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+import jwtdecode from 'jwt-decode'
+import api from '../api'
 
-import Price from './Price';
-import ProductDescription from './ProductDescription';
+import Price from './Price'
+import ProductDescription from './ProductDescription'
 
 class ProductCard extends React.Component {
   state = {
     showConfirmation: false,
     size: ''
-  };
+  }
 
-  showConfirmation = () => this.setState({ showConfirmation: true });
-  hideConfirmation = () => this.setState({ showConfirmation: false });
+  showConfirmation = () => this.setState({ showConfirmation: true })
+  hideConfirmation = () => this.setState({ showConfirmation: false })
 
   handleClick = () => {
-    const userId = jwtdecode(this.props.user.token).user._id;
+    const userId = jwtdecode(this.props.user.token).user._id
     api.cart
       .add(userId, this.props.product._id, { size: this.state.size })
       .then(data => {
-        this.props.setMessage(data.message);
-      });
-  };
-  handleChange = e => this.setState({ size: e.target.value });
+        this.props.setMessage(data.message)
+      })
+  }
+  handleChange = e => this.setState({ size: e.target.value })
 
   render() {
-    const { product, toggleDescription, deleteProduct, user } = this.props;
-    const { size } = this.state;
+    const { product, toggleDescription, deleteProduct, user } = this.props
+    const { size } = this.state
     const adminActions = (
       <div className='extra content'>
         {this.state.showConfirmation ? (
@@ -63,7 +63,7 @@ class ProductCard extends React.Component {
           </div>
         )}
       </div>
-    );
+    )
     const addToCart = (
       <div className='extra content right'>
         <button
@@ -73,7 +73,7 @@ class ProductCard extends React.Component {
           <i className='shopping basket icon'></i>Ajouter au panier
         </button>
       </div>
-    );
+    )
     const chooseSize = (
       <select
         name='productSize'
@@ -88,7 +88,7 @@ class ProductCard extends React.Component {
           </option>
         ))}
       </select>
-    );
+    )
 
     return (
       <div className='ui card'>
@@ -101,8 +101,8 @@ class ProductCard extends React.Component {
           </div>
         ) : (
           <div className='ui justified content description'>
-            {product.description.split('\n').map(line => (
-              <p>{line}</p>
+            {product.description.split('\n').map((line, ind) => (
+              <p key={ind}>{line}</p>
             ))}
           </div>
         )}
@@ -145,7 +145,7 @@ class ProductCard extends React.Component {
         )}
         {user.token && user.role === 'admin' && adminActions}
       </div>
-    );
+    )
   }
 }
 
@@ -162,6 +162,6 @@ ProductCard.propTypes = {
     token: PropTypes.string,
     role: PropTypes.string.isRequired
   }).isRequired
-};
+}
 
-export default ProductCard;
+export default ProductCard
