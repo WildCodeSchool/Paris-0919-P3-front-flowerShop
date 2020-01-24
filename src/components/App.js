@@ -1,36 +1,36 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import axios from 'axios';
-import jwtDecode from 'jwt-decode';
+import React from 'react'
+import { Route, Switch } from 'react-router-dom'
+import axios from 'axios'
+import jwtDecode from 'jwt-decode'
 
-import HomePage from './HomePage';
-import TopNavigation from './TopNavigation';
-import ProductsPage from './ProductsPage';
-import ShowProductPage from './ShowProductPage';
-import SignupPage from './SignupPage';
-import LoginPage from './LoginPage';
-import Cart from './Cart';
-import ArticleWedding from './ArticleWedding';
-import ArticlePro from './ArticlePro';
-import ArticleDIY from './ArticleDIY';
+import HomePage from './HomePage'
+import TopNavigation from './TopNavigation'
+import ProductsPage from './ProductsPage'
+import ShowProductPage from './ShowProductPage'
+import SignupPage from './SignupPage'
+import LoginPage from './LoginPage'
+import Cart from './Cart'
+import ArticleWedding from './ArticleWedding'
+import ArticlePro from './ArticlePro'
+import ArticleDIY from './ArticleDIY'
 
-import Footer from './Footer';
-import LegalMentions from './LegalMentions';
-import Delivery from './Delivery';
+import Footer from './Footer'
+import LegalMentions from './LegalMentions'
+import Delivery from './Delivery'
 
-import requireAuth from './hoc/requireAuth';
-import requireNotAuth from './hoc/requireNotAuth';
-import Contact from './Contact';
+import requireAuth from './hoc/requireAuth'
+import requireNotAuth from './hoc/requireNotAuth'
+import Contact from './Contact'
 
 const setAuthorizationHeader = (token = null) => {
   if (token) {
-    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+    axios.defaults.headers.common.Authorization = `Bearer ${token}`
   } else {
-    delete axios.defaults.headers.common.Authorization;
+    delete axios.defaults.headers.common.Authorization
   }
-};
+}
 
-let messageTimeout;
+let messageTimeout
 
 class App extends React.Component {
   state = {
@@ -41,7 +41,7 @@ class App extends React.Component {
     message: {
       visible: false
     }
-  };
+  }
 
   componentDidMount() {
     if (localStorage.bgshopToken) {
@@ -50,32 +50,32 @@ class App extends React.Component {
           token: localStorage.bgshopToken,
           role: jwtDecode(localStorage.bgshopToken).user.role
         }
-      });
-      setAuthorizationHeader(localStorage.bgshopToken);
+      })
+      setAuthorizationHeader(localStorage.bgshopToken)
     }
   }
 
   setMessage = message => {
-    clearInterval(messageTimeout);
-    this.setState({ message: { visible: false } });
-    this.setState({ message: { visible: true, ...message } });
+    clearInterval(messageTimeout)
+    this.setState({ message: { visible: false } })
+    this.setState({ message: { visible: true, ...message } })
     messageTimeout = setTimeout(
       () => this.setState({ message: { visible: false } }),
       3000
-    );
-  };
+    )
+  }
 
   logout = () => {
-    this.setState({ user: { token: null, role: 'user' } });
-    setAuthorizationHeader();
-    localStorage.removeItem('bgshopToken');
-  };
+    this.setState({ user: { token: null, role: 'user' } })
+    setAuthorizationHeader()
+    localStorage.removeItem('bgshopToken')
+  }
 
   login = token => {
-    this.setState({ user: { token, role: jwtDecode(token).user.role } });
-    localStorage.bgshopToken = token;
-    setAuthorizationHeader(token);
-  };
+    this.setState({ user: { token, role: jwtDecode(token).user.role } })
+    localStorage.bgshopToken = token
+    setAuthorizationHeader(token)
+  }
 
   render() {
     return (
@@ -121,20 +121,20 @@ class App extends React.Component {
           <Route
             path='/signup'
             render={props => {
-              const SignupPageWithProtection = requireNotAuth(SignupPage);
+              const SignupPageWithProtection = requireNotAuth(SignupPage)
               return (
                 <SignupPageWithProtection
                   {...props}
                   setMessage={this.setMessage}
                 />
-              );
+              )
             }}
           />
           <Route
             path='/login'
             render={props => {
-              const LoginPageWithProtection = requireNotAuth(LoginPage);
-              return <LoginPageWithProtection {...props} login={this.login} />;
+              const LoginPageWithProtection = requireNotAuth(LoginPage)
+              return <LoginPageWithProtection {...props} login={this.login} />
             }}
           />
           {/* <Route path='/product/:_id' exact component={ShowProductPage} /> */}
@@ -144,7 +144,7 @@ class App extends React.Component {
               <ShowProductPage
                 {...props}
                 user={this.state.user}
-                setMessage={this.props.setMessage}
+                setMessage={this.setMessage}
               />
             )}
           />
@@ -154,14 +154,14 @@ class App extends React.Component {
             path='/cart'
             exact
             render={props => {
-              const CartWithProtection = requireAuth(Cart);
+              const CartWithProtection = requireAuth(Cart)
               return (
                 <CartWithProtection
                   {...props}
                   user={this.state.user}
                   setMessage={this.setMessage}
                 />
-              );
+              )
             }}
           />
           <Route
@@ -199,8 +199,8 @@ class App extends React.Component {
         </div>
         <Footer />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

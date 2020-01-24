@@ -1,7 +1,7 @@
-import React from 'react';
-import { Image, Grid, Segment } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
-import logo from '../img/logo.png';
+import React from 'react'
+import { Image, Grid, Segment } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
+import logo from '../img/logo.png'
 
 function Footer() {
   return (
@@ -21,7 +21,7 @@ function Footer() {
             </Grid.Column>
             <Grid.Column className='six wide column'>
               <h4>CONTACT</h4>
-              <p className='footer-contact'>atshabo.corinne@gmail.com</p>
+              <p className='footer-contact'>eclosionflowers@gmail.com</p>
               <p className='footer-contact'>06 25 33 34 38</p>
               <p className='footer-contact'>Marne la Vallée</p>
             </Grid.Column>
@@ -61,7 +61,7 @@ function Footer() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

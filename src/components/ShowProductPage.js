@@ -1,18 +1,20 @@
-import React from 'react';
-import ProductDetails from './ProductDetails';
-import LoadingMsg from './LoadingMsg';
-import api from '../api';
+import React from 'react'
+import ProductDetails from './ProductDetails'
+import LoadingMsg from './LoadingMsg'
+import api from '../api'
 
 class ShowProductPage extends React.Component {
   state = {
     product: {},
     loading: true
-  };
+  }
 
   componentDidMount() {
+    console.log('show', this.props.setMessage)
+
     api.products
       .fetchById(this.props.match.params._id)
-      .then(product => this.setState({ product, loading: false }));
+      .then(product => this.setState({ product, loading: false }))
   }
 
   render() {
@@ -28,8 +30,8 @@ class ShowProductPage extends React.Component {
           />
         )}
       </div>
-    );
+    )
   }
 }
 
-export default ShowProductPage;
+export default ShowProductPage
