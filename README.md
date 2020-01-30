@@ -2,7 +2,7 @@
 
 Projet client pour la Wild Code School
 
-![Eclosion Home](https://res.cloudinary.com/dsbgj0oop/image/upload/v1579879359/home.png)
+![Eclosion Home](https://res.cloudinary.com/dsbgj0oop/image/upload/v1580384248/home.png)
 
 ## Configuration minimum requise
 
