@@ -148,7 +148,12 @@ class App extends React.Component {
               />
             )}
           />
-          <Route path='/contact' exact component={Contact} />
+          <Route
+            path='/contact'
+            render={props => (
+              <Contact {...props} setMessage={this.setMessage} />
+            )}
+          />
 
           <Route
             path='/cart'
