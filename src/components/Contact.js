@@ -1,16 +1,16 @@
-import React from 'react';
-import MailFormWithFormik from './MailFormWithFormik';
+import React from 'react'
+import MailFormWithFormik from './MailFormWithFormik'
 
 class Contact extends React.Component {
-  state = { isSent: false };
+  state = { isSent: false }
   render() {
     return (
       <div className='ui container contact'>
         <h1>Contactez-nous</h1>
-        <MailFormWithFormik />
+        <MailFormWithFormik setMessage={this.props.setMessage} />
       </div>
-    );
+    )
   }
 }
 
-export default Contact;
+export default Contact

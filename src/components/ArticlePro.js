@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-import ModalMail from './ModalMail';
-import event from '../img/event.jpg';
+import ModalMail from './ModalMail'
+import event from '../img/event.jpg'
 
 class ArticlePro extends React.Component {
-  state = {};
+  state = {}
   render() {
     return (
       <div className='ui container'>
@@ -18,7 +18,7 @@ class ArticlePro extends React.Component {
           </div>
           <div className='six wide column'>
             <div className='ui segment articles'>
-              Vous avez besoin d’une scénographie qui en jette !
+              Vous avez besoin d’une scénographie qui en jette!
             </div>
           </div>
 
@@ -41,8 +41,8 @@ class ArticlePro extends React.Component {
           className='ui image articles__img'
         />
       </div>
-    );
+    )
   }
 }
 
-export default ArticlePro;
+export default ArticlePro

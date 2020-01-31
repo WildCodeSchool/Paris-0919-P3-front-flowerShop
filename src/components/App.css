@@ -148,9 +148,8 @@ select,
 }
 .home::after {
   content: '';
-  background: url('https://images.unsplash.com/photo-1578030011717-592b32b82ff3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')
-    fixed top center / cover no-repeat;
-  opacity: 0.8;
+  background: url('../img/home.jpg') fixed top center / cover no-repeat;
+  /* opacity: 0.8; */
   top: 6rem;
   left: 0;
   bottom: 0;
@@ -169,10 +168,10 @@ select,
   transition: 0.3s;
 }
 .home__opening strong h3:hover {
-  color: #e79796;
+  color: #767864;
 }
 .ui.stackable.center.aligned.segment.title {
-  background-color: rgba(244, 241, 234, 0.6);
+  background-color: rgba(244, 241, 234, 0.8);
   max-width: 35rem;
   padding: 2rem 1rem;
 }
